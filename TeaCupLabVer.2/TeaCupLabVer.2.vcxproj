@@ -121,7 +121,7 @@
     <ClCompile Include="homeWindow.cpp" />
     <ClCompile Include="listWindow.cpp" />
     <ClCompile Include="registWindow.cpp" />
-    <ClCompile Include="viewWindow.cpp" />
+    <ClCompile Include="loginWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="homeWindow.h">
@@ -133,7 +133,7 @@
     <ClInclude Include="registWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="viewWindow.h">
+    <ClInclude Include="loginWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
