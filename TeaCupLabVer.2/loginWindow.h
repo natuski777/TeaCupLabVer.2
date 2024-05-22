@@ -1,4 +1,5 @@
 #pragma once
+#include "homeWindow.h"
 
 namespace TeaCupLabVer2 {
 
@@ -34,13 +35,16 @@ namespace TeaCupLabVer2 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ labelUserId;
+	private: System::Windows::Forms::Label^ labelUserName;
+	protected:
+
 	private: System::Windows::Forms::Label^ labelPassword;
+	private: System::Windows::Forms::TextBox^ textBoxUserName;
 	protected:
 
 	protected:
 
-	private: System::Windows::Forms::TextBox^ textBoxUserId;
+
 	private: System::Windows::Forms::TextBox^ textBoxPassword;
 
 
@@ -64,25 +68,25 @@ namespace TeaCupLabVer2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->labelUserId = (gcnew System::Windows::Forms::Label());
+			this->labelUserName = (gcnew System::Windows::Forms::Label());
 			this->labelPassword = (gcnew System::Windows::Forms::Label());
-			this->textBoxUserId = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxUserName = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxPassword = (gcnew System::Windows::Forms::TextBox());
 			this->buttonLogin = (gcnew System::Windows::Forms::Button());
 			this->buttonCancel = (gcnew System::Windows::Forms::Button());
 			this->labelRogin = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// labelUserId
+			// labelUserName
 			// 
-			this->labelUserId->AutoSize = true;
-			this->labelUserId->Font = (gcnew System::Drawing::Font(L"ＭＳ Ｐゴシック", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->labelUserName->AutoSize = true;
+			this->labelUserName->Font = (gcnew System::Drawing::Font(L"ＭＳ Ｐゴシック", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->labelUserId->Location = System::Drawing::Point(27, 97);
-			this->labelUserId->Name = L"labelUserId";
-			this->labelUserId->Size = System::Drawing::Size(110, 20);
-			this->labelUserId->TabIndex = 0;
-			this->labelUserId->Text = L"ユーザーID";
+			this->labelUserName->Location = System::Drawing::Point(27, 97);
+			this->labelUserName->Name = L"labelUserName";
+			this->labelUserName->Size = System::Drawing::Size(111, 20);
+			this->labelUserName->TabIndex = 0;
+			this->labelUserName->Text = L"ユーザー名";
 			// 
 			// labelPassword
 			// 
@@ -95,17 +99,18 @@ namespace TeaCupLabVer2 {
 			this->labelPassword->TabIndex = 1;
 			this->labelPassword->Text = L"パスワード";
 			// 
-			// textBoxUserId
+			// textBoxUserName
 			// 
-			this->textBoxUserId->Location = System::Drawing::Point(143, 95);
-			this->textBoxUserId->Name = L"textBoxUserId";
-			this->textBoxUserId->Size = System::Drawing::Size(340, 22);
-			this->textBoxUserId->TabIndex = 2;
+			this->textBoxUserName->Location = System::Drawing::Point(143, 95);
+			this->textBoxUserName->Name = L"textBoxUserName";
+			this->textBoxUserName->Size = System::Drawing::Size(340, 22);
+			this->textBoxUserName->TabIndex = 2;
 			// 
 			// textBoxPassword
 			// 
 			this->textBoxPassword->Location = System::Drawing::Point(143, 174);
 			this->textBoxPassword->Name = L"textBoxPassword";
+			this->textBoxPassword->PasswordChar = '*';
 			this->textBoxPassword->Size = System::Drawing::Size(340, 22);
 			this->textBoxPassword->TabIndex = 3;
 			// 
@@ -140,7 +145,7 @@ namespace TeaCupLabVer2 {
 				static_cast<System::Byte>(128)));
 			this->labelRogin->Location = System::Drawing::Point(185, 31);
 			this->labelRogin->Name = L"labelRogin";
-			this->labelRogin->Size = System::Drawing::Size(207, 34);
+			this->labelRogin->Size = System::Drawing::Size(201, 33);
 			this->labelRogin->TabIndex = 6;
 			this->labelRogin->Text = L"ログイン画面";
 			// 
@@ -153,12 +158,13 @@ namespace TeaCupLabVer2 {
 			this->Controls->Add(this->buttonCancel);
 			this->Controls->Add(this->buttonLogin);
 			this->Controls->Add(this->textBoxPassword);
-			this->Controls->Add(this->textBoxUserId);
+			this->Controls->Add(this->textBoxUserName);
 			this->Controls->Add(this->labelPassword);
-			this->Controls->Add(this->labelUserId);
+			this->Controls->Add(this->labelUserName);
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"viewWindow";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &viewWindow::viewWindow_FormClosing);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -167,17 +173,38 @@ namespace TeaCupLabVer2 {
 	private: System::Void buttonLogin_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		 //ユーザーID,パスワードを検証し,成功した場合カレンダー画面に遷移
-		if (this->textBoxUserId->Text == "User1" && this->textBoxPassword->Text == "Pass1")
+		if (this->textBoxUserName->Text == "User1" && this->textBoxPassword->Text == "Pass1")
 		{
+			homeWindow^ home = gcnew homeWindow();
+			home->ShowDialog();
+		}
+		else
+		{
+			//ログインエラー発生時に表示されるメッセージテキストを用意
+			String^ loginerror = "";
 
+			if (this->textBoxUserName->Text == "")
+			{
+				loginerror += "ユーザー名は必須項目です。\n";
+			}
+			if (this->textBoxPassword->Text == "")
+			{
+				loginerror += "パスワードは必須項目です。\n";
+			}
+
+			MessageBox::Show(loginerror, "", MessageBoxButtons::OKCancel);
 		}
 	}
 
 		//テキストボックス内の入力内容をクリア
 	private: System::Void buttonCancel_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		this->textBoxUserId->Text = "";
+		this->textBoxUserName->Text = "";
 		this->textBoxPassword->Text = "";
+	}
+	private: System::Void viewWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) 
+	{
+		
 	}
 };
 }
