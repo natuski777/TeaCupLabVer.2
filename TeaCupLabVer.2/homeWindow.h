@@ -63,7 +63,7 @@ namespace TeaCupLabVer2 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(612, 442);
+			this->button1->Location = System::Drawing::Point(632, 431);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(569, 88);
 			this->button1->TabIndex = 3;
@@ -73,17 +73,21 @@ namespace TeaCupLabVer2 {
 			// 
 			// monthCalendar1
 			// 
+			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(6, 1);
 			this->monthCalendar1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9999, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->monthCalendar1->Location = System::Drawing::Point(317, 124);
+			this->monthCalendar1->Location = System::Drawing::Point(18, 19);
 			this->monthCalendar1->MaxSelectionCount = 366;
 			this->monthCalendar1->MinDate = System::DateTime(2024, 1, 1, 0, 0, 0, 0);
-			this->monthCalendar1->MinimumSize = System::Drawing::Size(200, 200);
+			this->monthCalendar1->MinimumSize = System::Drawing::Size(200, 400);
 			this->monthCalendar1->Name = L"monthCalendar1";
 			this->monthCalendar1->SelectionRange = (gcnew System::Windows::Forms::SelectionRange(System::DateTime(2024, 1, 1, 0, 0, 0, 0), System::DateTime(2024,
 				12, 31, 0, 0, 0, 0)));
 			this->monthCalendar1->TabIndex = 4;
+			this->monthCalendar1->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &homeWindow::monthCalendar1_DateChanged_2);
+			this->monthCalendar1->DateSelected += gcnew System::Windows::Forms::DateRangeEventHandler(this, &homeWindow::monthCalendar1_DateChanged_2);
+			this->monthCalendar1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &homeWindow::monthCalendar1_MouseDown);
 			// 
 			// homeWindow
 			// 
@@ -100,12 +104,6 @@ namespace TeaCupLabVer2 {
 		}
 #pragma endregion
 
-	
-	private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void monthCalendar1_DateChanged(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
-	}
-
 	 //ログアウト確認メッセージボックス
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
@@ -121,7 +119,14 @@ namespace TeaCupLabVer2 {
 			e->Cancel = true;
 		}
 	}
-	private: System::Void monthCalendar1_DateChanged_1(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
-	}
+	
+private: System::Void monthCalendar1_DateChanged_2(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) 
+{
+
+}
+private: System::Void monthCalendar1_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) 
+{
+
+}
 };
 }
