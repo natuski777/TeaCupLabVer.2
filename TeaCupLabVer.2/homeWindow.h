@@ -62,7 +62,7 @@ namespace TeaCupLabVer2 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(384, 333);
+			this->button1->Location = System::Drawing::Point(354, 348);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(156, 54);
 			this->button1->TabIndex = 3;
