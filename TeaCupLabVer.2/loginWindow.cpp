@@ -1,4 +1,7 @@
 #include "loginWindow.h"
+#include "homeWindow.h"
+#include "registWindow.h"
+#include "listWindow.h"
 
 using namespace TeaCupLabVer2;
 
