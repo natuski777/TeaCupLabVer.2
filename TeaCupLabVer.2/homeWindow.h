@@ -37,7 +37,8 @@ namespace TeaCupLabVer2 {
 
 
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::MonthCalendar^ monthCalendar1;
+
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
 
 
 
@@ -58,43 +59,33 @@ namespace TeaCupLabVer2 {
 		void InitializeComponent(void)
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(632, 431);
+			this->button1->Location = System::Drawing::Point(111, 286);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(569, 88);
+			this->button1->Size = System::Drawing::Size(244, 37);
 			this->button1->TabIndex = 3;
 			this->button1->Text = L"ログアウト";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &homeWindow::button1_Click);
 			// 
-			// monthCalendar1
+			// dateTimePicker1
 			// 
-			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(6, 1);
-			this->monthCalendar1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9999, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->monthCalendar1->Location = System::Drawing::Point(18, 19);
-			this->monthCalendar1->MaxSelectionCount = 366;
-			this->monthCalendar1->MinDate = System::DateTime(2024, 1, 1, 0, 0, 0, 0);
-			this->monthCalendar1->MinimumSize = System::Drawing::Size(200, 400);
-			this->monthCalendar1->Name = L"monthCalendar1";
-			this->monthCalendar1->SelectionRange = (gcnew System::Windows::Forms::SelectionRange(System::DateTime(2024, 1, 1, 0, 0, 0, 0), System::DateTime(2024,
-				12, 31, 0, 0, 0, 0)));
-			this->monthCalendar1->TabIndex = 4;
-			this->monthCalendar1->DateChanged += gcnew System::Windows::Forms::DateRangeEventHandler(this, &homeWindow::monthCalendar1_DateChanged_2);
-			this->monthCalendar1->DateSelected += gcnew System::Windows::Forms::DateRangeEventHandler(this, &homeWindow::monthCalendar1_DateChanged_2);
-			this->monthCalendar1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &homeWindow::monthCalendar1_MouseDown);
+			this->dateTimePicker1->Location = System::Drawing::Point(204, 130);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(141, 19);
+			this->dateTimePicker1->TabIndex = 5;
+			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &homeWindow::dateTimePicker1_ValueChanged);
 			// 
 			// homeWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1236, 553);
-			this->Controls->Add(this->monthCalendar1);
+			this->ClientSize = System::Drawing::Size(569, 410);
+			this->Controls->Add(this->dateTimePicker1);
 			this->Controls->Add(this->button1);
 			this->Name = L"homeWindow";
 			this->Text = L"homeWindow";
@@ -123,10 +114,16 @@ namespace TeaCupLabVer2 {
 private: System::Void monthCalendar1_DateChanged_2(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) 
 {
 
+	
 }
 private: System::Void monthCalendar1_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) 
 {
 
+}
+private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) 
+{
+	//this->dateTimePicker1->Value->monthofday->ToString();
+	//ToLongDataString();
 }
 };
 }
