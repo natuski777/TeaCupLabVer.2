@@ -86,7 +86,7 @@ namespace TeaCupLabVer2 {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(33, 155);
+			this->label3->Location = System::Drawing::Point(33, 142);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(67, 15);
 			this->label3->TabIndex = 2;
@@ -95,7 +95,7 @@ namespace TeaCupLabVer2 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(33, 230);
+			this->label4->Location = System::Drawing::Point(33, 200);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(67, 15);
 			this->label4->TabIndex = 3;
@@ -140,6 +140,7 @@ namespace TeaCupLabVer2 {
 #pragma endregion
 	private: System::Void listWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
 	{
+		//フォームを閉じるときの処理
 		if (System::Windows::Forms::DialogResult::Cancel ==
 			MessageBox::Show("内容が保存されていません\n", "本当に終了しますか?",
 				MessageBoxButtons::OKCancel, MessageBoxIcon::Question))

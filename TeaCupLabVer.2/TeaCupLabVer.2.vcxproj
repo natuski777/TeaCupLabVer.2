@@ -141,6 +141,9 @@
     <EmbeddedResource Include="homeWindow.resx">
       <DependentUpon>homeWindow.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="listWindow.resx">
+      <DependentUpon>listWindow.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="loginWindow.resx">
       <DependentUpon>loginWindow.h</DependentUpon>
     </EmbeddedResource>
