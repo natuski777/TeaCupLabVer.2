@@ -3,7 +3,8 @@
 using namespace TeaCupLabVer2;
 
 [STAThreadAttribute]
-int main() {
+int main()
+{
 	Application::Run(gcnew registWindow());
 	return 0;
 }

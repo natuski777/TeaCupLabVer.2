@@ -39,10 +39,14 @@ namespace TeaCupLabVer2 {
 	private: System::Windows::Forms::Label^ labelTimeStart;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ labelPlan;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
-	private: System::Windows::Forms::ComboBox^ comboBox2;
-	private: System::Windows::Forms::ComboBox^ comboBox3;
-	private: System::Windows::Forms::ComboBox^ comboBox4;
+	private: System::Windows::Forms::ComboBox^ buttonTimeStart;
+	private: System::Windows::Forms::ComboBox^ buttonMinuteStart;
+	private: System::Windows::Forms::ComboBox^ buttonTimeFinish;
+	private: System::Windows::Forms::ComboBox^ buttonMinuteFinish;
+
+
+
+
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Button^ buttonFinish;
 	private: System::Windows::Forms::Label^ label1;
@@ -68,10 +72,10 @@ namespace TeaCupLabVer2 {
 			this->labelTimeStart = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->labelPlan = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
-			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
+			this->buttonTimeStart = (gcnew System::Windows::Forms::ComboBox());
+			this->buttonMinuteStart = (gcnew System::Windows::Forms::ComboBox());
+			this->buttonTimeFinish = (gcnew System::Windows::Forms::ComboBox());
+			this->buttonMinuteFinish = (gcnew System::Windows::Forms::ComboBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->buttonFinish = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -120,54 +124,54 @@ namespace TeaCupLabVer2 {
 			this->labelPlan->TabIndex = 3;
 			this->labelPlan->Text = L"・予定内容：";
 			// 
-			// comboBox1
+			// buttonTimeStart
 			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(25) {
-				L"0", L"1", L"2", L"3", L"4", L"5", L"6", L"7",
-					L"8", L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23", L"24"
+			this->buttonTimeStart->FormattingEnabled = true;
+			this->buttonTimeStart->Items->AddRange(gcnew cli::array< System::Object^  >(25) {
+				L"0", L"1", L"2", L"3", L"4", L"5", L"6",
+					L"7", L"8", L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23", L"24"
 			});
-			this->comboBox1->Location = System::Drawing::Point(171, 63);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 23);
-			this->comboBox1->TabIndex = 4;
-			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &registWindow::comboBox1_SelectedIndexChanged);
+			this->buttonTimeStart->Location = System::Drawing::Point(171, 63);
+			this->buttonTimeStart->Name = L"buttonTimeStart";
+			this->buttonTimeStart->Size = System::Drawing::Size(121, 23);
+			this->buttonTimeStart->TabIndex = 4;
+			this->buttonTimeStart->SelectedIndexChanged += gcnew System::EventHandler(this, &registWindow::comboBox1_SelectedIndexChanged);
 			// 
-			// comboBox2
+			// buttonMinuteStart
 			// 
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
-				L"0", L"5", L"10", L"15", L"20", L"25", L"30",
+			this->buttonMinuteStart->FormattingEnabled = true;
+			this->buttonMinuteStart->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+				L"0", L"5", L"10", L"15", L"20", L"25",
+					L"30", L"35", L"40", L"45", L"50", L"55"
+			});
+			this->buttonMinuteStart->Location = System::Drawing::Point(347, 63);
+			this->buttonMinuteStart->Name = L"buttonMinuteStart";
+			this->buttonMinuteStart->Size = System::Drawing::Size(121, 23);
+			this->buttonMinuteStart->TabIndex = 5;
+			// 
+			// buttonTimeFinish
+			// 
+			this->buttonTimeFinish->FormattingEnabled = true;
+			this->buttonTimeFinish->Items->AddRange(gcnew cli::array< System::Object^  >(24) {
+				L"0", L"1", L"2", L"3", L"4", L"5", L"6",
+					L"7", L"8", L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23"
+			});
+			this->buttonTimeFinish->Location = System::Drawing::Point(171, 109);
+			this->buttonTimeFinish->Name = L"buttonTimeFinish";
+			this->buttonTimeFinish->Size = System::Drawing::Size(121, 23);
+			this->buttonTimeFinish->TabIndex = 6;
+			// 
+			// buttonMinuteFinish
+			// 
+			this->buttonMinuteFinish->FormattingEnabled = true;
+			this->buttonMinuteFinish->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+				L"0", L"5", L"15", L"20", L"25", L"30",
 					L"35", L"40", L"45", L"50", L"55"
 			});
-			this->comboBox2->Location = System::Drawing::Point(347, 63);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(121, 23);
-			this->comboBox2->TabIndex = 5;
-			// 
-			// comboBox3
-			// 
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(24) {
-				L"0", L"1", L"2", L"3", L"4", L"5", L"6", L"7",
-					L"8", L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23"
-			});
-			this->comboBox3->Location = System::Drawing::Point(171, 109);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(121, 23);
-			this->comboBox3->TabIndex = 6;
-			// 
-			// comboBox4
-			// 
-			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
-				L"0", L"5", L"15", L"20", L"25", L"30", L"35",
-					L"40", L"45", L"50", L"55"
-			});
-			this->comboBox4->Location = System::Drawing::Point(347, 109);
-			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(121, 23);
-			this->comboBox4->TabIndex = 7;
+			this->buttonMinuteFinish->Location = System::Drawing::Point(347, 109);
+			this->buttonMinuteFinish->Name = L"buttonMinuteFinish";
+			this->buttonMinuteFinish->Size = System::Drawing::Size(121, 23);
+			this->buttonMinuteFinish->TabIndex = 7;
 			// 
 			// textBox1
 			// 
@@ -238,10 +242,10 @@ namespace TeaCupLabVer2 {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->buttonFinish);
 			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->comboBox4);
-			this->Controls->Add(this->comboBox3);
-			this->Controls->Add(this->comboBox2);
-			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->buttonMinuteFinish);
+			this->Controls->Add(this->buttonTimeFinish);
+			this->Controls->Add(this->buttonMinuteStart);
+			this->Controls->Add(this->buttonTimeStart);
 			this->Controls->Add(this->labelPlan);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->labelTimeStart);
@@ -269,6 +273,9 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 	//
 	//完了ボタンを押された場合の処理
 private: System::Void buttonFinish_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->buttonTimeStart->SelectedIndex = -1 || this->buttonMinuteStart->SelectedIndex = -1) {
+
+	}
 }
 };
 }
