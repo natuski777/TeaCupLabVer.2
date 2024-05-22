@@ -35,6 +35,11 @@ namespace TeaCupLabVer2 {
 			}
 		}
 
+
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::MonthCalendar^ monthCalendar1;
+	protected:
+
 	private:
 		/// <summary>
 		/// 必要なデザイナー変数です。
@@ -48,12 +53,41 @@ namespace TeaCupLabVer2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"homeWindow";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
+			this->SuspendLayout();
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(364, 357);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(156, 54);
+			this->button1->TabIndex = 3;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &homeWindow::button1_Click);
+			// 
+			// monthCalendar1
+			// 
+			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(2, 1);
+			this->monthCalendar1->Location = System::Drawing::Point(60, 32);
+			this->monthCalendar1->Name = L"monthCalendar1";
+			this->monthCalendar1->TabIndex = 4;
+			// 
+			// homeWindow
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(660, 485);
+			this->Controls->Add(this->monthCalendar1);
+			this->Controls->Add(this->button1);
+			this->Name = L"homeWindow";
+			this->Text = L"homeWindow";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }
