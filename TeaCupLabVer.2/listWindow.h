@@ -1,5 +1,6 @@
 #pragma once
 #include "registWindow.h"
+#include "homeWindow.h"
 
 namespace TeaCupLabVer2 {
 
@@ -96,7 +97,7 @@ namespace TeaCupLabVer2 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(33, 200);
+			this->label4->Location = System::Drawing::Point(33, 208);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(67, 15);
 			this->label4->TabIndex = 3;
@@ -104,9 +105,9 @@ namespace TeaCupLabVer2 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(78, 279);
+			this->button1->Location = System::Drawing::Point(45, 279);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(120, 39);
+			this->button1->Size = System::Drawing::Size(118, 39);
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"情報登録画面へ";
 			this->button1->UseVisualStyleBackColor = true;
@@ -120,6 +121,7 @@ namespace TeaCupLabVer2 {
 			this->button2->TabIndex = 5;
 			this->button2->Text = L"カレンダー画面へ";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &listWindow::button2_Click);
 			// 
 			// listWindow
 			// 
@@ -144,7 +146,7 @@ namespace TeaCupLabVer2 {
 	{
 		//フォームを閉じるときの処理
 		if (System::Windows::Forms::DialogResult::Cancel ==
-			MessageBox::Show("内容が保存されていません\n", "本当に終了しますか?",
+			MessageBox::Show("内容が保存されていません\n本当に終了しますか?", "警告",
 				MessageBoxButtons::OKCancel, MessageBoxIcon::Question))
 		{
 			e->Cancel= true;
@@ -157,6 +159,14 @@ namespace TeaCupLabVer2 {
 		
 		registWindow^ Reg = gcnew registWindow();
 		Reg->ShowDialog();
+}
+
+		  //カレンダー画面のボタンをクリックするとカレンダー画面へ遷移する処理　モーダルダイアログで表示
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e)
+{
+		homeWindow^ Hom = gcnew homeWindow();
+		Hom->ShowDialog();
+
 }
 };
 }
