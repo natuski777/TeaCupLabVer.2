@@ -123,7 +123,7 @@ namespace TeaCupLabVer2 {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(171, 68);
+			this->comboBox1->Location = System::Drawing::Point(171, 63);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(121, 23);
 			this->comboBox1->TabIndex = 4;
@@ -131,7 +131,7 @@ namespace TeaCupLabVer2 {
 			// comboBox2
 			// 
 			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(354, 67);
+			this->comboBox2->Location = System::Drawing::Point(347, 63);
 			this->comboBox2->Name = L"comboBox2";
 			this->comboBox2->Size = System::Drawing::Size(121, 23);
 			this->comboBox2->TabIndex = 5;
@@ -139,7 +139,7 @@ namespace TeaCupLabVer2 {
 			// comboBox3
 			// 
 			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(196, 107);
+			this->comboBox3->Location = System::Drawing::Point(171, 109);
 			this->comboBox3->Name = L"comboBox3";
 			this->comboBox3->Size = System::Drawing::Size(121, 23);
 			this->comboBox3->TabIndex = 6;
@@ -147,14 +147,14 @@ namespace TeaCupLabVer2 {
 			// comboBox4
 			// 
 			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Location = System::Drawing::Point(354, 107);
+			this->comboBox4->Location = System::Drawing::Point(347, 109);
 			this->comboBox4->Name = L"comboBox4";
 			this->comboBox4->Size = System::Drawing::Size(121, 23);
 			this->comboBox4->TabIndex = 7;
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(196, 148);
+			this->textBox1->Location = System::Drawing::Point(171, 148);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(279, 22);
 			this->textBox1->TabIndex = 8;
@@ -172,38 +172,42 @@ namespace TeaCupLabVer2 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(333, 71);
+			this->label1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->label1->Location = System::Drawing::Point(298, 71);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(43, 15);
+			this->label1->Size = System::Drawing::Size(25, 17);
 			this->label1->TabIndex = 10;
-			this->label1->Text = L"label1";
+			this->label1->Text = L"Žž";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(477, 75);
+			this->label3->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->label3->Location = System::Drawing::Point(474, 69);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(43, 15);
+			this->label3->Size = System::Drawing::Size(25, 17);
 			this->label3->TabIndex = 11;
-			this->label3->Text = L"label3";
+			this->label3->Text = L"•ª";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(328, 111);
+			this->label4->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->label4->Location = System::Drawing::Point(298, 117);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(43, 15);
+			this->label4->Size = System::Drawing::Size(25, 17);
 			this->label4->TabIndex = 12;
-			this->label4->Text = L"label4";
+			this->label4->Text = L"Žž";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(477, 112);
+			this->label5->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->label5->Location = System::Drawing::Point(474, 115);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(43, 15);
+			this->label5->Size = System::Drawing::Size(25, 17);
 			this->label5->TabIndex = 13;
-			this->label5->Text = L"label5";
+			this->label5->Text = L"•ª";
 			// 
 			// registWindow
 			// 
