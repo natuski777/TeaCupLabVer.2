@@ -38,7 +38,18 @@ namespace TeaCupLabVer2 {
 	protected:
 	private: System::Windows::Forms::Label^ labelTimeStart;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ labelPlan;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
+	private: System::Windows::Forms::ComboBox^ comboBox3;
+	private: System::Windows::Forms::ComboBox^ comboBox4;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Button^ buttonFinish;
+	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label5;
+
 
 	private:
 		/// <summary>
@@ -56,7 +67,17 @@ namespace TeaCupLabVer2 {
 			this->labelRegist = (gcnew System::Windows::Forms::Label());
 			this->labelTimeStart = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->labelPlan = (gcnew System::Windows::Forms::Label());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->comboBox4 = (gcnew System::Windows::Forms::ComboBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->buttonFinish = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// labelRegist
@@ -73,7 +94,7 @@ namespace TeaCupLabVer2 {
 			// 
 			this->labelTimeStart->AutoSize = true;
 			this->labelTimeStart->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->labelTimeStart->Location = System::Drawing::Point(55, 87);
+			this->labelTimeStart->Location = System::Drawing::Point(47, 73);
 			this->labelTimeStart->Name = L"labelTimeStart";
 			this->labelTimeStart->Size = System::Drawing::Size(94, 17);
 			this->labelTimeStart->TabIndex = 1;
@@ -83,27 +104,123 @@ namespace TeaCupLabVer2 {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->label2->Location = System::Drawing::Point(52, 124);
+			this->label2->Location = System::Drawing::Point(47, 113);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(94, 17);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"・終了時間：";
 			// 
+			// labelPlan
+			// 
+			this->labelPlan->AutoSize = true;
+			this->labelPlan->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->labelPlan->Location = System::Drawing::Point(47, 153);
+			this->labelPlan->Name = L"labelPlan";
+			this->labelPlan->Size = System::Drawing::Size(94, 17);
+			this->labelPlan->TabIndex = 3;
+			this->labelPlan->Text = L"・予定内容：";
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(171, 68);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(121, 23);
+			this->comboBox1->TabIndex = 4;
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Location = System::Drawing::Point(354, 67);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(121, 23);
+			this->comboBox2->TabIndex = 5;
+			// 
+			// comboBox3
+			// 
+			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Location = System::Drawing::Point(196, 107);
+			this->comboBox3->Name = L"comboBox3";
+			this->comboBox3->Size = System::Drawing::Size(121, 23);
+			this->comboBox3->TabIndex = 6;
+			// 
+			// comboBox4
+			// 
+			this->comboBox4->FormattingEnabled = true;
+			this->comboBox4->Location = System::Drawing::Point(354, 107);
+			this->comboBox4->Name = L"comboBox4";
+			this->comboBox4->Size = System::Drawing::Size(121, 23);
+			this->comboBox4->TabIndex = 7;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(196, 148);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(279, 22);
+			this->textBox1->TabIndex = 8;
+			// 
+			// buttonFinish
+			// 
+			this->buttonFinish->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->buttonFinish->Location = System::Drawing::Point(206, 208);
+			this->buttonFinish->Name = L"buttonFinish";
+			this->buttonFinish->Size = System::Drawing::Size(75, 33);
+			this->buttonFinish->TabIndex = 9;
+			this->buttonFinish->Text = L"完了";
+			this->buttonFinish->UseVisualStyleBackColor = true;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(333, 71);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(43, 15);
+			this->label1->TabIndex = 10;
+			this->label1->Text = L"label1";
+			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(47, 162);
+			this->label3->Location = System::Drawing::Point(477, 75);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(43, 15);
-			this->label3->TabIndex = 3;
+			this->label3->TabIndex = 11;
 			this->label3->Text = L"label3";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(328, 111);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(43, 15);
+			this->label4->TabIndex = 12;
+			this->label4->Text = L"label4";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(477, 112);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(43, 15);
+			this->label5->TabIndex = 13;
+			this->label5->Text = L"label5";
 			// 
 			// registWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(507, 253);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->buttonFinish);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->comboBox4);
+			this->Controls->Add(this->comboBox3);
+			this->Controls->Add(this->comboBox2);
+			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->labelPlan);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->labelTimeStart);
 			this->Controls->Add(this->labelRegist);
