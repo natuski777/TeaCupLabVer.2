@@ -34,6 +34,13 @@ namespace TeaCupLabVer2 {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Label^ label1;
+	protected:
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
 
 	private:
 		/// <summary>
@@ -48,12 +55,97 @@ namespace TeaCupLabVer2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"listWindow";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->SuspendLayout();
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->label1->Location = System::Drawing::Point(144, 21);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(180, 28);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"“o˜^î•ñˆê——";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(33, 84);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(67, 15);
+			this->label2->TabIndex = 1;
+			this->label2->Text = L"ŠJŽnŽžŠÔ";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(33, 155);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(67, 15);
+			this->label3->TabIndex = 2;
+			this->label3->Text = L"I—¹ŽžŠÔ";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(33, 230);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(67, 15);
+			this->label4->TabIndex = 3;
+			this->label4->Text = L"—\’è“à—e";
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(78, 279);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(120, 39);
+			this->button1->TabIndex = 4;
+			this->button1->Text = L"î•ñ“o˜^‰æ–Ê‚Ö";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(247, 279);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(120, 39);
+			this->button2->TabIndex = 5;
+			this->button2->Text = L"ƒJƒŒƒ“ƒ_[‰æ–Ê‚Ö";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// listWindow
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(449, 359);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
+			this->Name = L"listWindow";
+			this->Text = L"listWindow";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &listWindow::listWindow_FormClosing);
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
 		}
 #pragma endregion
-	};
+	private: System::Void listWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
+	{
+		if (System::Windows::Forms::DialogResult::Cancel ==
+			MessageBox::Show("“à—e‚ª•Û‘¶‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ\n", "–{“–‚ÉI—¹‚µ‚Ü‚·‚©?",
+				MessageBoxButtons::OKCancel, MessageBoxIcon::Question))
+		{
+			e->Cancel= true;
+		}
+	}
+};
 }
