@@ -13,10 +13,10 @@ namespace TeaCupLabVer2 {
 	/// <summary>
 	/// viewWindow の概要
 	/// </summary>
-	public ref class viewWindow : public System::Windows::Forms::Form
+	public ref class loginWindow : public System::Windows::Forms::Form
 	{
 	public:
-		viewWindow(void)
+		loginWindow(void)
 		{
 			InitializeComponent();
 			//
@@ -28,7 +28,7 @@ namespace TeaCupLabVer2 {
 		/// <summary>
 		/// 使用中のリソースをすべてクリーンアップします。
 		/// </summary>
-		~viewWindow()
+		~loginWindow()
 		{
 			if (components)
 			{
@@ -125,7 +125,7 @@ namespace TeaCupLabVer2 {
 			this->buttonLogin->TabIndex = 4;
 			this->buttonLogin->Text = L"ログイン";
 			this->buttonLogin->UseVisualStyleBackColor = true;
-			this->buttonLogin->Click += gcnew System::EventHandler(this, &viewWindow::buttonLogin_Click);
+			this->buttonLogin->Click += gcnew System::EventHandler(this, &loginWindow::buttonLogin_Click);
 			// 
 			// buttonCancel
 			// 
@@ -137,7 +137,7 @@ namespace TeaCupLabVer2 {
 			this->buttonCancel->TabIndex = 5;
 			this->buttonCancel->Text = L"キャンセル";
 			this->buttonCancel->UseVisualStyleBackColor = true;
-			this->buttonCancel->Click += gcnew System::EventHandler(this, &viewWindow::buttonCancel_Click);
+			this->buttonCancel->Click += gcnew System::EventHandler(this, &loginWindow::buttonCancel_Click);
 			// 
 			// labelRogin
 			// 
@@ -165,7 +165,7 @@ namespace TeaCupLabVer2 {
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"viewWindow";
-			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &viewWindow::viewWindow_FormClosing);
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &loginWindow::viewWindow_FormClosing);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
