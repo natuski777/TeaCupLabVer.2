@@ -38,6 +38,7 @@ namespace TeaCupLabVer2 {
 
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::MonthCalendar^ monthCalendar1;
+
 	protected:
 
 	private:
@@ -59,18 +60,18 @@ namespace TeaCupLabVer2 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(364, 357);
+			this->button1->Location = System::Drawing::Point(137, 350);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(156, 54);
 			this->button1->TabIndex = 3;
-			this->button1->Text = L"button1";
+			this->button1->Text = L"ログアウト";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &homeWindow::button1_Click);
 			// 
 			// monthCalendar1
 			// 
 			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(2, 1);
-			this->monthCalendar1->Location = System::Drawing::Point(60, 32);
+			this->monthCalendar1->Location = System::Drawing::Point(101, 122);
 			this->monthCalendar1->Name = L"monthCalendar1";
 			this->monthCalendar1->TabIndex = 4;
 			// 
@@ -88,6 +89,8 @@ namespace TeaCupLabVer2 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }
