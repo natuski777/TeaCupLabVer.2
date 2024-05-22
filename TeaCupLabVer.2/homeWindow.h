@@ -62,9 +62,9 @@ namespace TeaCupLabVer2 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(354, 348);
+			this->button1->Location = System::Drawing::Point(46, 385);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(156, 54);
+			this->button1->Size = System::Drawing::Size(569, 88);
 			this->button1->TabIndex = 3;
 			this->button1->Text = L"ログアウト";
 			this->button1->UseVisualStyleBackColor = true;
@@ -72,10 +72,11 @@ namespace TeaCupLabVer2 {
 			// 
 			// monthCalendar1
 			// 
-			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(2, 2);
-			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->monthCalendar1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 72, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->monthCalendar1->Location = System::Drawing::Point(59, 18);
+			this->monthCalendar1->Location = System::Drawing::Point(62, 67);
+			this->monthCalendar1->Margin = System::Windows::Forms::Padding(0);
 			this->monthCalendar1->MinimumSize = System::Drawing::Size(500, 300);
 			this->monthCalendar1->Name = L"monthCalendar1";
 			this->monthCalendar1->TabIndex = 4;
