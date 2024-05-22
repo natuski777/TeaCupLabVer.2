@@ -11,7 +11,7 @@ namespace TeaCupLabVer2 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// viewWindow ‚ÌŠT—v
+	/// loginWindow ‚ÌŠT—v
 	/// </summary>
 	public ref class loginWindow : public System::Windows::Forms::Form
 	{
@@ -150,7 +150,7 @@ namespace TeaCupLabVer2 {
 			this->labelRogin->TabIndex = 6;
 			this->labelRogin->Text = L"ƒƒOƒCƒ“‰æ–Ê";
 			// 
-			// viewWindow
+			// loginWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
