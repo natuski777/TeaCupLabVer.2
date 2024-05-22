@@ -109,6 +109,7 @@ namespace TeaCupLabVer2 {
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"î•ñ“o˜^‰æ–Ê‚Ö";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &listWindow::button1_Click);
 			// 
 			// button2
 			// 
@@ -148,5 +149,15 @@ namespace TeaCupLabVer2 {
 			e->Cancel= true;
 		}
 	}
+
+		//î•ñ“o˜^‰æ–Ê‚Ìƒ{ƒ^ƒ“‚ðƒNƒŠƒbƒN‚·‚é‚Æî•ñ“o˜^‰æ–Ê‚Ö‘JˆÚ‚·‚éˆ—
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
+{
+
+		.h->ShowDialog();
+
+
+
+}
 };
 }
