@@ -144,6 +144,9 @@
     <EmbeddedResource Include="loginWindow.resx">
       <DependentUpon>loginWindow.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="registWindow.resx">
+      <DependentUpon>registWindow.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
