@@ -1,4 +1,5 @@
 #pragma once
+#include "registWindow.h"
 
 namespace TeaCupLabVer2 {
 
@@ -150,14 +151,12 @@ namespace TeaCupLabVer2 {
 		}
 	}
 
-		//î•ñ“o˜^‰æ–Ê‚Ìƒ{ƒ^ƒ“‚ðƒNƒŠƒbƒN‚·‚é‚Æî•ñ“o˜^‰æ–Ê‚Ö‘JˆÚ‚·‚éˆ—
+		//î•ñ“o˜^‰æ–Ê‚Ìƒ{ƒ^ƒ“‚ðƒNƒŠƒbƒN‚·‚é‚Æî•ñ“o˜^‰æ–Ê‚Ö‘JˆÚ‚·‚éˆ—,ƒ‚[ƒ_ƒ‹ƒ_ƒCƒAƒƒO‚Å•\Ž¦
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
 {
-
-		.h->ShowDialog();
-
-
-
+		
+		registWindow^ Reg = gcnew registWindow();
+		Reg->ShowDialog();
 }
 };
 }
