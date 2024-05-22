@@ -64,9 +64,9 @@ namespace TeaCupLabVer2 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(111, 286);
+			this->button1->Location = System::Drawing::Point(49, 104);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(244, 37);
+			this->button1->Size = System::Drawing::Size(469, 258);
 			this->button1->TabIndex = 3;
 			this->button1->Text = L"ログアウト";
 			this->button1->UseVisualStyleBackColor = true;
@@ -74,7 +74,7 @@ namespace TeaCupLabVer2 {
 			// 
 			// dateTimePicker1
 			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(204, 130);
+			this->dateTimePicker1->Location = System::Drawing::Point(202, 37);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(141, 19);
 			this->dateTimePicker1->TabIndex = 5;
