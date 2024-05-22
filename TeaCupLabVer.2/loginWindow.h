@@ -108,6 +108,7 @@ namespace TeaCupLabVer2 {
 			// 
 			// textBoxPassword
 			// 
+			this->textBoxPassword->ImeMode = System::Windows::Forms::ImeMode::Alpha;
 			this->textBoxPassword->Location = System::Drawing::Point(143, 174);
 			this->textBoxPassword->Name = L"textBoxPassword";
 			this->textBoxPassword->PasswordChar = '*';
@@ -191,8 +192,17 @@ namespace TeaCupLabVer2 {
 			{
 				loginerror += "パスワードは必須項目です。\n";
 			}
+			
 
-			MessageBox::Show(loginerror, "", MessageBoxButtons::OKCancel);
+			if (loginerror == "")
+			{
+				MessageBox::Show("ユーザー名またはパスワードが違います");
+			}
+			else
+			{
+				MessageBox::Show(loginerror);
+			}
+			
 		}
 	}
 
@@ -202,9 +212,13 @@ namespace TeaCupLabVer2 {
 		this->textBoxUserName->Text = "";
 		this->textBoxPassword->Text = "";
 	}
+		//フォームを閉じる際にメッセージボックスを表示
 	private: System::Void viewWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) 
 	{
-		if(System::Windows::Forms::DialogResult::Cancel == MessageBox::Show("アプリを終了しますか？","",))
+		if (System::Windows::Forms::DialogResult::Cancel == MessageBox::Show("アプリを終了しますか？", "", MessageBoxButtons::OKCancel))
+		{
+			e->Cancel = true;
+		}
 	}
 };
 }
