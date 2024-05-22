@@ -204,7 +204,7 @@ namespace TeaCupLabVer2 {
 	}
 	private: System::Void viewWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) 
 	{
-		
+		if(System::Windows::Forms::DialogResult::Cancel == MessageBox::Show("アプリを終了しますか？","",))
 	}
 };
 }
