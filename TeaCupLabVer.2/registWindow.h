@@ -123,14 +123,23 @@ namespace TeaCupLabVer2 {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(25) {
+				L"0", L"1", L"2", L"3", L"4", L"5", L"6", L"7",
+					L"8", L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23", L"24"
+			});
 			this->comboBox1->Location = System::Drawing::Point(171, 63);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(121, 23);
 			this->comboBox1->TabIndex = 4;
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &registWindow::comboBox1_SelectedIndexChanged);
 			// 
 			// comboBox2
 			// 
 			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+				L"0", L"5", L"10", L"15", L"20", L"25", L"30",
+					L"35", L"40", L"45", L"50", L"55"
+			});
 			this->comboBox2->Location = System::Drawing::Point(347, 63);
 			this->comboBox2->Name = L"comboBox2";
 			this->comboBox2->Size = System::Drawing::Size(121, 23);
@@ -139,6 +148,10 @@ namespace TeaCupLabVer2 {
 			// comboBox3
 			// 
 			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(24) {
+				L"0", L"1", L"2", L"3", L"4", L"5", L"6", L"7",
+					L"8", L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23"
+			});
 			this->comboBox3->Location = System::Drawing::Point(171, 109);
 			this->comboBox3->Name = L"comboBox3";
 			this->comboBox3->Size = System::Drawing::Size(121, 23);
@@ -147,6 +160,10 @@ namespace TeaCupLabVer2 {
 			// comboBox4
 			// 
 			this->comboBox4->FormattingEnabled = true;
+			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+				L"0", L"5", L"15", L"20", L"25", L"30", L"35",
+					L"40", L"45", L"50", L"55"
+			});
 			this->comboBox4->Location = System::Drawing::Point(347, 109);
 			this->comboBox4->Name = L"comboBox4";
 			this->comboBox4->Size = System::Drawing::Size(121, 23);
@@ -168,6 +185,7 @@ namespace TeaCupLabVer2 {
 			this->buttonFinish->TabIndex = 9;
 			this->buttonFinish->Text = L"完了";
 			this->buttonFinish->UseVisualStyleBackColor = true;
+			this->buttonFinish->Click += gcnew System::EventHandler(this, &registWindow::buttonFinish_Click);
 			// 
 			// label1
 			// 
@@ -230,10 +248,27 @@ namespace TeaCupLabVer2 {
 			this->Controls->Add(this->labelRegist);
 			this->Name = L"registWindow";
 			this->Text = L"registWindow";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &registWindow::registWindow_FormClosing);
+			this->Load += gcnew System::EventHandler(this, &registWindow::registWindow_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void registWindow_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	//
+	//×をクリックした際の警告画面
+private: System::Void registWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+	if (System::Windows::Forms::DialogResult::Cancel ==MessageBox::Show("入力中の内容は保存されていません。\n本当に終了しますか？","確認",MessageBoxButtons::OKCancel, MessageBoxIcon::Question)) {
+		e->Cancel = true;
+	}
+}
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+	//
+	//完了ボタンを押された場合の処理
+private: System::Void buttonFinish_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }
