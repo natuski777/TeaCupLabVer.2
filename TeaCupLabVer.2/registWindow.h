@@ -56,6 +56,7 @@ namespace TeaCupLabVer2 {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Button^ buttonDelete;
 	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ Date;
 
 
 
@@ -88,6 +89,7 @@ namespace TeaCupLabVer2 {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->buttonDelete = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->Date = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// labelRegist
@@ -132,6 +134,7 @@ namespace TeaCupLabVer2 {
 			// 
 			// buttonTimeStart
 			// 
+			this->buttonTimeStart->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->buttonTimeStart->FormattingEnabled = true;
 			this->buttonTimeStart->Items->AddRange(gcnew cli::array< System::Object^  >(25) {
 				L"0", L"1", L"2", L"3", L"4", L"5", L"6",
@@ -145,6 +148,7 @@ namespace TeaCupLabVer2 {
 			// 
 			// buttonMinuteStart
 			// 
+			this->buttonMinuteStart->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->buttonMinuteStart->FormattingEnabled = true;
 			this->buttonMinuteStart->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
 				L"0", L"5", L"10", L"15", L"20", L"25",
@@ -157,6 +161,7 @@ namespace TeaCupLabVer2 {
 			// 
 			// buttonTimeFinish
 			// 
+			this->buttonTimeFinish->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->buttonTimeFinish->FormattingEnabled = true;
 			this->buttonTimeFinish->Items->AddRange(gcnew cli::array< System::Object^  >(24) {
 				L"0", L"1", L"2", L"3", L"4", L"5", L"6",
@@ -169,6 +174,7 @@ namespace TeaCupLabVer2 {
 			// 
 			// buttonMinuteFinish
 			// 
+			this->buttonMinuteFinish->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->buttonMinuteFinish->FormattingEnabled = true;
 			this->buttonMinuteFinish->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
 				L"0", L"5", L"15", L"20", L"25", L"30",
@@ -259,11 +265,21 @@ namespace TeaCupLabVer2 {
 			this->label6->TabIndex = 15;
 			this->label6->Text = L"テキストは50字まで入力できます";
 			// 
+			// Date
+			// 
+			this->Date->AutoSize = true;
+			this->Date->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->Date->Location = System::Drawing::Point(47, 18);
+			this->Date->Name = L"Date";
+			this->Date->Size = System::Drawing::Size(0, 17);
+			this->Date->TabIndex = 16;
+			// 
 			// registWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(507, 292);
+			this->Controls->Add(this->Date);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->buttonDelete);
 			this->Controls->Add(this->label5);
@@ -280,6 +296,8 @@ namespace TeaCupLabVer2 {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->labelTimeStart);
 			this->Controls->Add(this->labelRegist);
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"registWindow";
 			this->Text = L"registWindow";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &registWindow::registWindow_FormClosing);

@@ -1,10 +1,11 @@
 #pragma once
 #include "registWindow.h"
-#include "homeWindow.h"
+//#include "homeWindow.h"
 #include  <msclr/marshal_cppstd.h>//System::String←→std::stringで必要
 
 
-namespace TeaCupLabVer2 {
+namespace TeaCupLabVer2 
+{
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -187,8 +188,10 @@ namespace TeaCupLabVer2 {
 		  //カレンダー画面のボタンをクリックするとカレンダー画面へ遷移する処理　モーダルダイアログで表示
 	private: System::Void buttonReturn_Click(System::Object^ sender, System::EventArgs^ e)
 {
-		homeWindow^ Hom = gcnew homeWindow();
-		Hom->ShowDialog();
+
+		/*homeWindow^ A = gcnew homeWindow();
+		A->ShowDialog();*/
+
 
 		//ホームボタンクリックでDateの値をリセットする処理
 		/*if (this->date->Checked == 0)
@@ -197,6 +200,7 @@ namespace TeaCupLabVer2 {
 		}*/
 
 }
+
 	   //カレンダーの日付(date)をlabel5に表示する処理
 	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e)
 {

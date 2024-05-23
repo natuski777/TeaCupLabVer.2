@@ -3,7 +3,7 @@
 #include <string>
 #include <msclr/marshal_cppstd.h>	
 
-std::string date;
+//std::string date;
 
 using namespace System;
 using namespace std;
@@ -153,9 +153,9 @@ namespace TeaCupLabVer2 {
 		//“ú•tŽæ“¾‚Æ“o˜^î•ñˆê——‰æ–Ê‚Ö‘JˆÚ
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		String^ dayinfo;
+	/*	String^ dayinfo;
 		dayinfo= monthCalendar1->SelectionStart.ToLongDateString();
-		date = msclr::interop::marshal_as<string>(dayinfo);
+		date = msclr::interop::marshal_as<string>(dayinfo);*/
 
 
 		listWindow^ lis = gcnew listWindow();

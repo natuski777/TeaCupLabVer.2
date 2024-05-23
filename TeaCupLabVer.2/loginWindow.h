@@ -1,7 +1,8 @@
 #pragma once
 #include "homeWindow.h"
 
-namespace TeaCupLabVer2 {
+namespace TeaCupLabVer2 
+{
 
 	using namespace System;
 	using namespace System::ComponentModel;
