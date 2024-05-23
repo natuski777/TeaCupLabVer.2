@@ -183,7 +183,7 @@ namespace TeaCupLabVer2 {
 			// buttonFinish
 			// 
 			this->buttonFinish->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->buttonFinish->Location = System::Drawing::Point(206, 208);
+			this->buttonFinish->Location = System::Drawing::Point(347, 208);
 			this->buttonFinish->Name = L"buttonFinish";
 			this->buttonFinish->Size = System::Drawing::Size(75, 33);
 			this->buttonFinish->TabIndex = 9;
@@ -264,7 +264,7 @@ namespace TeaCupLabVer2 {
 	//
 	//×をクリックした際の警告画面
 private: System::Void registWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
-	if (System::Windows::Forms::DialogResult::Cancel ==MessageBox::Show("入力中の内容は保存されていません。\n本当に終了しますか？","確認",MessageBoxButtons::OKCancel, MessageBoxIcon::Question)) {
+	if (System::Windows::Forms::DialogResult::Cancel ==MessageBox::Show("入力中の内容は保存されていません。\n情報の登録を終了しますか？","確認",MessageBoxButtons::OKCancel, MessageBoxIcon::Question)) {
 		e->Cancel = true;
 	}
 }
@@ -301,6 +301,10 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 	{
 		MessageBox::Show("・予定内容が入力されていません。", "", MessageBoxButtons::OK);
 	}
+	//else
+	//{
+	//入力した情報をファイルに書き込む処理
+	//}
 }
 };
 }
