@@ -273,13 +273,33 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 	//
 	//完了ボタンを押された場合の処理
 private: System::Void buttonFinish_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1)
+	if ((this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1) && (this->buttonTimeFinish->SelectedIndex == -1 || this->buttonMinuteFinish->SelectedIndex == -1) && this->textBox1->Text == "")
 	{
-		MessageBox::Show("終了時間が選択されていません。", "", MessageBoxButtons::OK);
+		MessageBox::Show("・開始時間と終了時間が選択されていません。\n・予定内容が入力されていません。", "", MessageBoxButtons::OK);
+	}
+	else if ((this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1) && this->textBox1->Text == "")
+	{
+		MessageBox::Show("・開始時間が選択されていません。\n・予定内容が入力されていません。", "", MessageBoxButtons::OK);
+	}
+	else if ((this->buttonTimeFinish->SelectedIndex == -1 || this->buttonMinuteFinish->SelectedIndex == -1) && this->textBox1->Text == "")
+	{
+		MessageBox::Show("・終了時間が選択されていません。\n・予定内容が入力されていません。", "", MessageBoxButtons::OK);
+	}
+	else if ((this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1) && (this->buttonTimeFinish->SelectedIndex == -1 || this->buttonMinuteFinish->SelectedIndex == -1))
+	{
+		MessageBox::Show("・開始時間と終了時間が選択されていません。", "", MessageBoxButtons::OK);
+	}
+	else if (this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1)
+	{
+		MessageBox::Show("・開始時間が選択されていません。", "", MessageBoxButtons::OK);
 	}
 	else if (this->buttonTimeFinish->SelectedIndex == -1 || this->buttonMinuteFinish->SelectedIndex == -1)
 	{
-		MessageBox::Show("開始時間が選択されていません。", "", MessageBoxButtons::OK);
+		MessageBox::Show("・終了時間が選択されていません。", "", MessageBoxButtons::OK);
+	}
+	else if (this->textBox1->Text == "")
+	{
+		MessageBox::Show("・予定内容が入力されていません。", "", MessageBoxButtons::OK);
 	}
 }
 };
