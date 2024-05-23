@@ -108,7 +108,7 @@ namespace TeaCupLabVer2 {
 			// 
 			// monthCalendar1
 			// 
-			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(5, 3);
+			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(6, 3);
 			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->monthCalendar1->Location = System::Drawing::Point(18, 18);
