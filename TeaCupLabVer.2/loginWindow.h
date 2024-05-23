@@ -182,8 +182,8 @@ namespace TeaCupLabVer2 {
 		{
 			this->Hide();
 
-			homeWindow^ home = gcnew homeWindow();
-			home->ShowDialog();
+			homeWindow^ hom = gcnew homeWindow();
+			hom->ShowDialog();
 		}
 		else
 		{
