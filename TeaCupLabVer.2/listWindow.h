@@ -43,6 +43,7 @@ namespace TeaCupLabVer2 {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::TextBox^ textBox1;
 
 	private:
 		/// <summary>
@@ -63,6 +64,7 @@ namespace TeaCupLabVer2 {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -79,7 +81,7 @@ namespace TeaCupLabVer2 {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(33, 84);
+			this->label2->Location = System::Drawing::Point(33, 107);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(67, 15);
 			this->label2->TabIndex = 1;
@@ -88,7 +90,7 @@ namespace TeaCupLabVer2 {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(33, 142);
+			this->label3->Location = System::Drawing::Point(33, 167);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(67, 15);
 			this->label3->TabIndex = 2;
@@ -97,7 +99,7 @@ namespace TeaCupLabVer2 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(33, 208);
+			this->label4->Location = System::Drawing::Point(33, 229);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(67, 15);
 			this->label4->TabIndex = 3;
@@ -123,11 +125,20 @@ namespace TeaCupLabVer2 {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &listWindow::button2_Click);
 			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(26, 51);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(100, 22);
+			this->textBox1->TabIndex = 6;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &listWindow::textBox1_TextChanged);
+			// 
 			// listWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(449, 359);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label4);
@@ -166,6 +177,12 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 {
 		homeWindow^ Hom = gcnew homeWindow();
 		Hom->ShowDialog();
+
+}
+	   
+	//カレンダーの日付を表示する処理
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) 
+{
 
 }
 };
