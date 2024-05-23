@@ -94,7 +94,7 @@ namespace TeaCupLabVer2 {
 			// 
 			this->labelRegist->AutoSize = true;
 			this->labelRegist->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 15));
-			this->labelRegist->Location = System::Drawing::Point(180, 19);
+			this->labelRegist->Location = System::Drawing::Point(200, 18);
 			this->labelRegist->Name = L"labelRegist";
 			this->labelRegist->Size = System::Drawing::Size(112, 25);
 			this->labelRegist->TabIndex = 0;
@@ -203,7 +203,7 @@ namespace TeaCupLabVer2 {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->label1->Location = System::Drawing::Point(298, 71);
+			this->label1->Location = System::Drawing::Point(298, 64);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(25, 17);
 			this->label1->TabIndex = 10;
@@ -213,7 +213,7 @@ namespace TeaCupLabVer2 {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->label3->Location = System::Drawing::Point(474, 69);
+			this->label3->Location = System::Drawing::Point(474, 63);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(25, 17);
 			this->label3->TabIndex = 11;
@@ -223,7 +223,7 @@ namespace TeaCupLabVer2 {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->label4->Location = System::Drawing::Point(298, 117);
+			this->label4->Location = System::Drawing::Point(298, 110);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(25, 17);
 			this->label4->TabIndex = 12;
@@ -233,7 +233,7 @@ namespace TeaCupLabVer2 {
 			// 
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->label5->Location = System::Drawing::Point(474, 115);
+			this->label5->Location = System::Drawing::Point(474, 110);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(25, 17);
 			this->label5->TabIndex = 13;
@@ -248,7 +248,7 @@ namespace TeaCupLabVer2 {
 			this->buttonDelete->TabIndex = 14;
 			this->buttonDelete->Text = L"削除";
 			this->buttonDelete->UseVisualStyleBackColor = true;
-			this->buttonDelete->Click += gcnew System::EventHandler(this, &registWindow::button1_Click);
+			this->buttonDelete->Click += gcnew System::EventHandler(this, &registWindow::buttonDelete_Click);
 			// 
 			// label6
 			// 
@@ -325,7 +325,10 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 	//入力した情報をファイルに書き込む処理
 	//}
 }
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	//
+	//削除ボタンを押して登録情報を削除する処理
+private: System::Void buttonDelete_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("登録済みの情報を削除します。\n本当に削除しますか？", "確認", MessageBoxButtons::OKCancel, MessageBoxIcon::Question);
 }
 };
 }
