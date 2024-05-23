@@ -101,18 +101,22 @@ namespace TeaCupLabVer2 {
 			// 
 			// textBoxUserName
 			// 
-			this->textBoxUserName->Location = System::Drawing::Point(143, 95);
+			this->textBoxUserName->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->textBoxUserName->Location = System::Drawing::Point(143, 91);
 			this->textBoxUserName->Name = L"textBoxUserName";
-			this->textBoxUserName->Size = System::Drawing::Size(340, 22);
+			this->textBoxUserName->Size = System::Drawing::Size(340, 30);
 			this->textBoxUserName->TabIndex = 2;
 			// 
 			// textBoxPassword
 			// 
+			this->textBoxPassword->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
 			this->textBoxPassword->ImeMode = System::Windows::Forms::ImeMode::Alpha;
-			this->textBoxPassword->Location = System::Drawing::Point(143, 174);
+			this->textBoxPassword->Location = System::Drawing::Point(143, 171);
 			this->textBoxPassword->Name = L"textBoxPassword";
 			this->textBoxPassword->PasswordChar = '*';
-			this->textBoxPassword->Size = System::Drawing::Size(340, 22);
+			this->textBoxPassword->Size = System::Drawing::Size(340, 30);
 			this->textBoxPassword->TabIndex = 3;
 			// 
 			// buttonLogin
@@ -164,7 +168,7 @@ namespace TeaCupLabVer2 {
 			this->Controls->Add(this->labelUserName);
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
-			this->Name = L"viewWindow";
+			this->Name = L"loginWindow";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &loginWindow::viewWindow_FormClosing);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -176,6 +180,8 @@ namespace TeaCupLabVer2 {
 		 //ユーザーID,パスワードを検証し,成功した場合カレンダー画面に遷移
 		if (this->textBoxUserName->Text == "User1" && this->textBoxPassword->Text == "Pass1")
 		{
+			this->Hide();
+
 			homeWindow^ home = gcnew homeWindow();
 			home->ShowDialog();
 		}
