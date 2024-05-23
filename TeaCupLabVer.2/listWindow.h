@@ -45,8 +45,10 @@ namespace TeaCupLabVer2 {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ buttonRegist;
+
+	private: System::Windows::Forms::Button^ buttonReturn;
+
 	private: System::Windows::Forms::Label^ label5;
 
 
@@ -70,8 +72,8 @@ namespace TeaCupLabVer2 {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->buttonRegist = (gcnew System::Windows::Forms::Button());
+			this->buttonReturn = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
@@ -113,25 +115,25 @@ namespace TeaCupLabVer2 {
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"予定内容";
 			// 
-			// button1
+			// buttonRegist
 			// 
-			this->button1->Location = System::Drawing::Point(45, 279);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(118, 39);
-			this->button1->TabIndex = 4;
-			this->button1->Text = L"情報登録画面へ";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &listWindow::button1_Click);
+			this->buttonRegist->Location = System::Drawing::Point(45, 279);
+			this->buttonRegist->Name = L"buttonRegist";
+			this->buttonRegist->Size = System::Drawing::Size(118, 39);
+			this->buttonRegist->TabIndex = 4;
+			this->buttonRegist->Text = L"情報登録画面へ";
+			this->buttonRegist->UseVisualStyleBackColor = true;
+			this->buttonRegist->Click += gcnew System::EventHandler(this, &listWindow::button1_Click);
 			// 
-			// button2
+			// buttonReturn
 			// 
-			this->button2->Location = System::Drawing::Point(247, 279);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(120, 39);
-			this->button2->TabIndex = 5;
-			this->button2->Text = L"カレンダー画面へ";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &listWindow::button2_Click);
+			this->buttonReturn->Location = System::Drawing::Point(247, 279);
+			this->buttonReturn->Name = L"buttonReturn";
+			this->buttonReturn->Size = System::Drawing::Size(120, 39);
+			this->buttonReturn->TabIndex = 5;
+			this->buttonReturn->Text = L"カレンダー画面へ";
+			this->buttonReturn->UseVisualStyleBackColor = true;
+			this->buttonReturn->Click += gcnew System::EventHandler(this, &listWindow::buttonReturn_Click);
 			// 
 			// label5
 			// 
@@ -149,8 +151,8 @@ namespace TeaCupLabVer2 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(449, 359);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->buttonReturn);
+			this->Controls->Add(this->buttonRegist);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -183,23 +185,25 @@ namespace TeaCupLabVer2 {
 }
 
 		  //カレンダー画面のボタンをクリックするとカレンダー画面へ遷移する処理　モーダルダイアログで表示
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e)
+	private: System::Void buttonReturn_Click(System::Object^ sender, System::EventArgs^ e)
 {
 		homeWindow^ Hom = gcnew homeWindow();
 		Hom->ShowDialog();
 
 		//ホームボタンクリックでDateの値をリセットする処理
-		inputDate.value = "";
-
+		/*if (this->date->Checked == 0)
+		{
+			System::Diagnostics::Debug::WriteLine("");
+		}*/
 
 }
 	   //カレンダーの日付(date)をlabel5に表示する処理
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e)
+	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	String^ date = gcnew String(label5->Text);
+	/*String^ date = gcnew String(label5->Text);
 	string label5= msclr::interop::marshal_as<string>(date);
 	string date = gcnew string(label5->Text);
-	String^ label5 = msclr::interop::marshal_as<String^>(date);
+	String^ label5 = msclr::interop::marshal_as<String^>(date);*/
 
 }
 	   //情報登録画面の予定内容を表示、登録がなければ「予定はありません」と表示する
