@@ -1,5 +1,9 @@
 #pragma once
 #include "listWindow.h"
+#include <string>
+#include <msclr/marshal_cppstd.h>	
+
+std::string date;
 
 using namespace System;
 using namespace std;
@@ -104,10 +108,10 @@ namespace TeaCupLabVer2 {
 			// 
 			// monthCalendar1
 			// 
-			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(6, 3);
+			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(5, 3);
 			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->monthCalendar1->Location = System::Drawing::Point(5, 5);
+			this->monthCalendar1->Location = System::Drawing::Point(18, 18);
 			this->monthCalendar1->MaxSelectionCount = 1;
 			this->monthCalendar1->MinimumSize = System::Drawing::Size(0, 40);
 			this->monthCalendar1->Name = L"monthCalendar1";
@@ -117,7 +121,7 @@ namespace TeaCupLabVer2 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1225, 529);
+			this->ClientSize = System::Drawing::Size(1280, 551);
 			this->Controls->Add(this->monthCalendar1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
@@ -149,7 +153,9 @@ namespace TeaCupLabVer2 {
 		//“ú•tŽæ“¾‚Æ“o˜^î•ñˆê——‰æ–Ê‚Ö‘JˆÚ
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		label1->Text = monthCalendar1->SelectionStart.ToLongDateString();
+		String^ dayinfo;
+		dayinfo= monthCalendar1->SelectionStart.ToLongDateString();
+		date = msclr::interop::marshal_as<string>(dayinfo);
 
 
 		listWindow^ lis = gcnew listWindow();
