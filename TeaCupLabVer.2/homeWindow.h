@@ -1,5 +1,8 @@
 #pragma once
-
+#include "listWindow.h"
+#include <string>
+using namespace System;
+using namespace std;
 namespace TeaCupLabVer2 {
 
 	using namespace System;
@@ -34,11 +37,16 @@ namespace TeaCupLabVer2 {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^ buttonLogout;
+	protected:
 
 
-	private: System::Windows::Forms::Button^ button1;
 
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+
+
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::MonthCalendar^ monthCalendar1;
 
 
 
@@ -49,7 +57,7 @@ namespace TeaCupLabVer2 {
 		/// <summary>
 		/// 必要なデザイナー変数です。
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -58,72 +66,100 @@ namespace TeaCupLabVer2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->buttonLogout = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
 			this->SuspendLayout();
 			// 
-			// button1
+			// buttonLogout
 			// 
-			this->button1->Location = System::Drawing::Point(49, 104);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(469, 258);
-			this->button1->TabIndex = 3;
-			this->button1->Text = L"ログアウト";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &homeWindow::button1_Click);
+			this->buttonLogout->Location = System::Drawing::Point(854, 467);
+			this->buttonLogout->Name = L"buttonLogout";
+			this->buttonLogout->Size = System::Drawing::Size(185, 46);
+			this->buttonLogout->TabIndex = 3;
+			this->buttonLogout->Text = L"ログアウト";
+			this->buttonLogout->UseVisualStyleBackColor = true;
+			this->buttonLogout->Click += gcnew System::EventHandler(this, &homeWindow::buttonLogout_Click);
 			// 
-			// dateTimePicker1
+			// button2
 			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(202, 37);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(141, 19);
-			this->dateTimePicker1->TabIndex = 5;
-			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &homeWindow::dateTimePicker1_ValueChanged);
+			this->button2->Location = System::Drawing::Point(316, 465);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(138, 50);
+			this->button2->TabIndex = 6;
+			this->button2->Text = L"確定";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &homeWindow::button2_Click);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(60, 465);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(35, 12);
+			this->label1->TabIndex = 7;
+			this->label1->Text = L"label1";
+			this->label1->Visible = false;
+			// 
+			// monthCalendar1
+			// 
+			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(6, 3);
+			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->monthCalendar1->Location = System::Drawing::Point(-3, 3);
+			this->monthCalendar1->MaxSelectionCount = 1;
+			this->monthCalendar1->MinimumSize = System::Drawing::Size(0, 40);
+			this->monthCalendar1->Name = L"monthCalendar1";
+			this->monthCalendar1->SelectionRange = (gcnew System::Windows::Forms::SelectionRange(System::DateTime(2024, 1, 1, 0, 0, 0, 0), System::DateTime(2024,
+				12, 31, 0, 0, 0, 0)));
+			this->monthCalendar1->TabIndex = 8;
 			// 
 			// homeWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(569, 410);
-			this->Controls->Add(this->dateTimePicker1);
-			this->Controls->Add(this->button1);
+			this->ClientSize = System::Drawing::Size(1214, 530);
+			this->Controls->Add(this->monthCalendar1);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->buttonLogout);
 			this->Name = L"homeWindow";
 			this->Text = L"homeWindow";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &homeWindow::homeWindow_FormClosing);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
 
-	 //ログアウト確認メッセージボックス
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) 
+		//ログアウト確認メッセージボックス
+	private: System::Void buttonLogout_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		MessageBox::Show("ログアウトしますか?", "確認", MessageBoxButtons::OKCancel);
 	}
 
-	//終了確認メッセージボックス
+		 //終了確認メッセージボックス
 	private: System::Void homeWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
 	{
-		if (System::Windows::Forms::DialogResult::Cancel ==
-			MessageBox::Show("アプリを終了しますか?", "確認",
-				MessageBoxButtons::OKCancel)) {
+		if (System::Windows::Forms::DialogResult::Cancel ==MessageBox::Show("アプリを終了しますか?", "確認",MessageBoxButtons::OKCancel)) 
+		{
 			e->Cancel = true;
 		}
 	}
-	
-private: System::Void monthCalendar1_DateChanged_2(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) 
-{
 
 	
-}
-private: System::Void monthCalendar1_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) 
-{
+	private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e)
+	{
+		
 
-}
-private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) 
-{
-	//this->dateTimePicker1->Value->monthofday->ToString();
-	//ToLongDataString();
-}
+	};
+		//日付取得と登録情報一覧画面へ遷移
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		label1->Text = monthCalendar1->SelectionStart.ToLongDateString()+ monthCalendar1->SelectionEnd.ToLongDateString();
+		listWindow^ lis = gcnew listWindow();
+		lis->ShowDialog();
+	}
 };
 }
