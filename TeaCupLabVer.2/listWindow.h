@@ -1,7 +1,7 @@
 #pragma once
 #include "registWindow.h"
 #include "homeWindow.h"
-#include  <msclr/marshal_cppstd.h>
+#include  <msclr/marshal_cppstd.h>//System::String←→std::stringで必要
 
 
 namespace TeaCupLabVer2 {
@@ -188,13 +188,21 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		homeWindow^ Hom = gcnew homeWindow();
 		Hom->ShowDialog();
 
+		//ホームボタンクリックでDateの値をリセットする処理
+		inputDate.value = "";
+
+
 }
 	   //カレンダーの日付(date)をlabel5に表示する処理
 private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	String^ date = gcnew String(label5->Text);
+	string label5= msclr::interop::marshal_as<string>(date);
 	string date = gcnew string(label5->Text);
 	String^ label5 = msclr::interop::marshal_as<String^>(date);
 
 }
+	   //情報登録画面の予定内容を表示、登録がなければ「予定はありません」と表示する
+
 };
 }
