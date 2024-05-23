@@ -43,16 +43,20 @@ namespace TeaCupLabVer2 {
 	private: System::Windows::Forms::ComboBox^ buttonMinuteStart;
 	private: System::Windows::Forms::ComboBox^ buttonTimeFinish;
 	private: System::Windows::Forms::ComboBox^ buttonMinuteFinish;
+	private: System::Windows::Forms::TextBox^ textBoxPlan;
 
 
 
 
-	private: System::Windows::Forms::TextBox^ textBox1;
+
 	private: System::Windows::Forms::Button^ buttonFinish;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Button^ buttonDelete;
+	private: System::Windows::Forms::Label^ label6;
+
 
 
 	private:
@@ -76,12 +80,14 @@ namespace TeaCupLabVer2 {
 			this->buttonMinuteStart = (gcnew System::Windows::Forms::ComboBox());
 			this->buttonTimeFinish = (gcnew System::Windows::Forms::ComboBox());
 			this->buttonMinuteFinish = (gcnew System::Windows::Forms::ComboBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxPlan = (gcnew System::Windows::Forms::TextBox());
 			this->buttonFinish = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->buttonDelete = (gcnew System::Windows::Forms::Button());
+			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// labelRegist
@@ -173,17 +179,19 @@ namespace TeaCupLabVer2 {
 			this->buttonMinuteFinish->Size = System::Drawing::Size(121, 23);
 			this->buttonMinuteFinish->TabIndex = 7;
 			// 
-			// textBox1
+			// textBoxPlan
 			// 
-			this->textBox1->Location = System::Drawing::Point(171, 148);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(279, 22);
-			this->textBox1->TabIndex = 8;
+			this->textBoxPlan->Location = System::Drawing::Point(171, 148);
+			this->textBoxPlan->MaxLength = 50;
+			this->textBoxPlan->Multiline = true;
+			this->textBoxPlan->Name = L"textBoxPlan";
+			this->textBoxPlan->Size = System::Drawing::Size(297, 55);
+			this->textBoxPlan->TabIndex = 8;
 			// 
 			// buttonFinish
 			// 
 			this->buttonFinish->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->buttonFinish->Location = System::Drawing::Point(347, 208);
+			this->buttonFinish->Location = System::Drawing::Point(347, 247);
 			this->buttonFinish->Name = L"buttonFinish";
 			this->buttonFinish->Size = System::Drawing::Size(75, 33);
 			this->buttonFinish->TabIndex = 9;
@@ -231,17 +239,39 @@ namespace TeaCupLabVer2 {
 			this->label5->TabIndex = 13;
 			this->label5->Text = L"分";
 			// 
+			// buttonDelete
+			// 
+			this->buttonDelete->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->buttonDelete->Location = System::Drawing::Point(96, 247);
+			this->buttonDelete->Name = L"buttonDelete";
+			this->buttonDelete->Size = System::Drawing::Size(75, 33);
+			this->buttonDelete->TabIndex = 14;
+			this->buttonDelete->Text = L"削除";
+			this->buttonDelete->UseVisualStyleBackColor = true;
+			this->buttonDelete->Click += gcnew System::EventHandler(this, &registWindow::button1_Click);
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(272, 206);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(196, 15);
+			this->label6->TabIndex = 15;
+			this->label6->Text = L"テキストは50字まで入力できます";
+			// 
 			// registWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(507, 253);
+			this->ClientSize = System::Drawing::Size(507, 292);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->buttonDelete);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->buttonFinish);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->textBoxPlan);
 			this->Controls->Add(this->buttonMinuteFinish);
 			this->Controls->Add(this->buttonTimeFinish);
 			this->Controls->Add(this->buttonMinuteStart);
@@ -273,38 +303,29 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 	//
 	//完了ボタンを押された場合の処理
 private: System::Void buttonFinish_Click(System::Object^ sender, System::EventArgs^ e) {
-	if ((this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1) && (this->buttonTimeFinish->SelectedIndex == -1 || this->buttonMinuteFinish->SelectedIndex == -1) && this->textBox1->Text == "")
+	String^ str;
+	if (this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1)
 	{
-		MessageBox::Show("・開始時間と終了時間が選択されていません。\n・予定内容が入力されていません。", "", MessageBoxButtons::OK);
+		str = str + "・開始時間が選択されていません\n";
 	}
-	else if ((this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1) && this->textBox1->Text == "")
+	if (this->buttonTimeFinish->SelectedIndex == -1 || this->buttonMinuteFinish->SelectedIndex == -1)
 	{
-		MessageBox::Show("・開始時間が選択されていません。\n・予定内容が入力されていません。", "", MessageBoxButtons::OK);
+		str = str + "・終了時間が選択されていません。\n";
 	}
-	else if ((this->buttonTimeFinish->SelectedIndex == -1 || this->buttonMinuteFinish->SelectedIndex == -1) && this->textBox1->Text == "")
+	if (this->textBoxPlan->Text == "")
 	{
-		MessageBox::Show("・終了時間が選択されていません。\n・予定内容が入力されていません。", "", MessageBoxButtons::OK);
+		str = str + "・予定内容が入力されていません。\n";
 	}
-	else if ((this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1) && (this->buttonTimeFinish->SelectedIndex == -1 || this->buttonMinuteFinish->SelectedIndex == -1))
+	if (this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1 || this->buttonTimeFinish->SelectedIndex == -1 || this->buttonMinuteFinish->SelectedIndex == -1 || this->textBoxPlan->Text == "")
 	{
-		MessageBox::Show("・開始時間と終了時間が選択されていません。", "", MessageBoxButtons::OK);
-	}
-	else if (this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1)
-	{
-		MessageBox::Show("・開始時間が選択されていません。", "", MessageBoxButtons::OK);
-	}
-	else if (this->buttonTimeFinish->SelectedIndex == -1 || this->buttonMinuteFinish->SelectedIndex == -1)
-	{
-		MessageBox::Show("・終了時間が選択されていません。", "", MessageBoxButtons::OK);
-	}
-	else if (this->textBox1->Text == "")
-	{
-		MessageBox::Show("・予定内容が入力されていません。", "", MessageBoxButtons::OK);
+		MessageBox::Show(str);
 	}
 	//else
 	//{
 	//入力した情報をファイルに書き込む処理
 	//}
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
