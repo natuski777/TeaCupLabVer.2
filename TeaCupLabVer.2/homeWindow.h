@@ -1,6 +1,6 @@
 #pragma once
 #include "listWindow.h"
-#include <string>
+
 using namespace System;
 using namespace std;
 namespace TeaCupLabVer2 {
@@ -107,19 +107,17 @@ namespace TeaCupLabVer2 {
 			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(6, 3);
 			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->monthCalendar1->Location = System::Drawing::Point(-3, 3);
+			this->monthCalendar1->Location = System::Drawing::Point(5, 5);
 			this->monthCalendar1->MaxSelectionCount = 1;
 			this->monthCalendar1->MinimumSize = System::Drawing::Size(0, 40);
 			this->monthCalendar1->Name = L"monthCalendar1";
-			this->monthCalendar1->SelectionRange = (gcnew System::Windows::Forms::SelectionRange(System::DateTime(2024, 1, 1, 0, 0, 0, 0), System::DateTime(2024,
-				12, 31, 0, 0, 0, 0)));
 			this->monthCalendar1->TabIndex = 8;
 			// 
 			// homeWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1214, 530);
+			this->ClientSize = System::Drawing::Size(1225, 529);
 			this->Controls->Add(this->monthCalendar1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
@@ -132,7 +130,7 @@ namespace TeaCupLabVer2 {
 
 		}
 #pragma endregion
-
+		
 		//ログアウト確認メッセージボックス
 	private: System::Void buttonLogout_Click(System::Object^ sender, System::EventArgs^ e)
 	{
@@ -148,16 +146,12 @@ namespace TeaCupLabVer2 {
 		}
 	}
 
-	
-	private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e)
-	{
-		
-
-	};
 		//日付取得と登録情報一覧画面へ遷移
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		label1->Text = monthCalendar1->SelectionStart.ToLongDateString()+ monthCalendar1->SelectionEnd.ToLongDateString();
+		label1->Text = monthCalendar1->SelectionStart.ToLongDateString();
+
+
 		listWindow^ lis = gcnew listWindow();
 		lis->ShowDialog();
 	}
