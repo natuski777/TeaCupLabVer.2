@@ -300,19 +300,11 @@ namespace TeaCupLabVer2
 #pragma endregion
 	private: System::Void listWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
 	{
-		//フォームを閉じるときの処理
-		if (System::Windows::Forms::DialogResult::Cancel ==
-			MessageBox::Show("内容が保存されていません\n本当に終了しますか?", "警告",
-				MessageBoxButtons::OKCancel, MessageBoxIcon::Question))
-		{
-			e->Cancel= true;
-		}
 	}
 
 		//情報登録画面のボタンをクリックすると情報登録画面へ遷移する処理,モーダルダイアログで表示
 	private: System::Void buttonRegist_Click(System::Object^ sender, System::EventArgs^ e)
 {
-		
 		registWindow^ Reg = gcnew registWindow();
 		Reg->ShowDialog();
 }
@@ -320,7 +312,6 @@ namespace TeaCupLabVer2
 
 	//カレンダー画面へのボタンをクリックするとホーム画面へ遷移する処理、モーダルダイアログで表示
 	private: System::Void buttonReturn_Click(System::Object^ sender, System::EventArgs^ e)
-
 {
 		Close();
 }
@@ -356,22 +347,22 @@ namespace TeaCupLabVer2
 				}
 			}
 			//ラベルに表示するためにSystem::String型に変換
-		
-			String^ TS = msclr::interop::marshal_as<String^>(str_buf[1]);
-
-			String^ MS = msclr::interop::marshal_as<String^>(str_buf[2]);
-
-			String^ TF = msclr::interop::marshal_as<String^>(str_buf[3]);
-
-			String^ FH = msclr::interop::marshal_as<String^>(str_buf[4]);
-
-			String^ Plan = msclr::interop::marshal_as<String^>(str_buf[5]);
+			string ts =  str_buf[1];
+			String^ TS = msclr::interop::marshal_as<String^>(ts);
+			string ms =  str_buf[2];
+			String^ MS = msclr::interop::marshal_as<String^>(ms);
+			string tf =  str_buf[3];
+			String^ TF = msclr::interop::marshal_as<String^>(tf);
+			string fh =  str_buf[4];
+			String^ MF = msclr::interop::marshal_as<String^>(fh);
+			string mf =  str_buf[5];
+			String^ Plan = msclr::interop::marshal_as<String^>(mf);
 
 			//ラベルに表示
 			labelTimeStart	->Text = TS;
 			labelMinuteStart	->Text = MS;
 			labelTimeFinish	->Text = TF;
-			labelMinuteFinish	->Text = FH;
+			labelMinuteFinish	->Text = MF;
 			labelPlan		->Text = Plan;
 		}
 		myFile.close();

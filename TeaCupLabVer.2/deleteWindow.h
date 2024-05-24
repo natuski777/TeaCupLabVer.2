@@ -1,4 +1,8 @@
 #pragma once
+#include <msclr/marshal_cppstd.h>	//System::String©¨std::string‚Å•K—v
+#include <iostream>
+#include <fstream>
+#include <string>
 
 namespace TeaCupLabVer2 {
 
@@ -8,6 +12,8 @@ namespace TeaCupLabVer2 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace std;	//std::string
+	using namespace System::IO;
 
 	/// <summary>
 	/// deleteWindow ‚ÌŠT—v
