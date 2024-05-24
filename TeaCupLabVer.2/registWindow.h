@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "deleteWindow.h"
 //#include "homeWindow.h"
 
 namespace TeaCupLabVer2 {
@@ -364,9 +365,9 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 	}
 	else
 	{
-		//ViewDateのデータを取得・変換
-		String^ Date = gcnew String(labelViewDate->Text);
-		string date = msclr::interop::marshal_as<string>(Date);
+		//labelViewDateのデータを取得・変換
+		String^ Date = gcnew String(labelViewDate->Text);			//変数Dateに日付の情報を代入
+		string date = msclr::interop::marshal_as<string>(Date);		//変数dateには日付情報の入ったString型のDateを代入
 		//textBoxPlanのデータを取得・変換
 		String^ Plan = gcnew String(textBoxPlan->Text);				//System::String型XXXにtextBox1の中身を代入、変数Planには予定内容を代入
 		string plan = msclr::interop::marshal_as<string>(Plan);		//↑XXXをstd::string型に変換してYYYに代入、変数planには予定内容の入ったString型のPlanを代入
@@ -395,7 +396,8 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 	//削除ボタンを押して登録情報を削除する処理
 private: System::Void buttonDelete_Click(System::Object^ sender, System::EventArgs^ e) {
 	/*MessageBox::Show("登録済みの情報を削除します。\n本当に削除しますか？", "確認", MessageBoxButtons::OKCancel, MessageBoxIcon::Question);*/
-
+	deleteWindow^ del = gcnew deleteWindow();
+	del->ShowDialog();
 }
 private: System::Void labelViewDate_Click(System::Object^ sender, System::EventArgs^ e) {
 }
