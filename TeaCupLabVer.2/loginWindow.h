@@ -52,6 +52,8 @@ namespace TeaCupLabVer2
 	private: System::Windows::Forms::Button^ buttonLogin;
 	private: System::Windows::Forms::Button^ buttonCancel;
 	private: System::Windows::Forms::Label^ labelRogin;
+	private: System::Windows::Forms::Label^ labelCaution;
+
 
 
 
@@ -76,6 +78,7 @@ namespace TeaCupLabVer2
 			this->buttonLogin = (gcnew System::Windows::Forms::Button());
 			this->buttonCancel = (gcnew System::Windows::Forms::Button());
 			this->labelRogin = (gcnew System::Windows::Forms::Label());
+			this->labelCaution = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// labelUserName
@@ -104,6 +107,7 @@ namespace TeaCupLabVer2
 			// 
 			this->textBoxUserName->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
+			this->textBoxUserName->ImeMode = System::Windows::Forms::ImeMode::Disable;
 			this->textBoxUserName->Location = System::Drawing::Point(143, 91);
 			this->textBoxUserName->Name = L"textBoxUserName";
 			this->textBoxUserName->Size = System::Drawing::Size(340, 30);
@@ -113,7 +117,7 @@ namespace TeaCupLabVer2
 			// 
 			this->textBoxPassword->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->textBoxPassword->ImeMode = System::Windows::Forms::ImeMode::Alpha;
+			this->textBoxPassword->ImeMode = System::Windows::Forms::ImeMode::Disable;
 			this->textBoxPassword->Location = System::Drawing::Point(143, 171);
 			this->textBoxPassword->Name = L"textBoxPassword";
 			this->textBoxPassword->PasswordChar = '*';
@@ -124,9 +128,9 @@ namespace TeaCupLabVer2
 			// 
 			this->buttonLogin->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->buttonLogin->Location = System::Drawing::Point(67, 264);
+			this->buttonLogin->Location = System::Drawing::Point(67, 294);
 			this->buttonLogin->Name = L"buttonLogin";
-			this->buttonLogin->Size = System::Drawing::Size(170, 42);
+			this->buttonLogin->Size = System::Drawing::Size(170, 40);
 			this->buttonLogin->TabIndex = 4;
 			this->buttonLogin->Text = L"ログイン";
 			this->buttonLogin->UseVisualStyleBackColor = true;
@@ -136,9 +140,9 @@ namespace TeaCupLabVer2
 			// 
 			this->buttonCancel->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->buttonCancel->Location = System::Drawing::Point(313, 265);
+			this->buttonCancel->Location = System::Drawing::Point(313, 294);
 			this->buttonCancel->Name = L"buttonCancel";
-			this->buttonCancel->Size = System::Drawing::Size(170, 42);
+			this->buttonCancel->Size = System::Drawing::Size(170, 40);
 			this->buttonCancel->TabIndex = 5;
 			this->buttonCancel->Text = L"キャンセル";
 			this->buttonCancel->UseVisualStyleBackColor = true;
@@ -155,11 +159,25 @@ namespace TeaCupLabVer2
 			this->labelRogin->TabIndex = 6;
 			this->labelRogin->Text = L"ログイン画面";
 			// 
+			// labelCaution
+			// 
+			this->labelCaution->AutoSize = true;
+			this->labelCaution->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->labelCaution->ForeColor = System::Drawing::Color::Red;
+			this->labelCaution->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->labelCaution->Location = System::Drawing::Point(188, 239);
+			this->labelCaution->Name = L"labelCaution";
+			this->labelCaution->Size = System::Drawing::Size(225, 18);
+			this->labelCaution->TabIndex = 7;
+			this->labelCaution->Text = L"※半角文字を入力してください";
+			// 
 			// loginWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(581, 348);
+			this->ClientSize = System::Drawing::Size(606, 348);
+			this->Controls->Add(this->labelCaution);
 			this->Controls->Add(this->labelRogin);
 			this->Controls->Add(this->buttonCancel);
 			this->Controls->Add(this->buttonLogin);
