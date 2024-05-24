@@ -52,7 +52,9 @@ namespace TeaCupLabVer2 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ buttonDeleteOK;
+	protected:
+
 	private: System::Windows::Forms::Button^ buttonDeleteCancel;
 
 	private: System::Windows::Forms::Label^ label1;
@@ -73,22 +75,22 @@ namespace TeaCupLabVer2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->buttonDeleteOK = (gcnew System::Windows::Forms::Button());
 			this->buttonDeleteCancel = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->labelViewDate = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// button1
+			// buttonDeleteOK
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->button1->Location = System::Drawing::Point(48, 191);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 34);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"OK";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &deleteWindow::button1_Click);
+			this->buttonDeleteOK->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->buttonDeleteOK->Location = System::Drawing::Point(48, 191);
+			this->buttonDeleteOK->Name = L"buttonDeleteOK";
+			this->buttonDeleteOK->Size = System::Drawing::Size(75, 34);
+			this->buttonDeleteOK->TabIndex = 0;
+			this->buttonDeleteOK->Text = L"OK";
+			this->buttonDeleteOK->UseVisualStyleBackColor = true;
+			this->buttonDeleteOK->Click += gcnew System::EventHandler(this, &deleteWindow::buttonDeleteOK_Click);
 			// 
 			// buttonDeleteCancel
 			// 
@@ -128,7 +130,7 @@ namespace TeaCupLabVer2 {
 			this->Controls->Add(this->labelViewDate);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->buttonDeleteCancel);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->buttonDeleteOK);
 			this->Name = L"deleteWindow";
 			this->Text = L"deleteWindow";
 			this->Load += gcnew System::EventHandler(this, &deleteWindow::deleteWindow_Load);
@@ -141,7 +143,7 @@ namespace TeaCupLabVer2 {
 	{
 		labelViewDate->Text = dateFromMyForm.ToLongDateString();
 	}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void buttonDeleteOK_Click(System::Object^ sender, System::EventArgs^ e) {
 	//labelViewDateのデータを取得・変換
 	String^ DeleteDate = gcnew String(labelViewDate->Text);			//変数Dateに日付の情報を代入
 	string deletedate = msclr::interop::marshal_as<string>(DeleteDate);		//変数dateには日付情報の入ったString型のDateを代入
@@ -152,6 +154,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	string writing_text = deletedate + "," + "" + "," + "" + "," + "" + "," + "" + "," + "情報が登録されていません。" + ",";
 	writing_file << writing_text << endl;
 	writing_file.close();
+
 }
 };
 }
