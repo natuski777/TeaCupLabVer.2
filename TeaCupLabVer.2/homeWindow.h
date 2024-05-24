@@ -74,10 +74,9 @@ namespace TeaCupLabVer2 {
 			// 
 			// buttonLogout
 			// 
-			this->buttonLogout->Location = System::Drawing::Point(88, 626);
-			this->buttonLogout->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->buttonLogout->Location = System::Drawing::Point(66, 501);
 			this->buttonLogout->Name = L"buttonLogout";
-			this->buttonLogout->Size = System::Drawing::Size(247, 58);
+			this->buttonLogout->Size = System::Drawing::Size(185, 46);
 			this->buttonLogout->TabIndex = 3;
 			this->buttonLogout->Text = L"ƒƒOƒAƒEƒg";
 			this->buttonLogout->UseVisualStyleBackColor = true;
@@ -85,10 +84,9 @@ namespace TeaCupLabVer2 {
 			// 
 			// buttonDecision
 			// 
-			this->buttonDecision->Location = System::Drawing::Point(553, 626);
-			this->buttonDecision->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->buttonDecision->Location = System::Drawing::Point(415, 501);
 			this->buttonDecision->Name = L"buttonDecision";
-			this->buttonDecision->Size = System::Drawing::Size(184, 62);
+			this->buttonDecision->Size = System::Drawing::Size(138, 50);
 			this->buttonDecision->TabIndex = 6;
 			this->buttonDecision->Text = L"Šm’è";
 			this->buttonDecision->UseVisualStyleBackColor = true;
@@ -101,22 +99,20 @@ namespace TeaCupLabVer2 {
 			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->monthCalendar1->Location = System::Drawing::Point(0, 0);
-			this->monthCalendar1->Margin = System::Windows::Forms::Padding(12, 11, 12, 11);
 			this->monthCalendar1->MaxSelectionCount = 1;
-			this->monthCalendar1->MinimumSize = System::Drawing::Size(0, 50);
+			this->monthCalendar1->MinimumSize = System::Drawing::Size(0, 40);
 			this->monthCalendar1->Name = L"monthCalendar1";
 			this->monthCalendar1->TabIndex = 8;
 			this->monthCalendar1->DateSelected += gcnew System::Windows::Forms::DateRangeEventHandler(this, &homeWindow::monthCalendar1_DateSelected);
 			// 
 			// homeWindow
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1328, 712);
+			this->ClientSize = System::Drawing::Size(996, 570);
 			this->Controls->Add(this->monthCalendar1);
 			this->Controls->Add(this->buttonDecision);
 			this->Controls->Add(this->buttonLogout);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"homeWindow";
 			this->Text = L"homeWindow";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &homeWindow::homeWindow_FormClosing);
@@ -151,13 +147,13 @@ namespace TeaCupLabVer2 {
 	private: System::Void buttonDecision_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->Hide();
-		listWindow^ Lis = gcnew listWindow();	//“o˜^î•ñ
+		listWindow^ Lis = gcnew listWindow();	//“o˜^î•ñˆê——‰æ–Ê‚É“ú•t‚ğ“n‚·
 		Lis->DateFromMyForm = this->SelectedDate;
 
-		registWindow^ Reg = gcnew registWindow();	
+		registWindow^ Reg = gcnew registWindow();	//î•ñ“o˜^‰æ–Ê‚É“ú•t‚ğ“n‚·
 		Reg->DateFromMyForm = this->SelectedDate;
 		
-		deleteWindow^ Del = gcnew deleteWindow();	
+		deleteWindow^ Del = gcnew deleteWindow();	//íœ‰æ–Ê‚É“ú•t‚ğ“n‚·
 		Del->DateFromMyForm = this->SelectedDate;
 
 		Lis->ShowDialog();	//“o˜^î•ñˆê——‰æ–Ê‚É‘JˆÚ
