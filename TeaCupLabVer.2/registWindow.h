@@ -20,6 +20,18 @@ namespace TeaCupLabVer2 {
 	/// </summary>
 	public ref class registWindow : public System::Windows::Forms::Form
 	{
+	private:
+		System::DateTime dateFromMyForm;
+	public:
+		property System::DateTime DateFromMyForm {
+			System::DateTime get() {
+				return dateFromMyForm;
+			}
+			void set(System::DateTime value) {
+				dateFromMyForm = value;
+			}
+		}
+
 	public:
 		registWindow(void)
 		{
@@ -62,7 +74,8 @@ namespace TeaCupLabVer2 {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Button^ buttonDelete;
 	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::Label^ Date;
+	private: System::Windows::Forms::Label^ ViewDate;
+
 
 
 
@@ -95,7 +108,7 @@ namespace TeaCupLabVer2 {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->buttonDelete = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->Date = (gcnew System::Windows::Forms::Label());
+			this->ViewDate = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// labelRegist
@@ -271,21 +284,23 @@ namespace TeaCupLabVer2 {
 			this->label6->TabIndex = 15;
 			this->label6->Text = L"テキストは50字まで入力できます";
 			// 
-			// Date
+			// ViewDate
 			// 
-			this->Date->AutoSize = true;
-			this->Date->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->Date->Location = System::Drawing::Point(47, 18);
-			this->Date->Name = L"Date";
-			this->Date->Size = System::Drawing::Size(0, 17);
-			this->Date->TabIndex = 16;
+			this->ViewDate->AutoSize = true;
+			this->ViewDate->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->ViewDate->Location = System::Drawing::Point(47, 18);
+			this->ViewDate->Name = L"ViewDate";
+			this->ViewDate->Size = System::Drawing::Size(72, 17);
+			this->ViewDate->TabIndex = 16;
+			this->ViewDate->Text = L"datelabel";
+			this->ViewDate->Click += gcnew System::EventHandler(this, &registWindow::ViewDate_Click);
 			// 
 			// registWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(507, 292);
-			this->Controls->Add(this->Date);
+			this->Controls->Add(this->ViewDate);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->buttonDelete);
 			this->Controls->Add(this->label5);
@@ -314,6 +329,7 @@ namespace TeaCupLabVer2 {
 		}
 #pragma endregion
 	private: System::Void registWindow_Load(System::Object^ sender, System::EventArgs^ e) {
+		ViewDate->Text = dateFromMyForm.ToLongDateString();
 	}
 	//
 	//×をクリックした際の警告画面
@@ -375,6 +391,8 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 private: System::Void buttonDelete_Click(System::Object^ sender, System::EventArgs^ e) {
 	/*MessageBox::Show("登録済みの情報を削除します。\n本当に削除しますか？", "確認", MessageBoxButtons::OKCancel, MessageBoxIcon::Question);*/
 
+}
+private: System::Void ViewDate_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
