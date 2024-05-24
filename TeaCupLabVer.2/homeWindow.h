@@ -78,7 +78,7 @@ namespace TeaCupLabVer2 {
 			// 
 			// buttonLogout
 			// 
-			this->buttonLogout->Location = System::Drawing::Point(854, 467);
+			this->buttonLogout->Location = System::Drawing::Point(66, 501);
 			this->buttonLogout->Name = L"buttonLogout";
 			this->buttonLogout->Size = System::Drawing::Size(185, 46);
 			this->buttonLogout->TabIndex = 3;
@@ -88,7 +88,7 @@ namespace TeaCupLabVer2 {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(316, 465);
+			this->button2->Location = System::Drawing::Point(415, 501);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(138, 50);
 			this->button2->TabIndex = 6;
@@ -99,7 +99,7 @@ namespace TeaCupLabVer2 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(60, 465);
+			this->label1->Location = System::Drawing::Point(64, 450);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(35, 12);
 			this->label1->TabIndex = 7;
@@ -108,10 +108,13 @@ namespace TeaCupLabVer2 {
 			// 
 			// monthCalendar1
 			// 
-			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(6, 3);
-			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->monthCalendar1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(5, 3);
+			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->monthCalendar1->Location = System::Drawing::Point(18, 18);
+			this->monthCalendar1->Location = System::Drawing::Point(2, 2);
 			this->monthCalendar1->MaxSelectionCount = 1;
 			this->monthCalendar1->MinimumSize = System::Drawing::Size(0, 40);
 			this->monthCalendar1->Name = L"monthCalendar1";
@@ -121,7 +124,7 @@ namespace TeaCupLabVer2 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1280, 551);
+			this->ClientSize = System::Drawing::Size(1014, 570);
 			this->Controls->Add(this->monthCalendar1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
