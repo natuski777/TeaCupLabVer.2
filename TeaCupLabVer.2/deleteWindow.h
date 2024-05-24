@@ -132,6 +132,8 @@ namespace TeaCupLabVer2 {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->buttonDeleteCancel);
 			this->Controls->Add(this->buttonDeleteOK);
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"deleteWindow";
 			this->Text = L"deleteWindow";
 			this->Load += gcnew System::EventHandler(this, &deleteWindow::deleteWindow_Load);
