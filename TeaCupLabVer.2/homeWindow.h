@@ -124,12 +124,7 @@ namespace TeaCupLabVer2 {
 		//ログアウト確認メッセージボックス
 	private: System::Void buttonLogout_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		if (System::Windows::Forms::DialogResult::Cancel == MessageBox::Show("ログアウトして終了しますか?", "確認", MessageBoxButtons::OKCancel))
-		{
-		
-			
 			this->Close();
-		}
 	}
 
 		   //終了確認メッセージボックス
