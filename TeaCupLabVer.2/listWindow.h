@@ -21,6 +21,17 @@ namespace TeaCupLabVer2
 	/// </summary>
 	public ref class listWindow : public System::Windows::Forms::Form
 	{
+	private:
+		System::DateTime dateFromMyForm;
+	public:
+		property System::DateTime DateFromMyForm {
+			System::DateTime get() {
+				return dateFromMyForm;
+			}
+			void set(System::DateTime value) {
+				dateFromMyForm = value;
+			}
+		}
 	public:
 		listWindow(void)
 		{
@@ -47,10 +58,11 @@ namespace TeaCupLabVer2
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Button^ buttonRegist;
+	private: System::Windows::Forms::Label^ labelViewDate;
 
 
 
-	private: System::Windows::Forms::Label^ label5;
+
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ textBox3;
@@ -80,7 +92,7 @@ namespace TeaCupLabVer2
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->buttonRegist = (gcnew System::Windows::Forms::Button());
-			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->labelViewDate = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
@@ -135,15 +147,15 @@ namespace TeaCupLabVer2
 			this->buttonRegist->UseVisualStyleBackColor = true;
 			this->buttonRegist->Click += gcnew System::EventHandler(this, &listWindow::buttonRegist_Click);
 			// 
-			// label5
+			// labelViewDate
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(33, 54);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(43, 15);
-			this->label5->TabIndex = 6;
-			this->label5->Text = L"label5";
-			this->label5->Click += gcnew System::EventHandler(this, &listWindow::label5_Click);
+			this->labelViewDate->AutoSize = true;
+			this->labelViewDate->Location = System::Drawing::Point(33, 54);
+			this->labelViewDate->Name = L"labelViewDate";
+			this->labelViewDate->Size = System::Drawing::Size(43, 15);
+			this->labelViewDate->TabIndex = 6;
+			this->labelViewDate->Text = L"labelViewDate";
+			
 			// 
 			// textBox1
 			// 
@@ -188,7 +200,7 @@ namespace TeaCupLabVer2
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label5);
+			this->Controls->Add(this->labelViewDate);
 			this->Controls->Add(this->buttonRegist);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
@@ -197,6 +209,7 @@ namespace TeaCupLabVer2
 			this->Name = L"listWindow";
 			this->Text = L"listWindow";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &listWindow::listWindow_FormClosing);
+			this->Load += gcnew System::EventHandler(this, &listWindow::listWindow_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -222,12 +235,6 @@ namespace TeaCupLabVer2
 }
 
 
-		//ホームボタンクリックでDateの値をリセットする処理
-		/*if (this->date->Checked == 0)
-		{
-			System::Diagnostics::Debug::WriteLine("");
-		}*/
-	
 	//カレンダー画面へのボタンをクリックするとホーム画面へ遷移する処理、モーダルダイアログで表示
 	private: System::Void buttonReturn_Click(System::Object^ sender, System::EventArgs^ e)
 
@@ -235,16 +242,6 @@ namespace TeaCupLabVer2
 	/*	homeWindow^ Hom = gcnew homeWindow();
 		Hom->ShowDialog();
 }*/
-}
-
-	   //カレンダーの日付(date)をlabel5に表示する処理
-	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	/*String^ date = gcnew String(label5->Text);
-	string label5= msclr::interop::marshal_as<string>(date);
-	string date = gcnew string(label5->Text);
-	String^ label5 = msclr::interop::marshal_as<String^>(date);*/
-
 }
 	   //情報登録画面の開始時間を表示する処理 開始時間
 	
@@ -261,6 +258,10 @@ namespace TeaCupLabVer2
 	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) 
 {
 
+}
+private: System::Void listWindow_Load(System::Object^ sender, System::EventArgs^ e)
+{
+	labelViewDate->Text = dateFromMyForm.ToLongDateString();
 }
 };
 }
