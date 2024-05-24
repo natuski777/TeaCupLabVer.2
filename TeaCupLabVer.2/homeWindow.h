@@ -3,8 +3,7 @@
 #include <string>
 #include <msclr/marshal_cppstd.h>	
 #include "deleteWindow.h"
-
-//std::string date;
+#include "loginWindow.h"
 
 using namespace System;
 using namespace std;
@@ -59,7 +58,7 @@ namespace TeaCupLabVer2 {
 
 
 	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Label^ label1;
+
 	private: System::Windows::Forms::MonthCalendar^ monthCalendar1;
 
 
@@ -82,7 +81,6 @@ namespace TeaCupLabVer2 {
 		{
 			this->buttonLogout = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
 			this->SuspendLayout();
 			// 
@@ -106,16 +104,6 @@ namespace TeaCupLabVer2 {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &homeWindow::button2_Click);
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(64, 450);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(35, 12);
-			this->label1->TabIndex = 7;
-			this->label1->Text = L"label1";
-			this->label1->Visible = false;
-			// 
 			// monthCalendar1
 			// 
 			this->monthCalendar1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
@@ -124,7 +112,7 @@ namespace TeaCupLabVer2 {
 			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(4, 3);
 			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->monthCalendar1->Location = System::Drawing::Point(2, 2);
+			this->monthCalendar1->Location = System::Drawing::Point(18, 6);
 			this->monthCalendar1->MaxSelectionCount = 1;
 			this->monthCalendar1->MinimumSize = System::Drawing::Size(0, 40);
 			this->monthCalendar1->Name = L"monthCalendar1";
@@ -137,14 +125,12 @@ namespace TeaCupLabVer2 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1014, 570);
 			this->Controls->Add(this->monthCalendar1);
-			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->buttonLogout);
 			this->Name = L"homeWindow";
 			this->Text = L"homeWindow";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &homeWindow::homeWindow_FormClosing);
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -153,6 +139,11 @@ namespace TeaCupLabVer2 {
 	private: System::Void buttonLogout_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		MessageBox::Show("ログアウトしますか?", "確認", MessageBoxButtons::OKCancel);
+		if (this->DialogResult == System::Windows::Forms::DialogResult::OK)
+		{
+			loginWindow^Log=gcnew loginWindow();
+			Log->ShowDialog();
+		}
 	}
 
 		 //終了確認メッセージボックス
@@ -164,21 +155,22 @@ namespace TeaCupLabVer2 {
 		}
 	}
 
-		//日付取得と登録情報一覧画面へ遷移
+		
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		listWindow^ lis = gcnew listWindow();
-		lis->DateFromMyForm = this->SelectedDate;
-		lis->ShowDialog();
+		listWindow^ Lis = gcnew listWindow();
+		Lis->DateFromMyForm = this->SelectedDate;
+		Lis->ShowDialog();
 
-		registWindow^ reg = gcnew registWindow();
-		reg->DateFromMyForm = this->SelectedDate;
-		reg->ShowDialog();
+		registWindow^ Reg = gcnew registWindow();
+		Reg->DateFromMyForm = this->SelectedDate;
+		Reg->ShowDialog();
 
-		deleteWindow^ del = gcnew deleteWindow();
-		del->DateFromMyForm = this->SelectedDate;
-		del->ShowDialog();
+		deleteWindow^ Del = gcnew deleteWindow();
+		//del->DateFromMyForm = this->SelectedDate;
+		//del->ShowDialog();
 	}
+		   //日付取得
 private: System::Void monthCalendar1_DateSelected(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
 	selectedDate = monthCalendar1->SelectionStart;
 }

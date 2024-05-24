@@ -2,7 +2,10 @@
 #include "registWindow.h"
 //#include "homeWindow.h"
 #include  <msclr/marshal_cppstd.h>//System::String←→std::stringで必要
-
+#include <sstream>
+#include <iostream>
+#include <fstream>
+#include <string>
 
 namespace TeaCupLabVer2 
 {
@@ -15,6 +18,7 @@ namespace TeaCupLabVer2
 	using namespace System::Drawing;
 	using namespace System;
 	using namespace std;
+	using namespace System::IO;
 
 	/// <summary>
 	/// listWindow の概要
@@ -63,9 +67,9 @@ namespace TeaCupLabVer2
 
 
 
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox3;
+
+
+
 	private: System::Windows::Forms::Button^ buttonReturn;
 
 
@@ -93,9 +97,6 @@ namespace TeaCupLabVer2
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->buttonRegist = (gcnew System::Windows::Forms::Button());
 			this->labelViewDate = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->buttonReturn = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -152,34 +153,9 @@ namespace TeaCupLabVer2
 			this->labelViewDate->AutoSize = true;
 			this->labelViewDate->Location = System::Drawing::Point(33, 54);
 			this->labelViewDate->Name = L"labelViewDate";
-			this->labelViewDate->Size = System::Drawing::Size(43, 15);
+			this->labelViewDate->Size = System::Drawing::Size(95, 15);
 			this->labelViewDate->TabIndex = 6;
 			this->labelViewDate->Text = L"labelViewDate";
-			
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(137, 104);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(262, 22);
-			this->textBox1->TabIndex = 7;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &listWindow::textBox1_TextChanged);
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(137, 160);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(262, 22);
-			this->textBox2->TabIndex = 8;
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &listWindow::textBox2_TextChanged);
-			// 
-			// textBox3
-			// 
-			this->textBox3->Location = System::Drawing::Point(137, 229);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(262, 22);
-			this->textBox3->TabIndex = 9;
-			this->textBox3->TextChanged += gcnew System::EventHandler(this, &listWindow::textBox3_TextChanged);
 			// 
 			// buttonReturn
 			// 
@@ -197,9 +173,6 @@ namespace TeaCupLabVer2
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(449, 359);
 			this->Controls->Add(this->buttonReturn);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->labelViewDate);
 			this->Controls->Add(this->buttonRegist);
 			this->Controls->Add(this->label4);
@@ -243,25 +216,67 @@ namespace TeaCupLabVer2
 		Hom->ShowDialog();
 }*/
 }
-	   //情報登録画面の開始時間を表示する処理 開始時間
 	
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) 
 {	
-	
 }
-	//情報登録画面で終了時間を表示する処理
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) 
 {
-
 }
-	//情報登録画面で予定内容を表示し、入力がなければ「予定はありません。」と表示する処理
 	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) 
 {
+}
 
-}
-private: System::Void listWindow_Load(System::Object^ sender, System::EventArgs^ e)
-{
-	labelViewDate->Text = dateFromMyForm.ToLongDateString();
-}
+	private: System::Void listWindow_Load(System::Object^ sender, System::EventArgs^ e)
+	{
+		labelViewDate->Text = dateFromMyForm.ToLongDateString();
+
+		//ラベルの中身をstd::string型に変更（ファイルの中身と一致させるため）
+		String^ labelviewdate = gcnew String(labelViewDate->Text);
+		string date = msclr::interop::marshal_as<string>(labelviewdate);
+
+		string line;	//line　＝　一行
+		string str_first_conma;
+		string str_buf[6];
+
+		ifstream myFile("TeaCupLab.txt", ios::in);//read
+
+		// getline関数で1行ずつ[,]まで読み込む(読み込んだ内容はstr_buf[]に格納)
+
+		while (getline(myFile, line))
+		{
+			//先頭カンマを読み取る
+			istringstream i_stream(line);
+			getline(i_stream, str_first_conma, ',');
+
+			if (str_first_conma == date)
+			{
+				for (int i = 0; i < 6; i++)
+				{
+					getline(myFile, str_buf[i], ',');
+				}
+			}
+			//ラベルに表示するためにSystem::String型に変換
+		
+			String^ TS = msclr::interop::marshal_as<String^>(str_buf[1]);
+
+			String^ MS = msclr::interop::marshal_as<String^>(str_buf[2]);
+
+			String^ TF = msclr::interop::marshal_as<String^>(str_buf[3]);
+
+			String^ FH = msclr::interop::marshal_as<String^>(str_buf[4]);
+
+			String^ Plan = msclr::interop::marshal_as<String^>(str_buf[5]);
+
+			//ラベルに表示
+			labelTimeStart	->Text = TS;
+			labelMinuteStart	->Text = MS;
+			labelTimeFinish	->Text = TF;
+			labelMinuteFinish	->Text = FH;
+			labelPlan		->Text = Plan;
+		}
+		myFile.close();
+	}
+
 };
 }
