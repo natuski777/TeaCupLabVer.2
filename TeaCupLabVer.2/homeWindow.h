@@ -124,7 +124,7 @@ namespace TeaCupLabVer2 {
 		//ログアウト確認メッセージボックス
 	private: System::Void buttonLogout_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		System::Windows::Forms::DialogResult result = MessageBox::Show("ログアウトしますか?", "確認", MessageBoxButtons::OKCancel);
+		System::Windows::Forms::DialogResult result = MessageBox::Show("ログアウトしてしますか?", "確認", MessageBoxButtons::OKCancel);
 
 		// OKボタンが押された場合の処理
 		if (result == System::Windows::Forms::DialogResult::OK)
@@ -146,17 +146,18 @@ namespace TeaCupLabVer2 {
 		   //情報一覧画面、情報登録画面、削除画面に日付を渡す
 	private: System::Void buttonDecision_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		listWindow^ Lis = gcnew listWindow();	//登録情報一覧画面
+		this->Hide();
+		listWindow^ Lis = gcnew listWindow();	//登録情報
 		Lis->DateFromMyForm = this->SelectedDate;
-		Lis->ShowDialog();
 
-		registWindow^ Reg = gcnew registWindow();	//情報登録画面
+		registWindow^ Reg = gcnew registWindow();	
 		Reg->DateFromMyForm = this->SelectedDate;
-		Reg->ShowDialog();
-
-		deleteWindow^ Del = gcnew deleteWindow();	//削除画面
+		
+		deleteWindow^ Del = gcnew deleteWindow();	
 		Del->DateFromMyForm = this->SelectedDate;
-		Del->ShowDialog();
+
+		Lis->ShowDialog();	//登録情報一覧画面に遷移
+		this->Show();
 	}
 		   //日付取得
 	private: System::Void monthCalendar1_DateSelected(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) 
