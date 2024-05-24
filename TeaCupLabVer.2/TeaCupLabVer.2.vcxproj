@@ -120,12 +120,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="deleteWindow.cpp" />
     <ClCompile Include="homeWindow.cpp" />
     <ClCompile Include="listWindow.cpp" />
     <ClCompile Include="registWindow.cpp" />
     <ClCompile Include="loginWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="deleteWindow.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="homeWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -140,6 +144,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="deleteWindow.resx">
+      <DependentUpon>deleteWindow.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="homeWindow.resx">
       <DependentUpon>homeWindow.h</DependentUpon>
     </EmbeddedResource>

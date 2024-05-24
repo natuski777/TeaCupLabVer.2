@@ -1,4 +1,8 @@
 #pragma once
+#include <msclr/marshal_cppstd.h>	//System::String←→std::stringで必要
+#include <iostream>
+#include <fstream>
+#include <string>
 
 namespace TeaCupLabVer2 {
 
@@ -8,6 +12,8 @@ namespace TeaCupLabVer2 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace std;	//std::string
+	using namespace System::IO;
 
 	/// <summary>
 	/// registWindow の概要
@@ -321,7 +327,7 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 	//
 	//完了ボタンを押された場合の処理
 private: System::Void buttonFinish_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ str;
+	String^ str;	//エラー文を格納する変数
 	if (this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1)
 	{
 		str = str + "・開始時間が選択されていません\n";
@@ -340,13 +346,35 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 	}
 	//else
 	//{
-	//入力した情報をファイルに書き込む処理
+	//	//textBoxPlanのデータを取得・変換
+	//	String^ Plan = gcnew String(textBoxPlan->Text);				//System::String型XXXにtextBox1の中身を代入、変数Planには予定内容を代入
+	//	string plan = msclr::interop::marshal_as<string>(Plan);		//↑XXXをstd::string型に変換してYYYに代入、変数planには予定内容の入ったString型のPlanを代入
+	//	//buttonTimeStartのデータを取得・変換
+	//	String^ TimeStart = gcnew String(buttonTimeStart->Text);			//変数TimeStartには開始時間（時）を代入
+	//	string timestart = msclr::interop::marshal_as<string>(TimeStart);	//変数timestartには開始時間（時）の入ったString型のTimeStartを代入
+	//	//buttonMinuteStartのデータを取得・変換
+	//	String^ MinuteStart = gcnew String(buttonMinuteStart->Text);			//変数MinuteStartには開始時間（分）を代入
+	//	string minutestart = msclr::interop::marshal_as<string>(MinuteStart);	//変数minutestartには開始時間（分）の入ったString型のMinuteStartを代入
+	//	//buttonTimeFinishのデータを取得・変換
+	//	String^ TimeFinish = gcnew String(buttonTimeFinish->Text);				//変数TimeFinishには終了時間（時）を代入
+	//	string timefinish = msclr::interop::marshal_as<string>(TimeFinish);		//変数timefinishには終了時間（時）の入ったString型のTimeFinishを代入
+	//	//buttonMinuteFinishのデータを取得・変換
+	//	String^ MinuteFinish = gcnew String(buttonMinuteFinish->Text);				//変数MinuteFinishには終了時間（分）を代入
+	//	string minutefinish = msclr::interop::marshal_as<string>(MinuteFinish);		//変数Minutefinishには終了時間（分）の入ったString型のMinuteFinishを代入
+	//	//ファイルを開いて最後の行へ日付＋情報をカンマ区切りで入力→閉じるまで
+	//	ofstream writing_file;
+	//	string filename = "sample.txt";
+	//	writing_file.open(filename, ios::app);
+	//	string writing_text = date + "\n" + timestart + "," + minutestart + "," + timefinish + "," + minutefinish + "," + plan + ",";
+	//	writing_file << writing_text << endl;
+	//	writing_file.close();
 	//}
 }
 	//
 	//削除ボタンを押して登録情報を削除する処理
 private: System::Void buttonDelete_Click(System::Object^ sender, System::EventArgs^ e) {
-	MessageBox::Show("登録済みの情報を削除します。\n本当に削除しますか？", "確認", MessageBoxButtons::OKCancel, MessageBoxIcon::Question);
+	/*MessageBox::Show("登録済みの情報を削除します。\n本当に削除しますか？", "確認", MessageBoxButtons::OKCancel, MessageBoxIcon::Question);*/
+
 }
 };
 }
