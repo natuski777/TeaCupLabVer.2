@@ -254,6 +254,8 @@ namespace TeaCupLabVer2
 
 				homeWindow^ Hom = gcnew homeWindow();
 				Hom->ShowDialog();
+
+				this->Show();
 			}
 			//ユーザー名、パスワードの検証失敗時メッセージを表示
 			else
