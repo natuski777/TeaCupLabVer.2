@@ -390,6 +390,12 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 		string writing_text = date + "," + timestart + "," + minutestart + "," + timefinish + "," + minutefinish + "," + plan + ",";
 		writing_file << writing_text << endl;
 		writing_file.close();
+		/*this->buttonTimeStart->SelectedIndex == -1;
+		this->buttonMinuteStart->SelectedIndex == -1;
+		this->buttonTimeFinish->SelectedIndex == -1;
+		this->buttonMinuteFinish->SelectedIndex == -1;
+		this->textBoxPlan->Text == "";*/
+		Close();
 	}
 }
 	//

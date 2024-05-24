@@ -101,6 +101,7 @@ namespace TeaCupLabVer2 {
 			this->buttonDeleteCancel->TabIndex = 1;
 			this->buttonDeleteCancel->Text = L"Cancel";
 			this->buttonDeleteCancel->UseVisualStyleBackColor = true;
+			this->buttonDeleteCancel->Click += gcnew System::EventHandler(this, &deleteWindow::buttonDeleteCancel_Click);
 			// 
 			// label1
 			// 
@@ -154,7 +155,10 @@ private: System::Void buttonDeleteOK_Click(System::Object^ sender, System::Event
 	string writing_text = deletedate + "," + "" + "," + "" + "," + "" + "," + "" + "," + "î•ñ‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB" + ",";
 	writing_file << writing_text << endl;
 	writing_file.close();
-
+	Close();
+}
+private: System::Void buttonDeleteCancel_Click(System::Object^ sender, System::EventArgs^ e) {
+	Close();
 }
 };
 }
