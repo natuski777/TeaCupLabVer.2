@@ -89,6 +89,7 @@ namespace TeaCupLabVer2
 
 
 
+
 	private:
 		/// <summary>
 		/// 必要なデザイナー変数です。
@@ -346,22 +347,22 @@ namespace TeaCupLabVer2
 				}
 			}
 			//ラベルに表示するためにSystem::String型に変換
-			string ts =  str_buf[1];
-			String^ TS = msclr::interop::marshal_as<String^>(ts);
-			string ms =  str_buf[2];
-			String^ MS = msclr::interop::marshal_as<String^>(ms);
-			string tf =  str_buf[3];
-			String^ TF = msclr::interop::marshal_as<String^>(tf);
-			string fh =  str_buf[4];
-			String^ MF = msclr::interop::marshal_as<String^>(fh);
-			string mf =  str_buf[5];
-			String^ Plan = msclr::interop::marshal_as<String^>(mf);
+			string time_start =  str_buf[1];
+			String^ Time_Start = msclr::interop::marshal_as<String^>(time_start);
+			string minutes_tart =  str_buf[2];
+			String^ Minute_Start = msclr::interop::marshal_as<String^>(minutes_tart);
+			string time_finish =  str_buf[3];
+			String^ Time_Finish = msclr::interop::marshal_as<String^>(time_finish);
+			string minute_finish =  str_buf[4];
+			String^ Minute_Finish = msclr::interop::marshal_as<String^>(minute_finish);
+			string plan =  str_buf[5];
+			String^ Plan = msclr::interop::marshal_as<String^>(plan);
 
 			//ラベルに表示
-			labelTimeStart	->Text = TS;
-			labelMinuteStart	->Text = MS;
-			labelTimeFinish	->Text = TF;
-			labelMinuteFinish	->Text = MF;
+			labelTimeStart	->Text = Time_Start;
+			labelMinuteStart	->Text = Minute_Start;
+			labelTimeFinish	->Text = Time_Finish;
+			labelMinuteFinish	->Text = Minute_Finish;
 			labelPlan		->Text = Plan;
 		}
 		myFile.close();

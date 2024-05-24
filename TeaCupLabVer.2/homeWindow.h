@@ -1,6 +1,7 @@
 #pragma once
 #include "listWindow.h"
 #include "deleteWindow.h"
+#include"registWindow.h"
 #include <string>
 #include <msclr/marshal_cppstd.h>	
 
@@ -123,10 +124,12 @@ namespace TeaCupLabVer2 {
 		//ログアウト確認メッセージボックス
 	private: System::Void buttonLogout_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		MessageBox::Show("ログアウトしますか?", "確認", MessageBoxButtons::OKCancel);
-		if (this->DialogResult == System::Windows::Forms::DialogResult::OK)
+		System::Windows::Forms::DialogResult result = MessageBox::Show("ログアウトしますか?", "確認", MessageBoxButtons::OKCancel);
+
+		// OKボタンが押された場合の処理
+		if (result == System::Windows::Forms::DialogResult::OK)
 		{
-			Close();	//ログイン画面に戻る
+			Close();
 		}
 	}
 
@@ -136,6 +139,7 @@ namespace TeaCupLabVer2 {
 		if (System::Windows::Forms::DialogResult::Cancel == MessageBox::Show("アプリを終了しますか?", "確認", MessageBoxButtons::OKCancel))
 		{
 			e->Cancel = true;
+			Close();
 		}
 	}
 
