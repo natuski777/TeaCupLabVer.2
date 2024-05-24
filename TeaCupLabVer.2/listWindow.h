@@ -71,6 +71,18 @@ namespace TeaCupLabVer2
 
 
 	private: System::Windows::Forms::Button^ buttonReturn;
+	private: System::Windows::Forms::Label^ labelTimeStart;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ labelMinuteStart;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ labelTimeFinish;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ labelMinuteFinish;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Label^ labelPlan;
+
+
+
 
 
 
@@ -98,6 +110,15 @@ namespace TeaCupLabVer2
 			this->buttonRegist = (gcnew System::Windows::Forms::Button());
 			this->labelViewDate = (gcnew System::Windows::Forms::Label());
 			this->buttonReturn = (gcnew System::Windows::Forms::Button());
+			this->labelTimeStart = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->labelMinuteStart = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->labelTimeFinish = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->labelMinuteFinish = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->labelPlan = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -167,11 +188,100 @@ namespace TeaCupLabVer2
 			this->buttonReturn->UseVisualStyleBackColor = true;
 			this->buttonReturn->Click += gcnew System::EventHandler(this, &listWindow::buttonReturn_Click);
 			// 
+			// labelTimeStart
+			// 
+			this->labelTimeStart->AutoSize = true;
+			this->labelTimeStart->Location = System::Drawing::Point(168, 107);
+			this->labelTimeStart->Name = L"labelTimeStart";
+			this->labelTimeStart->Size = System::Drawing::Size(23, 15);
+			this->labelTimeStart->TabIndex = 11;
+			this->labelTimeStart->Text = L"00";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(221, 107);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(22, 15);
+			this->label5->TabIndex = 12;
+			this->label5->Text = L"Žž";
+			// 
+			// labelMinuteStart
+			// 
+			this->labelMinuteStart->AutoSize = true;
+			this->labelMinuteStart->Location = System::Drawing::Point(283, 107);
+			this->labelMinuteStart->Name = L"labelMinuteStart";
+			this->labelMinuteStart->Size = System::Drawing::Size(23, 15);
+			this->labelMinuteStart->TabIndex = 13;
+			this->labelMinuteStart->Text = L"00";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(358, 107);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(22, 15);
+			this->label6->TabIndex = 14;
+			this->label6->Text = L"•ª";
+			// 
+			// labelTimeFinish
+			// 
+			this->labelTimeFinish->AutoSize = true;
+			this->labelTimeFinish->Location = System::Drawing::Point(168, 167);
+			this->labelTimeFinish->Name = L"labelTimeFinish";
+			this->labelTimeFinish->Size = System::Drawing::Size(23, 15);
+			this->labelTimeFinish->TabIndex = 15;
+			this->labelTimeFinish->Text = L"00";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(221, 167);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(22, 15);
+			this->label7->TabIndex = 16;
+			this->label7->Text = L"Žž";
+			// 
+			// labelMinuteFinish
+			// 
+			this->labelMinuteFinish->AutoSize = true;
+			this->labelMinuteFinish->Location = System::Drawing::Point(283, 167);
+			this->labelMinuteFinish->Name = L"labelMinuteFinish";
+			this->labelMinuteFinish->Size = System::Drawing::Size(23, 15);
+			this->labelMinuteFinish->TabIndex = 17;
+			this->labelMinuteFinish->Text = L"00";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(358, 167);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(22, 15);
+			this->label8->TabIndex = 18;
+			this->label8->Text = L"•ª";
+			// 
+			// labelPlan
+			// 
+			this->labelPlan->AutoSize = true;
+			this->labelPlan->Location = System::Drawing::Point(146, 229);
+			this->labelPlan->Name = L"labelPlan";
+			this->labelPlan->Size = System::Drawing::Size(0, 15);
+			this->labelPlan->TabIndex = 19;
+			// 
 			// listWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(449, 359);
+			this->ClientSize = System::Drawing::Size(502, 359);
+			this->Controls->Add(this->labelPlan);
+			this->Controls->Add(this->label8);
+			this->Controls->Add(this->labelMinuteFinish);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->labelTimeFinish);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->labelMinuteStart);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->labelTimeStart);
 			this->Controls->Add(this->buttonReturn);
 			this->Controls->Add(this->labelViewDate);
 			this->Controls->Add(this->buttonRegist);
@@ -180,7 +290,7 @@ namespace TeaCupLabVer2
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Name = L"listWindow";
-			this->Text = L"listWindow";
+			this->Text = L"00";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &listWindow::listWindow_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &listWindow::listWindow_Load);
 			this->ResumeLayout(false);
@@ -212,20 +322,9 @@ namespace TeaCupLabVer2
 	private: System::Void buttonReturn_Click(System::Object^ sender, System::EventArgs^ e)
 
 {
-	/*	homeWindow^ Hom = gcnew homeWindow();
-		Hom->ShowDialog();
-}*/
+		Close();
 }
 	
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) 
-{	
-}
-	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) 
-{
-}
-	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) 
-{
-}
 
 	private: System::Void listWindow_Load(System::Object^ sender, System::EventArgs^ e)
 	{
