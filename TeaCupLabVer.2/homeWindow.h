@@ -2,6 +2,7 @@
 #include "listWindow.h"
 #include <string>
 #include <msclr/marshal_cppstd.h>	
+#include "deleteWindow.h"
 
 //std::string date;
 
@@ -21,6 +22,15 @@ namespace TeaCupLabVer2 {
 	/// </summary>
 	public ref class homeWindow : public System::Windows::Forms::Form
 	{
+	private:
+		System::DateTime selectedDate;
+
+	public:
+		property System::DateTime SelectedDate {
+			System::DateTime get() {
+				return selectedDate;
+			}
+		}
 	public:
 		homeWindow(void)
 		{
@@ -111,7 +121,7 @@ namespace TeaCupLabVer2 {
 			this->monthCalendar1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(5, 3);
+			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(4, 3);
 			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->monthCalendar1->Location = System::Drawing::Point(2, 2);
@@ -119,6 +129,7 @@ namespace TeaCupLabVer2 {
 			this->monthCalendar1->MinimumSize = System::Drawing::Size(0, 40);
 			this->monthCalendar1->Name = L"monthCalendar1";
 			this->monthCalendar1->TabIndex = 8;
+			this->monthCalendar1->DateSelected += gcnew System::Windows::Forms::DateRangeEventHandler(this, &homeWindow::monthCalendar1_DateSelected);
 			// 
 			// homeWindow
 			// 
@@ -156,13 +167,20 @@ namespace TeaCupLabVer2 {
 		//“ú•tŽæ“¾‚Æ“o˜^î•ñˆê——‰æ–Ê‚Ö‘JˆÚ
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-	/*	String^ dayinfo;
-		dayinfo= monthCalendar1->SelectionStart.ToLongDateString();
-		date = msclr::interop::marshal_as<string>(dayinfo);*/
-
-
 		listWindow^ lis = gcnew listWindow();
+		lis->DateFromMyForm = this->SelectedDate;
 		lis->ShowDialog();
+
+		registWindow^ reg = gcnew registWindow();
+		reg->DateFromMyForm = this->SelectedDate;
+		reg->ShowDialog();
+
+		deleteWindow^ del = gcnew deleteWindow();
+		del->DateFromMyForm = this->SelectedDate;
+		del->ShowDialog();
 	}
+private: System::Void monthCalendar1_DateSelected(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
+	selectedDate = monthCalendar1->SelectionStart;
+}
 };
 }
