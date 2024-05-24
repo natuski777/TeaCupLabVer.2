@@ -124,23 +124,23 @@ namespace TeaCupLabVer2 {
 		//ログアウト確認メッセージボックス
 	private: System::Void buttonLogout_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		System::Windows::Forms::DialogResult result = MessageBox::Show("ログアウトしてしますか?", "確認", MessageBoxButtons::OKCancel);
-
-		// OKボタンが押された場合の処理
-		if (result == System::Windows::Forms::DialogResult::OK)
+		if (System::Windows::Forms::DialogResult::Cancel == MessageBox::Show("ログアウトして終了しますか?", "確認", MessageBoxButtons::OKCancel))
 		{
-			Close();
+		
+			
+			this->Close();
 		}
 	}
 
 		   //終了確認メッセージボックス
 	private: System::Void homeWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
 	{
-		if (System::Windows::Forms::DialogResult::Cancel == MessageBox::Show("アプリを終了しますか?", "確認", MessageBoxButtons::OKCancel))
+		if (System::Windows::Forms::DialogResult::Cancel == MessageBox::Show("ログアウトして終了しますか?", "確認", MessageBoxButtons::OKCancel))
 		{
 			e->Cancel = true;
 			Close();
 		}
+		
 	}
 
 		   //情報一覧画面、情報登録画面、削除画面に日付を渡す
