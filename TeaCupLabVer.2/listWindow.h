@@ -48,9 +48,15 @@ namespace TeaCupLabVer2
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Button^ buttonRegist;
 
-	private: System::Windows::Forms::Button^ buttonReturn;
+
 
 	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::Button^ buttonReturn;
+
+
 
 
 
@@ -74,8 +80,11 @@ namespace TeaCupLabVer2
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->buttonRegist = (gcnew System::Windows::Forms::Button());
-			this->buttonReturn = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->buttonReturn = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -124,17 +133,7 @@ namespace TeaCupLabVer2
 			this->buttonRegist->TabIndex = 4;
 			this->buttonRegist->Text = L"情報登録画面へ";
 			this->buttonRegist->UseVisualStyleBackColor = true;
-			this->buttonRegist->Click += gcnew System::EventHandler(this, &listWindow::button1_Click);
-			// 
-			// buttonReturn
-			// 
-			this->buttonReturn->Location = System::Drawing::Point(247, 279);
-			this->buttonReturn->Name = L"buttonReturn";
-			this->buttonReturn->Size = System::Drawing::Size(120, 39);
-			this->buttonReturn->TabIndex = 5;
-			this->buttonReturn->Text = L"カレンダー画面へ";
-			this->buttonReturn->UseVisualStyleBackColor = true;
-			this->buttonReturn->Click += gcnew System::EventHandler(this, &listWindow::buttonReturn_Click);
+			this->buttonRegist->Click += gcnew System::EventHandler(this, &listWindow::buttonRegist_Click);
 			// 
 			// label5
 			// 
@@ -146,13 +145,50 @@ namespace TeaCupLabVer2
 			this->label5->Text = L"label5";
 			this->label5->Click += gcnew System::EventHandler(this, &listWindow::label5_Click);
 			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(137, 104);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(262, 22);
+			this->textBox1->TabIndex = 7;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &listWindow::textBox1_TextChanged);
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(137, 160);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(262, 22);
+			this->textBox2->TabIndex = 8;
+			this->textBox2->TextChanged += gcnew System::EventHandler(this, &listWindow::textBox2_TextChanged);
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(137, 229);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(262, 22);
+			this->textBox3->TabIndex = 9;
+			this->textBox3->TextChanged += gcnew System::EventHandler(this, &listWindow::textBox3_TextChanged);
+			// 
+			// buttonReturn
+			// 
+			this->buttonReturn->Location = System::Drawing::Point(235, 285);
+			this->buttonReturn->Name = L"buttonReturn";
+			this->buttonReturn->Size = System::Drawing::Size(145, 26);
+			this->buttonReturn->TabIndex = 10;
+			this->buttonReturn->Text = L"カレンダー画面へ";
+			this->buttonReturn->UseVisualStyleBackColor = true;
+			this->buttonReturn->Click += gcnew System::EventHandler(this, &listWindow::buttonReturn_Click);
+			// 
 			// listWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(449, 359);
-			this->Controls->Add(this->label5);
 			this->Controls->Add(this->buttonReturn);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->label5);
 			this->Controls->Add(this->buttonRegist);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
@@ -178,19 +214,12 @@ namespace TeaCupLabVer2
 	}
 
 		//情報登録画面のボタンをクリックすると情報登録画面へ遷移する処理,モーダルダイアログで表示
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
+	private: System::Void buttonRegist_Click(System::Object^ sender, System::EventArgs^ e)
 {
 		
 		registWindow^ Reg = gcnew registWindow();
 		Reg->ShowDialog();
 }
-
-		  //カレンダー画面のボタンをクリックするとカレンダー画面へ遷移する処理　モーダルダイアログで表示
-	private: System::Void buttonReturn_Click(System::Object^ sender, System::EventArgs^ e)
-{
-
-		/*homeWindow^ A = gcnew homeWindow();
-		A->ShowDialog();*/
 
 
 		//ホームボタンクリックでDateの値をリセットする処理
@@ -198,7 +227,14 @@ namespace TeaCupLabVer2
 		{
 			System::Diagnostics::Debug::WriteLine("");
 		}*/
+	
+	//カレンダー画面へのボタンをクリックするとホーム画面へ遷移する処理、モーダルダイアログで表示
+	private: System::Void buttonReturn_Click(System::Object^ sender, System::EventArgs^ e)
 
+{
+	/*	homeWindow^ Hom = gcnew homeWindow();
+		Hom->ShowDialog();
+}*/
 }
 
 	   //カレンダーの日付(date)をlabel5に表示する処理
@@ -210,7 +246,21 @@ namespace TeaCupLabVer2
 	String^ label5 = msclr::interop::marshal_as<String^>(date);*/
 
 }
-	   //情報登録画面の予定内容を表示、登録がなければ「予定はありません」と表示する
+	   //情報登録画面の開始時間を表示する処理 開始時間
+	
+	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) 
+{	
+	
+}
+	//情報登録画面で終了時間を表示する処理
+	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) 
+{
 
+}
+	//情報登録画面で予定内容を表示し、入力がなければ「予定はありません。」と表示する処理
+	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) 
+{
+
+}
 };
 }
