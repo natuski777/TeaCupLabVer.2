@@ -1,9 +1,9 @@
 #pragma once
 #include "listWindow.h"
+#include "deleteWindow.h"
 #include <string>
 #include <msclr/marshal_cppstd.h>	
-#include "deleteWindow.h"
-#include "loginWindow.h"
+
 
 using namespace System;
 using namespace std;
@@ -51,21 +51,8 @@ namespace TeaCupLabVer2 {
 			}
 		}
 	private: System::Windows::Forms::Button^ buttonLogout;
-	protected:
-
-
-
-
-
-	private: System::Windows::Forms::Button^ button2;
-
+	private: System::Windows::Forms::Button^ buttonDecision;
 	private: System::Windows::Forms::MonthCalendar^ monthCalendar1;
-
-
-
-
-	protected:
-
 	private:
 		/// <summary>
 		/// 必要なデザイナー変数です。
@@ -80,7 +67,7 @@ namespace TeaCupLabVer2 {
 		void InitializeComponent(void)
 		{
 			this->buttonLogout = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->buttonDecision = (gcnew System::Windows::Forms::Button());
 			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
 			this->SuspendLayout();
 			// 
@@ -94,25 +81,23 @@ namespace TeaCupLabVer2 {
 			this->buttonLogout->UseVisualStyleBackColor = true;
 			this->buttonLogout->Click += gcnew System::EventHandler(this, &homeWindow::buttonLogout_Click);
 			// 
-			// button2
+			// buttonDecision
 			// 
-			this->button2->Location = System::Drawing::Point(415, 501);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(138, 50);
-			this->button2->TabIndex = 6;
-			this->button2->Text = L"確定";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &homeWindow::button2_Click);
+			this->buttonDecision->Location = System::Drawing::Point(415, 501);
+			this->buttonDecision->Name = L"buttonDecision";
+			this->buttonDecision->Size = System::Drawing::Size(138, 50);
+			this->buttonDecision->TabIndex = 6;
+			this->buttonDecision->Text = L"確定";
+			this->buttonDecision->UseVisualStyleBackColor = true;
+			this->buttonDecision->Click += gcnew System::EventHandler(this, &homeWindow::buttonDecision_Click);
 			// 
 			// monthCalendar1
 			// 
-			this->monthCalendar1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(4, 3);
+			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(5, 3);
+			this->monthCalendar1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->monthCalendar1->Location = System::Drawing::Point(18, 6);
+			this->monthCalendar1->Location = System::Drawing::Point(0, 0);
 			this->monthCalendar1->MaxSelectionCount = 1;
 			this->monthCalendar1->MinimumSize = System::Drawing::Size(0, 40);
 			this->monthCalendar1->Name = L"monthCalendar1";
@@ -123,9 +108,9 @@ namespace TeaCupLabVer2 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1014, 570);
+			this->ClientSize = System::Drawing::Size(996, 570);
 			this->Controls->Add(this->monthCalendar1);
-			this->Controls->Add(this->button2);
+			this->Controls->Add(this->buttonDecision);
 			this->Controls->Add(this->buttonLogout);
 			this->Name = L"homeWindow";
 			this->Text = L"homeWindow";
@@ -134,45 +119,45 @@ namespace TeaCupLabVer2 {
 
 		}
 #pragma endregion
-		
+
 		//ログアウト確認メッセージボックス
 	private: System::Void buttonLogout_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		MessageBox::Show("ログアウトしますか?", "確認", MessageBoxButtons::OKCancel);
 		if (this->DialogResult == System::Windows::Forms::DialogResult::OK)
 		{
-			loginWindow^Log=gcnew loginWindow();
-			Log->ShowDialog();
+			Close();	//ログイン画面に戻る
 		}
 	}
 
-		 //終了確認メッセージボックス
+		   //終了確認メッセージボックス
 	private: System::Void homeWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
 	{
-		if (System::Windows::Forms::DialogResult::Cancel ==MessageBox::Show("アプリを終了しますか?", "確認",MessageBoxButtons::OKCancel)) 
+		if (System::Windows::Forms::DialogResult::Cancel == MessageBox::Show("アプリを終了しますか?", "確認", MessageBoxButtons::OKCancel))
 		{
 			e->Cancel = true;
 		}
 	}
 
-		
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) 
+		   //情報一覧画面、情報登録画面、削除画面に日付を渡す
+	private: System::Void buttonDecision_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		listWindow^ Lis = gcnew listWindow();
+		listWindow^ Lis = gcnew listWindow();	//登録情報一覧画面
 		Lis->DateFromMyForm = this->SelectedDate;
 		Lis->ShowDialog();
 
-		registWindow^ Reg = gcnew registWindow();
+		registWindow^ Reg = gcnew registWindow();	//情報登録画面
 		Reg->DateFromMyForm = this->SelectedDate;
 		Reg->ShowDialog();
 
-		deleteWindow^ Del = gcnew deleteWindow();
-		//del->DateFromMyForm = this->SelectedDate;
-		//del->ShowDialog();
+		deleteWindow^ Del = gcnew deleteWindow();	//削除画面
+		Del->DateFromMyForm = this->SelectedDate;
+		Del->ShowDialog();
 	}
 		   //日付取得
-private: System::Void monthCalendar1_DateSelected(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
-	selectedDate = monthCalendar1->SelectionStart;
-}
-};
+	private: System::Void monthCalendar1_DateSelected(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) 
+	{
+		selectedDate = monthCalendar1->SelectionStart;
+	}
+	};
 }
