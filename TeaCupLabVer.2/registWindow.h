@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+//#include "homeWindow.h"
 
 namespace TeaCupLabVer2 {
 
@@ -74,7 +75,8 @@ namespace TeaCupLabVer2 {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Button^ buttonDelete;
 	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::Label^ ViewDate;
+	private: System::Windows::Forms::Label^ labelViewDate;
+
 
 
 
@@ -108,7 +110,7 @@ namespace TeaCupLabVer2 {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->buttonDelete = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->ViewDate = (gcnew System::Windows::Forms::Label());
+			this->labelViewDate = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// labelRegist
@@ -284,23 +286,23 @@ namespace TeaCupLabVer2 {
 			this->label6->TabIndex = 15;
 			this->label6->Text = L"テキストは50字まで入力できます";
 			// 
-			// ViewDate
+			// labelViewDate
 			// 
-			this->ViewDate->AutoSize = true;
-			this->ViewDate->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->ViewDate->Location = System::Drawing::Point(47, 18);
-			this->ViewDate->Name = L"ViewDate";
-			this->ViewDate->Size = System::Drawing::Size(72, 17);
-			this->ViewDate->TabIndex = 16;
-			this->ViewDate->Text = L"datelabel";
-			this->ViewDate->Click += gcnew System::EventHandler(this, &registWindow::ViewDate_Click);
+			this->labelViewDate->AutoSize = true;
+			this->labelViewDate->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->labelViewDate->Location = System::Drawing::Point(47, 18);
+			this->labelViewDate->Name = L"labelViewDate";
+			this->labelViewDate->Size = System::Drawing::Size(72, 17);
+			this->labelViewDate->TabIndex = 16;
+			this->labelViewDate->Text = L"datelabel";
+			this->labelViewDate->Click += gcnew System::EventHandler(this, &registWindow::labelViewDate_Click);
 			// 
 			// registWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(507, 292);
-			this->Controls->Add(this->ViewDate);
+			this->Controls->Add(this->labelViewDate);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->buttonDelete);
 			this->Controls->Add(this->label5);
@@ -329,7 +331,7 @@ namespace TeaCupLabVer2 {
 		}
 #pragma endregion
 	private: System::Void registWindow_Load(System::Object^ sender, System::EventArgs^ e) {
-		ViewDate->Text = dateFromMyForm.ToLongDateString();
+		labelViewDate->Text = dateFromMyForm.ToLongDateString();
 	}
 	//
 	//×をクリックした際の警告画面
@@ -360,31 +362,34 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 	{
 		MessageBox::Show(str);
 	}
-	//else
-	//{
-	//	//textBoxPlanのデータを取得・変換
-	//	String^ Plan = gcnew String(textBoxPlan->Text);				//System::String型XXXにtextBox1の中身を代入、変数Planには予定内容を代入
-	//	string plan = msclr::interop::marshal_as<string>(Plan);		//↑XXXをstd::string型に変換してYYYに代入、変数planには予定内容の入ったString型のPlanを代入
-	//	//buttonTimeStartのデータを取得・変換
-	//	String^ TimeStart = gcnew String(buttonTimeStart->Text);			//変数TimeStartには開始時間（時）を代入
-	//	string timestart = msclr::interop::marshal_as<string>(TimeStart);	//変数timestartには開始時間（時）の入ったString型のTimeStartを代入
-	//	//buttonMinuteStartのデータを取得・変換
-	//	String^ MinuteStart = gcnew String(buttonMinuteStart->Text);			//変数MinuteStartには開始時間（分）を代入
-	//	string minutestart = msclr::interop::marshal_as<string>(MinuteStart);	//変数minutestartには開始時間（分）の入ったString型のMinuteStartを代入
-	//	//buttonTimeFinishのデータを取得・変換
-	//	String^ TimeFinish = gcnew String(buttonTimeFinish->Text);				//変数TimeFinishには終了時間（時）を代入
-	//	string timefinish = msclr::interop::marshal_as<string>(TimeFinish);		//変数timefinishには終了時間（時）の入ったString型のTimeFinishを代入
-	//	//buttonMinuteFinishのデータを取得・変換
-	//	String^ MinuteFinish = gcnew String(buttonMinuteFinish->Text);				//変数MinuteFinishには終了時間（分）を代入
-	//	string minutefinish = msclr::interop::marshal_as<string>(MinuteFinish);		//変数Minutefinishには終了時間（分）の入ったString型のMinuteFinishを代入
-	//	//ファイルを開いて最後の行へ日付＋情報をカンマ区切りで入力→閉じるまで
-	//	ofstream writing_file;
-	//	string filename = "sample.txt";
-	//	writing_file.open(filename, ios::app);
-	//	string writing_text = date + "\n" + timestart + "," + minutestart + "," + timefinish + "," + minutefinish + "," + plan + ",";
-	//	writing_file << writing_text << endl;
-	//	writing_file.close();
-	//}
+	else
+	{
+		//ViewDateのデータを取得・変換
+		String^ Date = gcnew String(labelViewDate->Text);
+		string date = msclr::interop::marshal_as<string>(Date);
+		//textBoxPlanのデータを取得・変換
+		String^ Plan = gcnew String(textBoxPlan->Text);				//System::String型XXXにtextBox1の中身を代入、変数Planには予定内容を代入
+		string plan = msclr::interop::marshal_as<string>(Plan);		//↑XXXをstd::string型に変換してYYYに代入、変数planには予定内容の入ったString型のPlanを代入
+		//buttonTimeStartのデータを取得・変換
+		String^ TimeStart = gcnew String(buttonTimeStart->Text);			//変数TimeStartには開始時間（時）を代入
+		string timestart = msclr::interop::marshal_as<string>(TimeStart);	//変数timestartには開始時間（時）の入ったString型のTimeStartを代入
+		//buttonMinuteStartのデータを取得・変換
+		String^ MinuteStart = gcnew String(buttonMinuteStart->Text);			//変数MinuteStartには開始時間（分）を代入
+		string minutestart = msclr::interop::marshal_as<string>(MinuteStart);	//変数minutestartには開始時間（分）の入ったString型のMinuteStartを代入
+		//buttonTimeFinishのデータを取得・変換
+		String^ TimeFinish = gcnew String(buttonTimeFinish->Text);				//変数TimeFinishには終了時間（時）を代入
+		string timefinish = msclr::interop::marshal_as<string>(TimeFinish);		//変数timefinishには終了時間（時）の入ったString型のTimeFinishを代入
+		//buttonMinuteFinishのデータを取得・変換
+		String^ MinuteFinish = gcnew String(buttonMinuteFinish->Text);				//変数MinuteFinishには終了時間（分）を代入
+		string minutefinish = msclr::interop::marshal_as<string>(MinuteFinish);		//変数Minutefinishには終了時間（分）の入ったString型のMinuteFinishを代入
+		//ファイルを開いて最後の行へ日付＋情報をカンマ区切りで入力→閉じるまで
+		ofstream writing_file;
+		string filename = "TeaCupLab.txt";
+		writing_file.open(filename, ios::app);
+		string writing_text = date + "," + timestart + "," + minutestart + "," + timefinish + "," + minutefinish + "," + plan + ",";
+		writing_file << writing_text << endl;
+		writing_file.close();
+	}
 }
 	//
 	//削除ボタンを押して登録情報を削除する処理
@@ -392,7 +397,7 @@ private: System::Void buttonDelete_Click(System::Object^ sender, System::EventAr
 	/*MessageBox::Show("登録済みの情報を削除します。\n本当に削除しますか？", "確認", MessageBoxButtons::OKCancel, MessageBoxIcon::Question);*/
 
 }
-private: System::Void ViewDate_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void labelViewDate_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
