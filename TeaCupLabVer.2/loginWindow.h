@@ -194,6 +194,7 @@ namespace TeaCupLabVer2
 			// 
 			// loginWindow
 			// 
+			this->AcceptButton = this->buttonLogin;
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(606, 348);
