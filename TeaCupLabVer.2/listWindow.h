@@ -1,6 +1,5 @@
 #pragma once
 #include "registWindow.h"
-//#include "homeWindow.h"
 #include  <msclr/marshal_cppstd.h>//System::String©¨std::string‚Å•K—v
 #include <sstream>
 #include <iostream>
