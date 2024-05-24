@@ -14,6 +14,18 @@ namespace TeaCupLabVer2 {
 	/// </summary>
 	public ref class deleteWindow : public System::Windows::Forms::Form
 	{
+	private:
+		System::DateTime dateFromMyForm;
+	public:
+		property System::DateTime DateFromMyForm {
+			System::DateTime get() {
+				return dateFromMyForm;
+			}
+			void set(System::DateTime value) {
+				dateFromMyForm = value;
+			}
+			}
+
 	public:
 		deleteWindow(void)
 		{
@@ -37,6 +49,8 @@ namespace TeaCupLabVer2 {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ labelViewDate;
+
 	protected:
 
 	private:
@@ -55,6 +69,7 @@ namespace TeaCupLabVer2 {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->labelViewDate = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -85,20 +100,35 @@ namespace TeaCupLabVer2 {
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"“o˜^Ï‚Ý‚Ìî•ñ‚ðíœ‚µ‚Ü‚·B\r\n–{“–‚Éíœ‚µ‚Ü‚·‚©H";
 			// 
+			// labelViewDate
+			// 
+			this->labelViewDate->AutoSize = true;
+			this->labelViewDate->Location = System::Drawing::Point(48, 135);
+			this->labelViewDate->Name = L"labelViewDate";
+			this->labelViewDate->Size = System::Drawing::Size(43, 15);
+			this->labelViewDate->TabIndex = 3;
+			this->labelViewDate->Text = L"label2";
+			// 
 			// deleteWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(282, 253);
+			this->Controls->Add(this->labelViewDate);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"deleteWindow";
 			this->Text = L"deleteWindow";
+			this->Load += gcnew System::EventHandler(this, &deleteWindow::deleteWindow_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void deleteWindow_Load(System::Object^ sender, System::EventArgs^ e) 
+	{
+		labelViewDate->Text = dateFromMyForm.ToLongDateString();
+	}
+};
 }
