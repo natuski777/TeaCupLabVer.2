@@ -161,9 +161,9 @@ namespace TeaCupLabVer2
 			// 
 			// buttonRegist
 			// 
-			this->buttonRegist->Location = System::Drawing::Point(45, 279);
+			this->buttonRegist->Location = System::Drawing::Point(286, 291);
 			this->buttonRegist->Name = L"buttonRegist";
-			this->buttonRegist->Size = System::Drawing::Size(118, 39);
+			this->buttonRegist->Size = System::Drawing::Size(146, 39);
 			this->buttonRegist->TabIndex = 4;
 			this->buttonRegist->Text = L"情報登録画面へ";
 			this->buttonRegist->UseVisualStyleBackColor = true;
@@ -180,9 +180,9 @@ namespace TeaCupLabVer2
 			// 
 			// buttonReturn
 			// 
-			this->buttonReturn->Location = System::Drawing::Point(235, 285);
+			this->buttonReturn->Location = System::Drawing::Point(97, 291);
 			this->buttonReturn->Name = L"buttonReturn";
-			this->buttonReturn->Size = System::Drawing::Size(145, 26);
+			this->buttonReturn->Size = System::Drawing::Size(146, 39);
 			this->buttonReturn->TabIndex = 10;
 			this->buttonReturn->Text = L"カレンダー画面へ";
 			this->buttonReturn->UseVisualStyleBackColor = true;
@@ -355,15 +355,15 @@ namespace TeaCupLabVer2
 			String^ Time_Finish = msclr::interop::marshal_as<String^>(time_finish);
 			string minute_finish =  str_buf[4];
 			String^ Minute_Finish = msclr::interop::marshal_as<String^>(minute_finish);
-			string plan =  str_buf[5];
-			String^ Plan = msclr::interop::marshal_as<String^>(plan);
+			string list_plan =  str_buf[5];
+			String^ List_Plan = msclr::interop::marshal_as<String^>(list_plan);
 
 			//ラベルに表示
 			labelTimeStart	->Text = Time_Start;
 			labelMinuteStart	->Text = Minute_Start;
 			labelTimeFinish	->Text = Time_Finish;
 			labelMinuteFinish	->Text = Minute_Finish;
-			labelPlan		->Text = Plan;
+			labelPlan		->Text = List_Plan;
 		}
 		myFile.close();
 	}
