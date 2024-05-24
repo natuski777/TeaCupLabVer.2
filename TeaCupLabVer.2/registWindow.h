@@ -402,8 +402,12 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 	//íœƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚Ä“o˜^î•ñ‚ðíœ‚·‚éˆ—
 private: System::Void buttonDelete_Click(System::Object^ sender, System::EventArgs^ e) {
 	/*MessageBox::Show("“o˜^Ï‚Ý‚Ìî•ñ‚ðíœ‚µ‚Ü‚·B\n–{“–‚Éíœ‚µ‚Ü‚·‚©H", "Šm”F", MessageBoxButtons::OKCancel, MessageBoxIcon::Question);*/
+	this->Hide();
+
 	deleteWindow^ del = gcnew deleteWindow();
 	del->ShowDialog();
+
+	this->Show();
 }
 private: System::Void labelViewDate_Click(System::Object^ sender, System::EventArgs^ e) {
 }
