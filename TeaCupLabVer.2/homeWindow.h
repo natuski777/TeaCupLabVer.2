@@ -143,7 +143,7 @@ namespace TeaCupLabVer2 {
 	{
 		this->Hide();
 		listWindow^ Lis = gcnew listWindow();	//“o˜^î•ñˆê——‰æ–Ê‚É“ú•t‚ð“n‚·
-		Lis->DateFromMyForm = this->SelectedDate;
+		Lis->DateFromList = this->SelectedDate;
 
 		registWindow^ Reg = gcnew registWindow();	//î•ñ“o˜^‰æ–Ê‚É“ú•t‚ð“n‚·
 		Reg->DateFromMyForm = this->SelectedDate;
@@ -152,6 +152,7 @@ namespace TeaCupLabVer2 {
 		Del->DateFromMyForm = this->SelectedDate;
 
 		Lis->ShowDialog();	//“o˜^î•ñˆê——‰æ–Ê‚É‘JˆÚ
+		
 		this->Show();
 	}
 		   //“ú•tŽæ“¾
