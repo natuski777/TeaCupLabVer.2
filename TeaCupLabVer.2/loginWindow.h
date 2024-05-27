@@ -153,7 +153,7 @@ namespace TeaCupLabVer2
 				static_cast<System::Byte>(128)));
 			this->buttonLogin->Location = System::Drawing::Point(151, 282);
 			this->buttonLogin->Name = L"buttonLogin";
-			this->buttonLogin->Size = System::Drawing::Size(170, 40);
+			this->buttonLogin->Size = System::Drawing::Size(170, 38);
 			this->buttonLogin->TabIndex = 4;
 			this->buttonLogin->Text = L"ログイン";
 			this->buttonLogin->UseVisualStyleBackColor = true;
@@ -165,7 +165,7 @@ namespace TeaCupLabVer2
 				static_cast<System::Byte>(128)));
 			this->buttonCancel->Location = System::Drawing::Point(392, 282);
 			this->buttonCancel->Name = L"buttonCancel";
-			this->buttonCancel->Size = System::Drawing::Size(170, 40);
+			this->buttonCancel->Size = System::Drawing::Size(170, 38);
 			this->buttonCancel->TabIndex = 5;
 			this->buttonCancel->Text = L"キャンセル";
 			this->buttonCancel->UseVisualStyleBackColor = true;
@@ -201,7 +201,7 @@ namespace TeaCupLabVer2
 				static_cast<System::Byte>(128)));
 			this->buttonPasswordVisual->Location = System::Drawing::Point(550, 174);
 			this->buttonPasswordVisual->Name = L"buttonPasswordVisual";
-			this->buttonPasswordVisual->Size = System::Drawing::Size(92, 38);
+			this->buttonPasswordVisual->Size = System::Drawing::Size(120, 38);
 			this->buttonPasswordVisual->TabIndex = 8;
 			this->buttonPasswordVisual->Text = L"表示";
 			this->buttonPasswordVisual->UseVisualStyleBackColor = true;
