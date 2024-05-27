@@ -109,40 +109,44 @@ namespace TeaCupLabVer2 {
 			// labelRegist
 			// 
 			this->labelRegist->AutoSize = true;
-			this->labelRegist->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 15));
-			this->labelRegist->Location = System::Drawing::Point(200, 18);
+			this->labelRegist->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->labelRegist->Location = System::Drawing::Point(164, 9);
 			this->labelRegist->Name = L"labelRegist";
-			this->labelRegist->Size = System::Drawing::Size(112, 25);
+			this->labelRegist->Size = System::Drawing::Size(177, 40);
 			this->labelRegist->TabIndex = 0;
 			this->labelRegist->Text = L"èÓïÒìoò^";
 			// 
 			// labelTimeStart
 			// 
 			this->labelTimeStart->AutoSize = true;
-			this->labelTimeStart->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->labelTimeStart->Location = System::Drawing::Point(47, 73);
+			this->labelTimeStart->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->labelTimeStart->Location = System::Drawing::Point(36, 66);
 			this->labelTimeStart->Name = L"labelTimeStart";
-			this->labelTimeStart->Size = System::Drawing::Size(94, 17);
+			this->labelTimeStart->Size = System::Drawing::Size(129, 20);
 			this->labelTimeStart->TabIndex = 1;
 			this->labelTimeStart->Text = L"ÅEäJénéûä‘ÅF";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->label2->Location = System::Drawing::Point(47, 113);
+			this->label2->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->label2->Location = System::Drawing::Point(36, 112);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(94, 17);
+			this->label2->Size = System::Drawing::Size(129, 20);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"ÅEèIóπéûä‘ÅF";
 			// 
 			// labelPlan
 			// 
 			this->labelPlan->AutoSize = true;
-			this->labelPlan->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->labelPlan->Location = System::Drawing::Point(47, 153);
+			this->labelPlan->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->labelPlan->Location = System::Drawing::Point(36, 159);
 			this->labelPlan->Name = L"labelPlan";
-			this->labelPlan->Size = System::Drawing::Size(94, 17);
+			this->labelPlan->Size = System::Drawing::Size(129, 20);
 			this->labelPlan->TabIndex = 3;
 			this->labelPlan->Text = L"ÅEó\íËì‡óeÅF";
 			// 
@@ -223,40 +227,44 @@ namespace TeaCupLabVer2 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->label1->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
 			this->label1->Location = System::Drawing::Point(298, 64);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(25, 17);
+			this->label1->Size = System::Drawing::Size(29, 20);
 			this->label1->TabIndex = 10;
 			this->label1->Text = L"éû";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->label3->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
 			this->label3->Location = System::Drawing::Point(474, 63);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(25, 17);
+			this->label3->Size = System::Drawing::Size(29, 20);
 			this->label3->TabIndex = 11;
 			this->label3->Text = L"ï™";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->label4->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
 			this->label4->Location = System::Drawing::Point(298, 110);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(25, 17);
+			this->label4->Size = System::Drawing::Size(29, 20);
 			this->label4->TabIndex = 12;
 			this->label4->Text = L"éû";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->label5->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
 			this->label5->Location = System::Drawing::Point(474, 110);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(25, 17);
+			this->label5->Size = System::Drawing::Size(29, 20);
 			this->label5->TabIndex = 13;
 			this->label5->Text = L"ï™";
 			// 
@@ -381,7 +389,7 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 		ofstream writing_file;
 		string filename = "TeaCupLab.txt";
 		writing_file.open(filename, ios::app);
-		string writing_text = date + "\n," + timestart + "," + minutestart + "," + timefinish + "," + minutefinish + "," + plan + ",";
+		string writing_text = date + ",\n" + timestart + "," + minutestart + "," + timefinish + "," + minutefinish + "," + plan + ",";
 		writing_file << writing_text << endl;
 		writing_file.close();
 		this->buttonTimeStart->SelectedIndex = -1;

@@ -76,10 +76,11 @@ namespace TeaCupLabVer2 {
 			// 
 			// buttonDeleteOK
 			// 
-			this->buttonDeleteOK->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->buttonDeleteOK->Location = System::Drawing::Point(48, 191);
+			this->buttonDeleteOK->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->buttonDeleteOK->Location = System::Drawing::Point(35, 191);
 			this->buttonDeleteOK->Name = L"buttonDeleteOK";
-			this->buttonDeleteOK->Size = System::Drawing::Size(75, 34);
+			this->buttonDeleteOK->Size = System::Drawing::Size(85, 38);
 			this->buttonDeleteOK->TabIndex = 0;
 			this->buttonDeleteOK->Text = L"OK";
 			this->buttonDeleteOK->UseVisualStyleBackColor = true;
@@ -87,10 +88,11 @@ namespace TeaCupLabVer2 {
 			// 
 			// buttonDeleteCancel
 			// 
-			this->buttonDeleteCancel->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->buttonDeleteCancel->Location = System::Drawing::Point(153, 191);
+			this->buttonDeleteCancel->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->buttonDeleteCancel->Location = System::Drawing::Point(163, 191);
 			this->buttonDeleteCancel->Name = L"buttonDeleteCancel";
-			this->buttonDeleteCancel->Size = System::Drawing::Size(75, 34);
+			this->buttonDeleteCancel->Size = System::Drawing::Size(85, 38);
 			this->buttonDeleteCancel->TabIndex = 1;
 			this->buttonDeleteCancel->Text = L"Cancel";
 			this->buttonDeleteCancel->UseVisualStyleBackColor = true;
@@ -99,10 +101,10 @@ namespace TeaCupLabVer2 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
-			this->label1->Location = System::Drawing::Point(35, 82);
+			this->label1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12));
+			this->label1->Location = System::Drawing::Point(21, 93);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(219, 34);
+			this->label1->Size = System::Drawing::Size(257, 40);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"“o˜^Ï‚İ‚Ìî•ñ‚ğíœ‚µ‚Ü‚·B\r\n–{“–‚Éíœ‚µ‚Ü‚·‚©H";
 			// 
@@ -147,7 +149,7 @@ private: System::Void buttonDeleteOK_Click(System::Object^ sender, System::Event
 	ofstream writing_file;
 	string filename = "TeaCupLab.txt";
 	writing_file.open(filename, ios::app);
-	string writing_text = deletedate + "\n," + "" + "," + "" + "," + "" + "," + "" + "," + "î•ñ‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB" + ",";
+	string writing_text = deletedate + ",\n" + "" + "," + "" + "," + "" + "," + "" + "," + "î•ñ‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB" + ",";
 	writing_file << writing_text << endl;
 	writing_file.close();
 	Close();
