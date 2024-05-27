@@ -22,16 +22,9 @@ namespace TeaCupLabVer2 {
 	public ref class registWindow : public System::Windows::Forms::Form
 	{
 	private:
-		System::DateTime dateFromMyForm;
+		System::DateTime dateFromRegist;
 	public:
-		property System::DateTime DateFromMyForm {
-			System::DateTime get() {
-				return dateFromMyForm;
-			}
-			void set(System::DateTime value) {
-				dateFromMyForm = value;
-			}
-		}
+		property System::DateTime DateFromRegist;
 
 	public:
 		registWindow(void)
@@ -333,7 +326,7 @@ namespace TeaCupLabVer2 {
 		}
 #pragma endregion
 	private: System::Void registWindow_Load(System::Object^ sender, System::EventArgs^ e) {
-		labelViewDate->Text = dateFromMyForm.ToLongDateString();
+		labelViewDate->Text = DateFromRegist.ToLongDateString();
 	}
 	//
 	//~‚ðƒNƒŠƒbƒN‚µ‚½Û‚ÌŒx‰æ–Ê
@@ -403,8 +396,9 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 private: System::Void buttonDelete_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
 
-	deleteWindow^ del = gcnew deleteWindow();
-	del->ShowDialog();
+	deleteWindow^ Del = gcnew deleteWindow();
+	Del->DateFromDelete = this->DateFromRegist;
+	Del->ShowDialog();
 
 	this->Show();
 }

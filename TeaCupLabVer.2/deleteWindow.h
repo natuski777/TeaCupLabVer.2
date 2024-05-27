@@ -21,16 +21,9 @@ namespace TeaCupLabVer2 {
 	public ref class deleteWindow : public System::Windows::Forms::Form
 	{
 	private:
-		System::DateTime dateFromMyForm;
+		System::DateTime dateFromDelete;
 	public:
-		property System::DateTime DateFromMyForm {
-			System::DateTime get() {
-				return dateFromMyForm;
-			}
-			void set(System::DateTime value) {
-				dateFromMyForm = value;
-			}
-			}
+		property System::DateTime DateFromDelete;
 
 	public:
 		deleteWindow(void)
@@ -144,7 +137,7 @@ namespace TeaCupLabVer2 {
 #pragma endregion
 	private: System::Void deleteWindow_Load(System::Object^ sender, System::EventArgs^ e) 
 	{
-		labelViewDate->Text = dateFromMyForm.ToLongDateString();
+		labelViewDate->Text = DateFromDelete.ToLongDateString();
 	}
 private: System::Void buttonDeleteOK_Click(System::Object^ sender, System::EventArgs^ e) {
 	//labelViewDateのデータを取得・変換
