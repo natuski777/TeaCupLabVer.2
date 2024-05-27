@@ -73,6 +73,8 @@ namespace TeaCupLabVer2
 	private: System::Windows::Forms::Button^ buttonCancel;
 	private: System::Windows::Forms::Label^ labelRogin;
 	private: System::Windows::Forms::Label^ labelCaution;
+	private: System::Windows::Forms::Button^ buttonPasswordVisual;
+
 
 
 
@@ -99,6 +101,7 @@ namespace TeaCupLabVer2
 			this->buttonCancel = (gcnew System::Windows::Forms::Button());
 			this->labelRogin = (gcnew System::Windows::Forms::Label());
 			this->labelCaution = (gcnew System::Windows::Forms::Label());
+			this->buttonPasswordVisual = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// labelUserName
@@ -138,7 +141,7 @@ namespace TeaCupLabVer2
 			this->textBoxPassword->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->textBoxPassword->ImeMode = System::Windows::Forms::ImeMode::Disable;
-			this->textBoxPassword->Location = System::Drawing::Point(143, 171);
+			this->textBoxPassword->Location = System::Drawing::Point(143, 162);
 			this->textBoxPassword->Name = L"textBoxPassword";
 			this->textBoxPassword->PasswordChar = '*';
 			this->textBoxPassword->Size = System::Drawing::Size(340, 37);
@@ -192,12 +195,25 @@ namespace TeaCupLabVer2
 			this->labelCaution->TabIndex = 7;
 			this->labelCaution->Text = L"※半角英数字を入力してください";
 			// 
+			// buttonPasswordVisual
+			// 
+			this->buttonPasswordVisual->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->buttonPasswordVisual->Location = System::Drawing::Point(502, 164);
+			this->buttonPasswordVisual->Name = L"buttonPasswordVisual";
+			this->buttonPasswordVisual->Size = System::Drawing::Size(92, 41);
+			this->buttonPasswordVisual->TabIndex = 8;
+			this->buttonPasswordVisual->Text = L"表示";
+			this->buttonPasswordVisual->UseVisualStyleBackColor = true;
+			this->buttonPasswordVisual->Click += gcnew System::EventHandler(this, &loginWindow::buttonPasswordVisual_Click);
+			// 
 			// loginWindow
 			// 
 			this->AcceptButton = this->buttonLogin;
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(606, 348);
+			this->Controls->Add(this->buttonPasswordVisual);
 			this->Controls->Add(this->labelCaution);
 			this->Controls->Add(this->labelRogin);
 			this->Controls->Add(this->buttonCancel);
@@ -209,6 +225,7 @@ namespace TeaCupLabVer2
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"loginWindow";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &loginWindow::viewWindow_FormClosing);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -281,6 +298,25 @@ namespace TeaCupLabVer2
 		{
 			e->Cancel = true;
 		}
+	}
+		   //入力されたパスワードの表示切り替え
+	private: System::Void buttonPasswordVisual_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		//ボタンが押された回数を記録する変数の宣言
+		static int c = 1;
+
+		if (c % 2)
+		{
+			textBoxPassword->PasswordChar = 0;
+			buttonPasswordVisual->Text = "非表示";
+		}
+		else
+		{
+			textBoxPassword->PasswordChar = '*';
+			buttonPasswordVisual->Text = "表示";
+		}
+
+		c++;
 	}
 };
 }
