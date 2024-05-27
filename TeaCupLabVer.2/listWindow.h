@@ -327,7 +327,7 @@ namespace TeaCupLabVer2
 
 		string line;	//line　＝　一行
 		string str_first_conma;
-		string str_buf[6];
+		string str_buf[5];
 
 		//ファイルを開く
 		ifstream myFile("TeaCupLab.txt", ios::in);//read
@@ -343,34 +343,42 @@ namespace TeaCupLabVer2
 			if (str_first_conma == date)
 			{
 				//↑の中身をカンマ区切りでstr_buf配列に格納する
-				for (int i = 0; i < 6; i++)
+				for (int i = 0; i < 5; i++)
 				{
 					getline(myFile, str_buf[i], ',');
 				}
 			}
+			else
+			{
+
+			}
 			//ラベルに表示するためにSystem::String型に変換
 			//開始　時間
-			string time_start =  str_buf[1];
+			string time_start =  str_buf[0];
 			String^ Time_Start = msclr::interop::marshal_as<String^>(time_start);
 			//開始　分
-			string minutes_tart =  str_buf[2];
+			string minutes_tart =  str_buf[1];
 			String^ Minute_Start = msclr::interop::marshal_as<String^>(minutes_tart);
 			//終了　時間
-			string time_finish =  str_buf[3];
+			string time_finish =  str_buf[2];
 			String^ Time_Finish = msclr::interop::marshal_as<String^>(time_finish);
 			//終了　分
-			string minute_finish =  str_buf[4];
+			string minute_finish =  str_buf[3];
 			String^ Minute_Finish = msclr::interop::marshal_as<String^>(minute_finish);
 			//予定内容
-			string list_plan =  str_buf[5];
+			string list_plan =  str_buf[4];
 			String^ List_Plan = msclr::interop::marshal_as<String^>(list_plan);
 
 			//ラベルに表示
-			labelTimeStart	->Text = Time_Start;
-			labelMinuteStart	->Text = Minute_Start;
-			labelTimeFinish	->Text = Time_Finish;
+			labelTimeStart->Text = Time_Start;
+			labelMinuteStart->Text = Minute_Start;
+			labelTimeFinish->Text = Time_Finish;
 			labelMinuteFinish	->Text = Minute_Finish;
-			labelPlan		->Text = List_Plan;
+			labelPlan->Text = List_Plan;
+
+			//MessageBox::Show(labelviewdate,"a");
+
+
 		}
 		myFile.close();
 	}
