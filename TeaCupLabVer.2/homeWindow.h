@@ -55,6 +55,7 @@ namespace TeaCupLabVer2 {
 	private: System::Windows::Forms::Button^ buttonDecision;
 	private: System::Windows::Forms::MonthCalendar^ monthCalendar1;
 	private: System::Windows::Forms::Label^ label1;
+
 	private:
 		/// <summary>
 		/// 必要なデザイナー変数です。
@@ -76,9 +77,12 @@ namespace TeaCupLabVer2 {
 			// 
 			// buttonLogout
 			// 
-			this->buttonLogout->Location = System::Drawing::Point(66, 501);
+			this->buttonLogout->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->buttonLogout->ForeColor = System::Drawing::Color::Tomato;
+			this->buttonLogout->Location = System::Drawing::Point(775, 86);
 			this->buttonLogout->Name = L"buttonLogout";
-			this->buttonLogout->Size = System::Drawing::Size(185, 46);
+			this->buttonLogout->Size = System::Drawing::Size(136, 50);
 			this->buttonLogout->TabIndex = 3;
 			this->buttonLogout->Text = L"ログアウト";
 			this->buttonLogout->UseVisualStyleBackColor = true;
@@ -86,9 +90,11 @@ namespace TeaCupLabVer2 {
 			// 
 			// buttonDecision
 			// 
-			this->buttonDecision->Location = System::Drawing::Point(415, 501);
+			this->buttonDecision->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->buttonDecision->Location = System::Drawing::Point(761, 213);
 			this->buttonDecision->Name = L"buttonDecision";
-			this->buttonDecision->Size = System::Drawing::Size(138, 50);
+			this->buttonDecision->Size = System::Drawing::Size(150, 53);
 			this->buttonDecision->TabIndex = 6;
 			this->buttonDecision->Text = L"確定";
 			this->buttonDecision->UseVisualStyleBackColor = true;
@@ -96,13 +102,17 @@ namespace TeaCupLabVer2 {
 			// 
 			// monthCalendar1
 			// 
-			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(5, 3);
-			this->monthCalendar1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->monthCalendar1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->monthCalendar1->BackColor = System::Drawing::Color::LemonChiffon;
+			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(4, 3);
+			this->monthCalendar1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->monthCalendar1->Location = System::Drawing::Point(0, 0);
+			this->monthCalendar1->Location = System::Drawing::Point(103, 21);
+			this->monthCalendar1->Margin = System::Windows::Forms::Padding(0);
 			this->monthCalendar1->MaxSelectionCount = 1;
-			this->monthCalendar1->MinimumSize = System::Drawing::Size(0, 40);
 			this->monthCalendar1->Name = L"monthCalendar1";
 			this->monthCalendar1->TabIndex = 8;
 			this->monthCalendar1->DateSelected += gcnew System::Windows::Forms::DateRangeEventHandler(this, &homeWindow::monthCalendar1_DateSelected);
@@ -110,9 +120,11 @@ namespace TeaCupLabVer2 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(630, 518);
+			this->label1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->label1->Location = System::Drawing::Point(682, 341);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(130, 12);
+			this->label1->Size = System::Drawing::Size(208, 19);
 			this->label1->TabIndex = 9;
 			this->label1->Text = L"日付が選択されていません";
 			// 
@@ -120,13 +132,18 @@ namespace TeaCupLabVer2 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(996, 570);
+			this->BackColor = System::Drawing::Color::LemonChiffon;
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->ClientSize = System::Drawing::Size(920, 552);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->monthCalendar1);
 			this->Controls->Add(this->buttonDecision);
 			this->Controls->Add(this->buttonLogout);
+			this->ForeColor = System::Drawing::Color::Black;
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"homeWindow";
-			this->Text = L"homeWindow";
+			this->Text = L"茶碗蒸し研究所";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &homeWindow::homeWindow_FormClosing);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -154,7 +171,7 @@ namespace TeaCupLabVer2 {
 		   //情報一覧画面、情報登録画面、削除画面に日付を渡す
 	private: System::Void buttonDecision_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-
+		
 		this->Hide();
 		listWindow^ Lis = gcnew listWindow();	//登録情報一覧画面に日付を渡す
 		Lis->DateFromList = this->SelectedDate;
@@ -175,5 +192,7 @@ namespace TeaCupLabVer2 {
 		selectedDate = monthCalendar1->SelectionStart;
 		label1->Text = (selectedDate.ToLongDateString()+"が選択されています");
 	}
-	};
+
+
+};
 }
