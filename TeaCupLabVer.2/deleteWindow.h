@@ -154,7 +154,7 @@ private: System::Void buttonDeleteOK_Click(System::Object^ sender, System::Event
 	ofstream writing_file;
 	string filename = "TeaCupLab.txt";
 	writing_file.open(filename, ios::app);
-	string writing_text = deletedate + "," + "" + "," + "" + "," + "" + "," + "" + "," + "î•ñ‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB" + ",";
+	string writing_text = deletedate + "\n," + "" + "," + "" + "," + "" + "," + "" + "," + "î•ñ‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB" + ",";
 	writing_file << writing_text << endl;
 	writing_file.close();
 	Close();

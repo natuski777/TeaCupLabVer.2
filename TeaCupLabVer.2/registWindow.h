@@ -4,7 +4,6 @@
 #include <fstream>
 #include <string>
 #include "deleteWindow.h"
-//#include "homeWindow.h"
 
 namespace TeaCupLabVer2 {
 
@@ -209,6 +208,7 @@ namespace TeaCupLabVer2 {
 			// 
 			// textBoxPlan
 			// 
+			this->textBoxPlan->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
 			this->textBoxPlan->Location = System::Drawing::Point(171, 148);
 			this->textBoxPlan->MaxLength = 50;
 			this->textBoxPlan->Multiline = true;
@@ -221,7 +221,7 @@ namespace TeaCupLabVer2 {
 			this->buttonFinish->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
 			this->buttonFinish->Location = System::Drawing::Point(347, 247);
 			this->buttonFinish->Name = L"buttonFinish";
-			this->buttonFinish->Size = System::Drawing::Size(75, 33);
+			this->buttonFinish->Size = System::Drawing::Size(75, 34);
 			this->buttonFinish->TabIndex = 9;
 			this->buttonFinish->Text = L"完了";
 			this->buttonFinish->UseVisualStyleBackColor = true;
@@ -272,7 +272,7 @@ namespace TeaCupLabVer2 {
 			this->buttonDelete->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
 			this->buttonDelete->Location = System::Drawing::Point(96, 247);
 			this->buttonDelete->Name = L"buttonDelete";
-			this->buttonDelete->Size = System::Drawing::Size(75, 33);
+			this->buttonDelete->Size = System::Drawing::Size(75, 34);
 			this->buttonDelete->TabIndex = 14;
 			this->buttonDelete->Text = L"削除";
 			this->buttonDelete->UseVisualStyleBackColor = true;
@@ -281,11 +281,12 @@ namespace TeaCupLabVer2 {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(272, 206);
+			this->label6->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 10));
+			this->label6->Location = System::Drawing::Point(215, 206);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(196, 15);
+			this->label6->Size = System::Drawing::Size(253, 17);
 			this->label6->TabIndex = 15;
-			this->label6->Text = L"テキストは50字まで入力できます";
+			this->label6->Text = L"※テキストは50字まで入力できます。";
 			// 
 			// labelViewDate
 			// 
@@ -346,22 +347,22 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 	//
 	//完了ボタンを押された場合の処理
 private: System::Void buttonFinish_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ str;	//エラー文を格納する変数
+	String^ err;	//エラー文を格納する変数
 	if (this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1)
 	{
-		str = str + "・開始時間が選択されていません\n";
+		err = err + "・開始時間が選択されていません\n";
 	}
 	if (this->buttonTimeFinish->SelectedIndex == -1 || this->buttonMinuteFinish->SelectedIndex == -1)
 	{
-		str = str + "・終了時間が選択されていません。\n";
+		err = err + "・終了時間が選択されていません。\n";
 	}
 	if (this->textBoxPlan->Text == "")
 	{
-		str = str + "・予定内容が入力されていません。\n";
+		err = err + "・予定内容が入力されていません。\n";
 	}
 	if (this->buttonTimeStart->SelectedIndex == -1 || this->buttonMinuteStart->SelectedIndex == -1 || this->buttonTimeFinish->SelectedIndex == -1 || this->buttonMinuteFinish->SelectedIndex == -1 || this->textBoxPlan->Text == "")
 	{
-		MessageBox::Show(str);
+		MessageBox::Show(err);
 	}
 	else
 	{
@@ -387,21 +388,19 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 		ofstream writing_file;
 		string filename = "TeaCupLab.txt";
 		writing_file.open(filename, ios::app);
-		string writing_text = date + "," + timestart + "," + minutestart + "," + timefinish + "," + minutefinish + "," + plan + ",";
+		string writing_text = date + "\n," + timestart + "," + minutestart + "," + timefinish + "," + minutefinish + "," + plan + ",";
 		writing_file << writing_text << endl;
 		writing_file.close();
-		/*this->buttonTimeStart->SelectedIndex == -1;
-		this->buttonMinuteStart->SelectedIndex == -1;
-		this->buttonTimeFinish->SelectedIndex == -1;
-		this->buttonMinuteFinish->SelectedIndex == -1;
-		this->textBoxPlan->Text == "";*/
-		Close();
+		this->buttonTimeStart->SelectedIndex = -1;
+		this->buttonMinuteStart->SelectedIndex = -1;
+		this->buttonTimeFinish->SelectedIndex = -1;
+		this->buttonMinuteFinish->SelectedIndex = -1;
+		this->textBoxPlan->Text = "";
 	}
 }
 	//
 	//削除ボタンを押して登録情報を削除する処理
 private: System::Void buttonDelete_Click(System::Object^ sender, System::EventArgs^ e) {
-	/*MessageBox::Show("登録済みの情報を削除します。\n本当に削除しますか？", "確認", MessageBoxButtons::OKCancel, MessageBoxIcon::Question);*/
 	this->Hide();
 
 	deleteWindow^ del = gcnew deleteWindow();
