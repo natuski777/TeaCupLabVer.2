@@ -71,6 +71,11 @@ namespace TeaCupLabVer2 {
 	private: System::Windows::Forms::Label^ labelViewDate;
 	private: System::Windows::Forms::Label^ labelTitle;
 	private: System::Windows::Forms::TextBox^ textBoxTitle;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Button^ buttonReturn;
+	private: System::Windows::Forms::Label^ label10;
 
 
 
@@ -109,6 +114,11 @@ namespace TeaCupLabVer2 {
 			this->labelViewDate = (gcnew System::Windows::Forms::Label());
 			this->labelTitle = (gcnew System::Windows::Forms::Label());
 			this->textBoxTitle = (gcnew System::Windows::Forms::TextBox());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->buttonReturn = (gcnew System::Windows::Forms::Button());
+			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// labelRegist
@@ -128,7 +138,7 @@ namespace TeaCupLabVer2 {
 			this->labelTimeStart->AutoSize = true;
 			this->labelTimeStart->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->labelTimeStart->Location = System::Drawing::Point(54, 182);
+			this->labelTimeStart->Location = System::Drawing::Point(55, 194);
 			this->labelTimeStart->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelTimeStart->Name = L"labelTimeStart";
 			this->labelTimeStart->Size = System::Drawing::Size(154, 23);
@@ -141,7 +151,7 @@ namespace TeaCupLabVer2 {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->label2->Location = System::Drawing::Point(54, 232);
+			this->label2->Location = System::Drawing::Point(55, 250);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(154, 23);
@@ -154,7 +164,7 @@ namespace TeaCupLabVer2 {
 			this->labelPlan->AutoSize = true;
 			this->labelPlan->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->labelPlan->Location = System::Drawing::Point(54, 283);
+			this->labelPlan->Location = System::Drawing::Point(54, 299);
 			this->labelPlan->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelPlan->Name = L"labelPlan";
 			this->labelPlan->Size = System::Drawing::Size(154, 23);
@@ -172,7 +182,7 @@ namespace TeaCupLabVer2 {
 				L"0", L"1", L"2", L"3", L"4", L"5", L"6",
 					L"7", L"8", L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23", L"24"
 			});
-			this->buttonTimeStart->Location = System::Drawing::Point(216, 229);
+			this->buttonTimeStart->Location = System::Drawing::Point(216, 247);
 			this->buttonTimeStart->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonTimeStart->Name = L"buttonTimeStart";
 			this->buttonTimeStart->Size = System::Drawing::Size(136, 31);
@@ -189,7 +199,7 @@ namespace TeaCupLabVer2 {
 				L"0", L"5", L"10", L"15", L"20", L"25",
 					L"30", L"35", L"40", L"45", L"50", L"55"
 			});
-			this->buttonMinuteStart->Location = System::Drawing::Point(402, 229);
+			this->buttonMinuteStart->Location = System::Drawing::Point(436, 247);
 			this->buttonMinuteStart->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonMinuteStart->Name = L"buttonMinuteStart";
 			this->buttonMinuteStart->Size = System::Drawing::Size(136, 31);
@@ -206,7 +216,7 @@ namespace TeaCupLabVer2 {
 				L"0", L"1", L"2", L"3", L"4", L"5", L"6",
 					L"7", L"8", L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23"
 			});
-			this->buttonTimeFinish->Location = System::Drawing::Point(216, 179);
+			this->buttonTimeFinish->Location = System::Drawing::Point(216, 191);
 			this->buttonTimeFinish->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonTimeFinish->Name = L"buttonTimeFinish";
 			this->buttonTimeFinish->Size = System::Drawing::Size(136, 31);
@@ -223,7 +233,7 @@ namespace TeaCupLabVer2 {
 				L"0", L"5", L"15", L"20", L"25", L"30",
 					L"35", L"40", L"45", L"50", L"55"
 			});
-			this->buttonMinuteFinish->Location = System::Drawing::Point(402, 179);
+			this->buttonMinuteFinish->Location = System::Drawing::Point(436, 191);
 			this->buttonMinuteFinish->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonMinuteFinish->Name = L"buttonMinuteFinish";
 			this->buttonMinuteFinish->Size = System::Drawing::Size(136, 31);
@@ -234,12 +244,12 @@ namespace TeaCupLabVer2 {
 			// 
 			this->textBoxPlan->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->textBoxPlan->Location = System::Drawing::Point(216, 283);
+			this->textBoxPlan->Location = System::Drawing::Point(216, 299);
 			this->textBoxPlan->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->textBoxPlan->MaxLength = 50;
 			this->textBoxPlan->Multiline = true;
 			this->textBoxPlan->Name = L"textBoxPlan";
-			this->textBoxPlan->Size = System::Drawing::Size(322, 70);
+			this->textBoxPlan->Size = System::Drawing::Size(398, 70);
 			this->textBoxPlan->TabIndex = 8;
 			this->textBoxPlan->TextChanged += gcnew System::EventHandler(this, &registWindow::textBoxPlan_TextChanged);
 			// 
@@ -247,7 +257,7 @@ namespace TeaCupLabVer2 {
 			// 
 			this->buttonFinish->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->buttonFinish->Location = System::Drawing::Point(402, 390);
+			this->buttonFinish->Location = System::Drawing::Point(499, 432);
 			this->buttonFinish->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonFinish->Name = L"buttonFinish";
 			this->buttonFinish->Size = System::Drawing::Size(90, 38);
@@ -261,7 +271,7 @@ namespace TeaCupLabVer2 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->label1->Location = System::Drawing::Point(360, 232);
+			this->label1->Location = System::Drawing::Point(360, 250);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(34, 23);
@@ -274,7 +284,7 @@ namespace TeaCupLabVer2 {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->label3->Location = System::Drawing::Point(546, 232);
+			this->label3->Location = System::Drawing::Point(580, 250);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(34, 23);
@@ -287,7 +297,7 @@ namespace TeaCupLabVer2 {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->label4->Location = System::Drawing::Point(360, 182);
+			this->label4->Location = System::Drawing::Point(360, 194);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(34, 23);
@@ -300,7 +310,7 @@ namespace TeaCupLabVer2 {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->label5->Location = System::Drawing::Point(546, 182);
+			this->label5->Location = System::Drawing::Point(580, 194);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(34, 23);
@@ -312,7 +322,7 @@ namespace TeaCupLabVer2 {
 			// 
 			this->buttonDelete->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->buttonDelete->Location = System::Drawing::Point(127, 390);
+			this->buttonDelete->Location = System::Drawing::Point(292, 432);
 			this->buttonDelete->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonDelete->Name = L"buttonDelete";
 			this->buttonDelete->Size = System::Drawing::Size(90, 38);
@@ -327,19 +337,19 @@ namespace TeaCupLabVer2 {
 			this->label6->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->label6->ForeColor = System::Drawing::Color::Tomato;
-			this->label6->Location = System::Drawing::Point(213, 355);
+			this->label6->Location = System::Drawing::Point(434, 374);
 			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(332, 17);
+			this->label6->Size = System::Drawing::Size(180, 17);
 			this->label6->TabIndex = 15;
-			this->label6->Text = L"※テキストは50字まで入力できます。";
+			this->label6->Text = L"※50文字まで入力可";
 			// 
 			// labelViewDate
 			// 
 			this->labelViewDate->AutoSize = true;
 			this->labelViewDate->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->labelViewDate->Location = System::Drawing::Point(13, 34);
+			this->labelViewDate->Location = System::Drawing::Point(55, 79);
 			this->labelViewDate->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelViewDate->Name = L"labelViewDate";
 			this->labelViewDate->Size = System::Drawing::Size(118, 23);
@@ -350,7 +360,7 @@ namespace TeaCupLabVer2 {
 			// labelTitle
 			// 
 			this->labelTitle->AutoSize = true;
-			this->labelTitle->Location = System::Drawing::Point(55, 132);
+			this->labelTitle->Location = System::Drawing::Point(55, 143);
 			this->labelTitle->Name = L"labelTitle";
 			this->labelTitle->Size = System::Drawing::Size(154, 23);
 			this->labelTitle->TabIndex = 17;
@@ -358,17 +368,81 @@ namespace TeaCupLabVer2 {
 			// 
 			// textBoxTitle
 			// 
-			this->textBoxTitle->Location = System::Drawing::Point(216, 132);
+			this->textBoxTitle->Location = System::Drawing::Point(215, 140);
+			this->textBoxTitle->MaxLength = 20;
 			this->textBoxTitle->Name = L"textBoxTitle";
-			this->textBoxTitle->Size = System::Drawing::Size(322, 30);
+			this->textBoxTitle->Size = System::Drawing::Size(399, 30);
 			this->textBoxTitle->TabIndex = 18;
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->label7->ForeColor = System::Drawing::Color::Tomato;
+			this->label7->Location = System::Drawing::Point(83, 166);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(103, 17);
+			this->label7->TabIndex = 19;
+			this->label7->Text = L"※入力必須";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->label8->ForeColor = System::Drawing::Color::Tomato;
+			this->label8->Location = System::Drawing::Point(83, 217);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(103, 17);
+			this->label8->TabIndex = 20;
+			this->label8->Text = L"※入力必須";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->label9->ForeColor = System::Drawing::Color::Tomato;
+			this->label9->Location = System::Drawing::Point(83, 273);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(103, 17);
+			this->label9->TabIndex = 21;
+			this->label9->Text = L"※入力必須";
+			// 
+			// buttonReturn
+			// 
+			this->buttonReturn->Location = System::Drawing::Point(96, 432);
+			this->buttonReturn->Name = L"buttonReturn";
+			this->buttonReturn->Size = System::Drawing::Size(90, 38);
+			this->buttonReturn->TabIndex = 22;
+			this->buttonReturn->Text = L"戻る";
+			this->buttonReturn->UseVisualStyleBackColor = true;
+			this->buttonReturn->Click += gcnew System::EventHandler(this, &registWindow::buttonReturn_Click);
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(128)));
+			this->label10->ForeColor = System::Drawing::Color::Tomato;
+			this->label10->Location = System::Drawing::Point(434, 173);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(180, 17);
+			this->label10->TabIndex = 23;
+			this->label10->Text = L"※20文字まで入力可";
 			// 
 			// registWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 23);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::LemonChiffon;
-			this->ClientSize = System::Drawing::Size(638, 457);
+			this->ClientSize = System::Drawing::Size(682, 503);
+			this->Controls->Add(this->label10);
+			this->Controls->Add(this->buttonReturn);
+			this->Controls->Add(this->label9);
+			this->Controls->Add(this->label8);
+			this->Controls->Add(this->label7);
 			this->Controls->Add(this->textBoxTitle);
 			this->Controls->Add(this->labelTitle);
 			this->Controls->Add(this->labelViewDate);
@@ -467,7 +541,7 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 		string writing_text = date + ",\n" + title + "," + timestart + "," + minutestart + "," + timefinish + "," + minutefinish + "," + plan + ",";
 		writing_file << writing_text << endl;
 		writing_file.close();
-		this->textBoxTitle->Text == "";					//コンボボックス、テキストボックスの中身を初期化
+		this->textBoxTitle->Text = "";					//コンボボックス、テキストボックスの中身を初期化
 		this->buttonTimeStart->SelectedIndex = -1;			
 		this->buttonMinuteStart->SelectedIndex = -1;
 		this->buttonTimeFinish->SelectedIndex = -1;
@@ -510,6 +584,9 @@ private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void buttonTimeFinish_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBoxPlan_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void buttonReturn_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
 }
 };
 }
