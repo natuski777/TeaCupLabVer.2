@@ -25,14 +25,14 @@ namespace TeaCupLabVer2
 	public ref class listWindow : public System::Windows::Forms::Form
 	{
 	private:
-		System::DateTime dateFromMyForm;
+		System::DateTime dateFromList;
 	public:
-		property System::DateTime DateFromMyForm {
+		property System::DateTime DateFromList {
 			System::DateTime get() {
-				return dateFromMyForm;
+				return dateFromList;
 			}
 			void set(System::DateTime value) {
-				dateFromMyForm = value;
+				dateFromList = value;
 			}
 		}
 	public:
@@ -305,8 +305,11 @@ namespace TeaCupLabVer2
 		//情報登録画面のボタンをクリックすると情報登録画面へ遷移する処理,モーダルダイアログで表示
 	private: System::Void buttonRegist_Click(System::Object^ sender, System::EventArgs^ e)
 {
+		this->Hide();
 		registWindow^ Reg = gcnew registWindow();
+		Reg->DateFromRegist = this->dateFromList;
 		Reg->ShowDialog();
+		this->Show();
 }
 
 
@@ -319,7 +322,7 @@ namespace TeaCupLabVer2
 
 	private: System::Void listWindow_Load(System::Object^ sender, System::EventArgs^ e)
 	{
-		labelViewDate->Text = dateFromMyForm.ToLongDateString();
+		labelViewDate->Text = dateFromList.ToLongDateString();
 
 		//ラベルの中身をstd::string型に変更（ファイルの中身と一致させるため）
 		String^ labelviewdate = gcnew String(labelViewDate->Text);

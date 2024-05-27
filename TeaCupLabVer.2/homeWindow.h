@@ -54,6 +54,7 @@ namespace TeaCupLabVer2 {
 	private: System::Windows::Forms::Button^ buttonLogout;
 	private: System::Windows::Forms::Button^ buttonDecision;
 	private: System::Windows::Forms::MonthCalendar^ monthCalendar1;
+	private: System::Windows::Forms::Label^ label1;
 	private:
 		/// <summary>
 		/// •K—v‚ÈƒfƒUƒCƒi[•Ï”‚Å‚·B
@@ -70,6 +71,7 @@ namespace TeaCupLabVer2 {
 			this->buttonLogout = (gcnew System::Windows::Forms::Button());
 			this->buttonDecision = (gcnew System::Windows::Forms::Button());
 			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// buttonLogout
@@ -105,11 +107,21 @@ namespace TeaCupLabVer2 {
 			this->monthCalendar1->TabIndex = 8;
 			this->monthCalendar1->DateSelected += gcnew System::Windows::Forms::DateRangeEventHandler(this, &homeWindow::monthCalendar1_DateSelected);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(630, 518);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(130, 12);
+			this->label1->TabIndex = 9;
+			this->label1->Text = L"“ú•t‚ª‘I‘ð‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ";
+			// 
 			// homeWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(996, 570);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->monthCalendar1);
 			this->Controls->Add(this->buttonDecision);
 			this->Controls->Add(this->buttonLogout);
@@ -117,6 +129,7 @@ namespace TeaCupLabVer2 {
 			this->Text = L"homeWindow";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &homeWindow::homeWindow_FormClosing);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -141,15 +154,16 @@ namespace TeaCupLabVer2 {
 		   //î•ñˆê——‰æ–ÊAî•ñ“o˜^‰æ–ÊAíœ‰æ–Ê‚É“ú•t‚ð“n‚·
 	private: System::Void buttonDecision_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+
 		this->Hide();
 		listWindow^ Lis = gcnew listWindow();	//“o˜^î•ñˆê——‰æ–Ê‚É“ú•t‚ð“n‚·
 		Lis->DateFromList = this->SelectedDate;
 
 		registWindow^ Reg = gcnew registWindow();	//î•ñ“o˜^‰æ–Ê‚É“ú•t‚ð“n‚·
-		Reg->DateFromMyForm = this->SelectedDate;
+		Reg->DateFromRegist = this->SelectedDate;
 		
 		deleteWindow^ Del = gcnew deleteWindow();	//íœ‰æ–Ê‚É“ú•t‚ð“n‚·
-		Del->DateFromMyForm = this->SelectedDate;
+		Del->DateFromDelete = this->SelectedDate;
 
 		Lis->ShowDialog();	//“o˜^î•ñˆê——‰æ–Ê‚É‘JˆÚ
 		
@@ -159,6 +173,7 @@ namespace TeaCupLabVer2 {
 	private: System::Void monthCalendar1_DateSelected(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) 
 	{
 		selectedDate = monthCalendar1->SelectionStart;
+		label1->Text = (selectedDate.ToLongDateString()+"‚ª‘I‘ð‚³‚ê‚Ä‚¢‚Ü‚·");
 	}
 	};
 }
