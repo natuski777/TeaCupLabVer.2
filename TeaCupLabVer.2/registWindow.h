@@ -127,6 +127,7 @@ namespace TeaCupLabVer2
 			// labelRegist
 			// 
 			this->labelRegist->AutoSize = true;
+			this->labelRegist->BackColor = System::Drawing::Color::LemonChiffon;
 			this->labelRegist->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->labelRegist->Location = System::Drawing::Point(286, 40);
@@ -172,7 +173,7 @@ namespace TeaCupLabVer2
 			this->labelPlan->Name = L"labelPlan";
 			this->labelPlan->Size = System::Drawing::Size(130, 23);
 			this->labelPlan->TabIndex = 3;
-			this->labelPlan->Text = L"ó\íËì‡óeÅF";
+			this->labelPlan->Text = L"ó\íËè⁄ç◊ÅF";
 			this->labelPlan->Click += gcnew System::EventHandler(this, &registWindow::labelPlan_Click);
 			// 
 			// buttonTimeStart
@@ -181,8 +182,7 @@ namespace TeaCupLabVer2
 			this->buttonTimeStart->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->buttonTimeStart->FormattingEnabled = true;
-			this->buttonTimeStart->Items->AddRange(gcnew cli::array< System::Object^  >(25)
-			{
+			this->buttonTimeStart->Items->AddRange(gcnew cli::array< System::Object^  >(25) {
 				L"00", L"01", L"02", L"03", L"04", L"05",
 					L"06", L"07", L"08", L"09", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23",
 					L"24"
@@ -200,8 +200,7 @@ namespace TeaCupLabVer2
 			this->buttonMinuteStart->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->buttonMinuteStart->FormattingEnabled = true;
-			this->buttonMinuteStart->Items->AddRange(gcnew cli::array< System::Object^  >(12)
-			{
+			this->buttonMinuteStart->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
 				L"00", L"05", L"10", L"15", L"20", L"25",
 					L"30", L"35", L"40", L"45", L"50", L"55"
 			});
@@ -218,8 +217,7 @@ namespace TeaCupLabVer2
 			this->buttonTimeFinish->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->buttonTimeFinish->FormattingEnabled = true;
-			this->buttonTimeFinish->Items->AddRange(gcnew cli::array< System::Object^  >(24) 
-			{
+			this->buttonTimeFinish->Items->AddRange(gcnew cli::array< System::Object^  >(24) {
 				L"00", L"01", L"02", L"03", L"04", L"05",
 					L"06", L"07", L"08", L"09", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23"
 			});
@@ -236,8 +234,7 @@ namespace TeaCupLabVer2
 			this->buttonMinuteFinish->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->buttonMinuteFinish->FormattingEnabled = true;
-			this->buttonMinuteFinish->Items->AddRange(gcnew cli::array< System::Object^  >(11)
-			{
+			this->buttonMinuteFinish->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
 				L"00", L"05", L"15", L"20", L"25", L"30",
 					L"35", L"40", L"45", L"50", L"55"
 			});

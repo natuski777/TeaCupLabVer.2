@@ -114,6 +114,7 @@ namespace TeaCupLabVer2
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::LemonChiffon;
 			this->label1->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->label1->Location = System::Drawing::Point(257, 40);
@@ -157,7 +158,7 @@ namespace TeaCupLabVer2
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(130, 23);
 			this->label4->TabIndex = 3;
-			this->label4->Text = L"ó\íËì‡óeÅF";
+			this->label4->Text = L"ó\íËè⁄ç◊ÅF";
 			// 
 			// buttonRegist
 			// 
@@ -359,6 +360,8 @@ namespace TeaCupLabVer2
 			this->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"listWindow";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"íÉòqèˆÇµå§ãÜèä";
@@ -366,6 +369,7 @@ namespace TeaCupLabVer2
 			this->Load += gcnew System::EventHandler(this, &listWindow::listWindow_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
 		}
 #pragma endregion
 	private: System::Void listWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
