@@ -78,9 +78,9 @@ namespace TeaCupLabVer2 {
 			// 
 			this->buttonDeleteOK->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->buttonDeleteOK->Location = System::Drawing::Point(29, 192);
+			this->buttonDeleteOK->Location = System::Drawing::Point(54, 180);
 			this->buttonDeleteOK->Name = L"buttonDeleteOK";
-			this->buttonDeleteOK->Size = System::Drawing::Size(148, 38);
+			this->buttonDeleteOK->Size = System::Drawing::Size(150, 38);
 			this->buttonDeleteOK->TabIndex = 0;
 			this->buttonDeleteOK->Text = L"OK";
 			this->buttonDeleteOK->UseVisualStyleBackColor = true;
@@ -90,9 +90,9 @@ namespace TeaCupLabVer2 {
 			// 
 			this->buttonDeleteCancel->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->buttonDeleteCancel->Location = System::Drawing::Point(207, 192);
+			this->buttonDeleteCancel->Location = System::Drawing::Point(242, 180);
 			this->buttonDeleteCancel->Name = L"buttonDeleteCancel";
-			this->buttonDeleteCancel->Size = System::Drawing::Size(148, 38);
+			this->buttonDeleteCancel->Size = System::Drawing::Size(150, 38);
 			this->buttonDeleteCancel->TabIndex = 1;
 			this->buttonDeleteCancel->Text = L"ÉLÉÉÉìÉZÉã";
 			this->buttonDeleteCancel->UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@ namespace TeaCupLabVer2 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->label1->Location = System::Drawing::Point(25, 94);
+			this->label1->Location = System::Drawing::Point(50, 100);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(346, 46);
 			this->label1->TabIndex = 2;
@@ -114,7 +114,7 @@ namespace TeaCupLabVer2 {
 			this->labelViewDate->AutoSize = true;
 			this->labelViewDate->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->labelViewDate->Location = System::Drawing::Point(12, 24);
+			this->labelViewDate->Location = System::Drawing::Point(50, 40);
 			this->labelViewDate->Name = L"labelViewDate";
 			this->labelViewDate->Size = System::Drawing::Size(166, 23);
 			this->labelViewDate->TabIndex = 3;
@@ -125,7 +125,7 @@ namespace TeaCupLabVer2 {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::LemonChiffon;
-			this->ClientSize = System::Drawing::Size(381, 253);
+			this->ClientSize = System::Drawing::Size(438, 253);
 			this->Controls->Add(this->labelViewDate);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->buttonDeleteCancel);

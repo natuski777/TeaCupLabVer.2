@@ -179,6 +179,7 @@ namespace TeaCupLabVer2
 			// 
 			this->buttonRegist->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
+			this->buttonRegist->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->buttonRegist->Location = System::Drawing::Point(120, 480);
 			this->buttonRegist->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonRegist->Name = L"buttonRegist";
@@ -204,6 +205,7 @@ namespace TeaCupLabVer2
 			// 
 			this->buttonReturn->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
+			this->buttonReturn->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->buttonReturn->Location = System::Drawing::Point(405, 480);
 			this->buttonReturn->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonReturn->Name = L"buttonReturn";
@@ -216,7 +218,7 @@ namespace TeaCupLabVer2
 			// labelTimeStart
 			// 
 			this->labelTimeStart->AutoSize = true;
-			this->labelTimeStart->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelTimeStart->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->labelTimeStart->Location = System::Drawing::Point(320, 240);
 			this->labelTimeStart->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
@@ -264,7 +266,7 @@ namespace TeaCupLabVer2
 			// labelTimeFinish
 			// 
 			this->labelTimeFinish->AutoSize = true;
-			this->labelTimeFinish->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelTimeFinish->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->labelTimeFinish->Location = System::Drawing::Point(320, 300);
 			this->labelTimeFinish->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);

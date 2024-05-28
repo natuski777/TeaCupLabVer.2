@@ -109,7 +109,7 @@ namespace TeaCupLabVer2
 			this->labelUserName->AutoSize = true;
 			this->labelUserName->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->labelUserName->Location = System::Drawing::Point(26, 116);
+			this->labelUserName->Location = System::Drawing::Point(50, 120);
 			this->labelUserName->Name = L"labelUserName";
 			this->labelUserName->Size = System::Drawing::Size(130, 23);
 			this->labelUserName->TabIndex = 0;
@@ -120,7 +120,7 @@ namespace TeaCupLabVer2
 			this->labelPassword->AutoSize = true;
 			this->labelPassword->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->labelPassword->Location = System::Drawing::Point(26, 182);
+			this->labelPassword->Location = System::Drawing::Point(50, 180);
 			this->labelPassword->Name = L"labelPassword";
 			this->labelPassword->Size = System::Drawing::Size(130, 23);
 			this->labelPassword->TabIndex = 1;
@@ -128,30 +128,31 @@ namespace TeaCupLabVer2
 			// 
 			// textBoxUserName
 			// 
-			this->textBoxUserName->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBoxUserName->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->textBoxUserName->ImeMode = System::Windows::Forms::ImeMode::Disable;
-			this->textBoxUserName->Location = System::Drawing::Point(177, 107);
+			this->textBoxUserName->Location = System::Drawing::Point(200, 117);
 			this->textBoxUserName->Name = L"textBoxUserName";
-			this->textBoxUserName->Size = System::Drawing::Size(340, 37);
+			this->textBoxUserName->Size = System::Drawing::Size(340, 30);
 			this->textBoxUserName->TabIndex = 2;
 			// 
 			// textBoxPassword
 			// 
-			this->textBoxPassword->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBoxPassword->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->textBoxPassword->ImeMode = System::Windows::Forms::ImeMode::Disable;
-			this->textBoxPassword->Location = System::Drawing::Point(177, 173);
+			this->textBoxPassword->Location = System::Drawing::Point(200, 177);
 			this->textBoxPassword->Name = L"textBoxPassword";
 			this->textBoxPassword->PasswordChar = '*';
-			this->textBoxPassword->Size = System::Drawing::Size(340, 37);
+			this->textBoxPassword->Size = System::Drawing::Size(340, 30);
 			this->textBoxPassword->TabIndex = 3;
 			// 
 			// buttonLogin
 			// 
 			this->buttonLogin->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->buttonLogin->Location = System::Drawing::Point(151, 282);
+			this->buttonLogin->ForeColor = System::Drawing::Color::Tomato;
+			this->buttonLogin->Location = System::Drawing::Point(152, 282);
 			this->buttonLogin->Name = L"buttonLogin";
 			this->buttonLogin->Size = System::Drawing::Size(170, 38);
 			this->buttonLogin->TabIndex = 4;
@@ -163,7 +164,7 @@ namespace TeaCupLabVer2
 			// 
 			this->buttonCancel->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->buttonCancel->Location = System::Drawing::Point(392, 282);
+			this->buttonCancel->Location = System::Drawing::Point(422, 282);
 			this->buttonCancel->Name = L"buttonCancel";
 			this->buttonCancel->Size = System::Drawing::Size(170, 38);
 			this->buttonCancel->TabIndex = 5;
@@ -176,7 +177,7 @@ namespace TeaCupLabVer2
 			this->labelRogin->AutoSize = true;
 			this->labelRogin->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->labelRogin->Location = System::Drawing::Point(221, 25);
+			this->labelRogin->Location = System::Drawing::Point(244, 40);
 			this->labelRogin->Name = L"labelRogin";
 			this->labelRogin->Size = System::Drawing::Size(257, 40);
 			this->labelRogin->TabIndex = 6;
@@ -189,7 +190,7 @@ namespace TeaCupLabVer2
 				static_cast<System::Byte>(128)));
 			this->labelCaution->ForeColor = System::Drawing::Color::Tomato;
 			this->labelCaution->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->labelCaution->Location = System::Drawing::Point(224, 226);
+			this->labelCaution->Location = System::Drawing::Point(247, 220);
 			this->labelCaution->Name = L"labelCaution";
 			this->labelCaution->Size = System::Drawing::Size(293, 17);
 			this->labelCaution->TabIndex = 7;
@@ -199,7 +200,7 @@ namespace TeaCupLabVer2
 			// 
 			this->buttonPasswordVisual->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->buttonPasswordVisual->Location = System::Drawing::Point(550, 174);
+			this->buttonPasswordVisual->Location = System::Drawing::Point(575, 172);
 			this->buttonPasswordVisual->Name = L"buttonPasswordVisual";
 			this->buttonPasswordVisual->Size = System::Drawing::Size(120, 38);
 			this->buttonPasswordVisual->TabIndex = 8;
@@ -213,7 +214,7 @@ namespace TeaCupLabVer2
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::LemonChiffon;
-			this->ClientSize = System::Drawing::Size(682, 353);
+			this->ClientSize = System::Drawing::Size(737, 373);
 			this->Controls->Add(this->buttonPasswordVisual);
 			this->Controls->Add(this->labelCaution);
 			this->Controls->Add(this->labelRogin);
