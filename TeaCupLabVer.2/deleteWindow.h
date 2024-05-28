@@ -78,9 +78,9 @@ namespace TeaCupLabVer2 {
 			// 
 			this->buttonDeleteOK->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->buttonDeleteOK->Location = System::Drawing::Point(61, 192);
+			this->buttonDeleteOK->Location = System::Drawing::Point(29, 192);
 			this->buttonDeleteOK->Name = L"buttonDeleteOK";
-			this->buttonDeleteOK->Size = System::Drawing::Size(94, 38);
+			this->buttonDeleteOK->Size = System::Drawing::Size(148, 38);
 			this->buttonDeleteOK->TabIndex = 0;
 			this->buttonDeleteOK->Text = L"OK";
 			this->buttonDeleteOK->UseVisualStyleBackColor = true;
@@ -90,11 +90,11 @@ namespace TeaCupLabVer2 {
 			// 
 			this->buttonDeleteCancel->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->buttonDeleteCancel->Location = System::Drawing::Point(221, 192);
+			this->buttonDeleteCancel->Location = System::Drawing::Point(207, 192);
 			this->buttonDeleteCancel->Name = L"buttonDeleteCancel";
-			this->buttonDeleteCancel->Size = System::Drawing::Size(94, 38);
+			this->buttonDeleteCancel->Size = System::Drawing::Size(148, 38);
 			this->buttonDeleteCancel->TabIndex = 1;
-			this->buttonDeleteCancel->Text = L"Cancel";
+			this->buttonDeleteCancel->Text = L"ÉLÉÉÉìÉZÉã";
 			this->buttonDeleteCancel->UseVisualStyleBackColor = true;
 			this->buttonDeleteCancel->Click += gcnew System::EventHandler(this, &deleteWindow::buttonDeleteCancel_Click);
 			// 
@@ -133,6 +133,7 @@ namespace TeaCupLabVer2 {
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"deleteWindow";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"íÉòqèˆÇµå§ãÜèä";
 			this->Load += gcnew System::EventHandler(this, &deleteWindow::deleteWindow_Load);
 			this->ResumeLayout(false);
