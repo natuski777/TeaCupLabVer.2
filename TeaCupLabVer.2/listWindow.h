@@ -27,10 +27,12 @@ namespace TeaCupLabVer2
 		System::DateTime dateFromList;
 	public:
 		property System::DateTime DateFromList {
-			System::DateTime get() {
+			System::DateTime get() 
+			{
 				return dateFromList;
 			}
-			void set(System::DateTime value) {
+			void set(System::DateTime value)
+			{
 				dateFromList = value;
 			}
 		}
