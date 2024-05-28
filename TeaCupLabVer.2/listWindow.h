@@ -338,7 +338,7 @@ namespace TeaCupLabVer2
 			// labelPlan
 			// 
 			this->labelPlan->BackColor = System::Drawing::Color::LemonChiffon;
-			this->labelPlan->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->labelPlan->Font = (gcnew System::Drawing::Font(L"ÇlÇr ÉSÉVÉbÉN", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->labelPlan->Location = System::Drawing::Point(234, 360);
 			this->labelPlan->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
