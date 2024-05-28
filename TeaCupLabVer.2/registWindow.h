@@ -5,7 +5,8 @@
 #include <string>
 #include "deleteWindow.h"
 
-namespace TeaCupLabVer2 {
+namespace TeaCupLabVer2 
+{
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -19,6 +20,8 @@ namespace TeaCupLabVer2 {
 	/// <summary>
 	/// registWindow の概要
 	/// </summary>
+	/// 
+	/// 日付の情報を受け取る処理
 	public ref class registWindow : public System::Windows::Forms::Form
 	{
 	private:
@@ -178,7 +181,8 @@ namespace TeaCupLabVer2 {
 			this->buttonTimeStart->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->buttonTimeStart->FormattingEnabled = true;
-			this->buttonTimeStart->Items->AddRange(gcnew cli::array< System::Object^  >(25) {
+			this->buttonTimeStart->Items->AddRange(gcnew cli::array< System::Object^  >(25)
+			{
 				L"00", L"01", L"02", L"03", L"04", L"05",
 					L"06", L"07", L"08", L"09", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23",
 					L"24"
@@ -196,7 +200,8 @@ namespace TeaCupLabVer2 {
 			this->buttonMinuteStart->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->buttonMinuteStart->FormattingEnabled = true;
-			this->buttonMinuteStart->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+			this->buttonMinuteStart->Items->AddRange(gcnew cli::array< System::Object^  >(12)
+			{
 				L"00", L"05", L"10", L"15", L"20", L"25",
 					L"30", L"35", L"40", L"45", L"50", L"55"
 			});
@@ -213,7 +218,8 @@ namespace TeaCupLabVer2 {
 			this->buttonTimeFinish->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->buttonTimeFinish->FormattingEnabled = true;
-			this->buttonTimeFinish->Items->AddRange(gcnew cli::array< System::Object^  >(24) {
+			this->buttonTimeFinish->Items->AddRange(gcnew cli::array< System::Object^  >(24) 
+			{
 				L"00", L"01", L"02", L"03", L"04", L"05",
 					L"06", L"07", L"08", L"09", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23"
 			});
@@ -230,7 +236,8 @@ namespace TeaCupLabVer2 {
 			this->buttonMinuteFinish->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->buttonMinuteFinish->FormattingEnabled = true;
-			this->buttonMinuteFinish->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+			this->buttonMinuteFinish->Items->AddRange(gcnew cli::array< System::Object^  >(11)
+			{
 				L"00", L"05", L"15", L"20", L"25", L"30",
 					L"35", L"40", L"45", L"50", L"55"
 			});
@@ -478,21 +485,26 @@ namespace TeaCupLabVer2 {
 
 		}
 #pragma endregion
-	private: System::Void registWindow_Load(System::Object^ sender, System::EventArgs^ e) {
-		labelViewDate->Text = DateFromRegist.ToLongDateString();
+	private: System::Void registWindow_Load(System::Object^ sender, System::EventArgs^ e)
+	{
+		labelViewDate->Text = DateFromRegist.ToLongDateString();	//labelViewDateに日付の情報を代入
 	}
 	//
 	//×をクリックした際の警告画面
-private: System::Void registWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
-	if (System::Windows::Forms::DialogResult::Cancel ==MessageBox::Show("入力中の内容は保存されていません。\n情報の登録を終了しますか？","確認",MessageBoxButtons::OKCancel, MessageBoxIcon::Question)) {
+private: System::Void registWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
+{
+	if (System::Windows::Forms::DialogResult::Cancel ==MessageBox::Show("入力中の内容は保存されていません。\n情報の登録を終了しますか？","確認",MessageBoxButtons::OKCancel, MessageBoxIcon::Question)) 
+	{
 		e->Cancel = true;
 	}
 }
-private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
+{
 }
 	//
 	//完了ボタンが押された場合の処理
-private: System::Void buttonFinish_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void buttonFinish_Click(System::Object^ sender, System::EventArgs^ e)
+{
 	String^ err;	//エラー文を格納する変数
 	if (this->textBoxTitle->Text == "")
 	{
@@ -510,7 +522,7 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 	{
 		MessageBox::Show(err);
 	}
-	else
+	else    //正しい情報が入力された場合の処理
 	{
 		//System::String型XXXにtextBox1の中身を代入
 		// ↑XXXをstd::string型に変換してYYYに代入
@@ -537,7 +549,7 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 		string minutefinish = msclr::interop::marshal_as<string>(MinuteFinish);		//変数Minutefinishには終了時間（分）の入ったString型のMinuteFinishを代入
 		//ファイルを開いて最後の行へ日付＋情報をカンマ区切りで入力→閉じるまで
 		ofstream writing_file;
-		string filename = "TeaCupLab.txt";
+		string filename = "TeaCupLab.txt";		//変数filenameにテキストファイルを代入
 		writing_file.open(filename, ios::app);
 		string writing_text = date + ",\n" + title + "," + timestart + "," + minutestart + "," + timefinish + "," + minutefinish + "," + plan + ",";
 		writing_file << writing_text << endl;
@@ -552,41 +564,56 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 	}
 }
 	//
-	//削除ボタンを押して登録情報を削除する処理
-private: System::Void buttonDelete_Click(System::Object^ sender, System::EventArgs^ e) {
+	//削除ボタンを押して削除画面に遷移する処理
+private: System::Void buttonDelete_Click(System::Object^ sender, System::EventArgs^ e)
+{
 	this->Hide();
-
+	//deleteWindowのインスタンス化
 	deleteWindow^ Del = gcnew deleteWindow();
 	Del->DateFromDelete = this->DateFromRegist;
 	Del->ShowDialog();
 
 	this->Show();
 }
-private: System::Void labelViewDate_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void labelViewDate_Click(System::Object^ sender, System::EventArgs^ e) 
+{
 }
-private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) 
+{
 }
-private: System::Void labelPlan_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void labelPlan_Click(System::Object^ sender, System::EventArgs^ e)
+{
 }
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e)
+{
 }
-private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e)
+{
 }
-private: System::Void labelTimeStart_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void labelTimeStart_Click(System::Object^ sender, System::EventArgs^ e)
+{
 }
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e)
+{
 }
-private: System::Void buttonMinuteFinish_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void buttonMinuteFinish_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
+{
 }
-private: System::Void buttonMinuteStart_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void buttonMinuteStart_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
+{
 }
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e)
+{
 }
-private: System::Void buttonTimeFinish_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void buttonTimeFinish_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
+{
 }
-private: System::Void textBoxPlan_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void textBoxPlan_TextChanged(System::Object^ sender, System::EventArgs^ e)
+{
 }
-private: System::Void buttonReturn_Click(System::Object^ sender, System::EventArgs^ e) {
+//戻るボタンを押して情報登録画面を閉じる処理
+private: System::Void buttonReturn_Click(System::Object^ sender, System::EventArgs^ e)
+{
 	this->Close();
 }
 };

@@ -4,7 +4,8 @@
 #include <fstream>
 #include <string>
 
-namespace TeaCupLabVer2 {
+namespace TeaCupLabVer2
+{
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -18,6 +19,8 @@ namespace TeaCupLabVer2 {
 	/// <summary>
 	/// deleteWindow の概要
 	/// </summary>
+	/// 
+	/// カレンダーの日付情報を受け取る処理
 	public ref class deleteWindow : public System::Windows::Forms::Form
 	{
 	private:
@@ -143,9 +146,11 @@ namespace TeaCupLabVer2 {
 #pragma endregion
 	private: System::Void deleteWindow_Load(System::Object^ sender, System::EventArgs^ e) 
 	{
+		//labelViewDateに日付情報を代入
 		labelViewDate->Text = DateFromDelete.ToLongDateString();
 	}
-private: System::Void buttonDeleteOK_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void buttonDeleteOK_Click(System::Object^ sender, System::EventArgs^ e) //OKを押したときにファイルに初期表示の値を送り、情報登録画面に戻る処理
+{
 	//labelViewDateのデータを取得・変換
 	String^ DeleteDate = gcnew String(labelViewDate->Text);			//変数Dateに日付の情報を代入
 	string deletedate = msclr::interop::marshal_as<string>(DeleteDate);		//変数dateには日付情報の入ったString型のDateを代入
@@ -158,7 +163,9 @@ private: System::Void buttonDeleteOK_Click(System::Object^ sender, System::Event
 	writing_file.close();
 	Close();
 }
-private: System::Void buttonDeleteCancel_Click(System::Object^ sender, System::EventArgs^ e) {
+//キャンセルを押したときに情報登録画面に戻る処理
+private: System::Void buttonDeleteCancel_Click(System::Object^ sender, System::EventArgs^ e)
+{
 	Close();
 }
 };
