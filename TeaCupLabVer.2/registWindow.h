@@ -179,8 +179,9 @@ namespace TeaCupLabVer2 {
 				static_cast<System::Byte>(128)));
 			this->buttonTimeStart->FormattingEnabled = true;
 			this->buttonTimeStart->Items->AddRange(gcnew cli::array< System::Object^  >(25) {
-				L"0", L"1", L"2", L"3", L"4", L"5", L"6",
-					L"7", L"8", L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23", L"24"
+				L"00", L"01", L"02", L"03", L"04", L"05",
+					L"06", L"07", L"08", L"09", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23",
+					L"24"
 			});
 			this->buttonTimeStart->Location = System::Drawing::Point(255, 237);
 			this->buttonTimeStart->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
@@ -196,7 +197,7 @@ namespace TeaCupLabVer2 {
 				static_cast<System::Byte>(128)));
 			this->buttonMinuteStart->FormattingEnabled = true;
 			this->buttonMinuteStart->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
-				L"0", L"5", L"10", L"15", L"20", L"25",
+				L"00", L"05", L"10", L"15", L"20", L"25",
 					L"30", L"35", L"40", L"45", L"50", L"55"
 			});
 			this->buttonMinuteStart->Location = System::Drawing::Point(475, 237);
@@ -213,8 +214,8 @@ namespace TeaCupLabVer2 {
 				static_cast<System::Byte>(128)));
 			this->buttonTimeFinish->FormattingEnabled = true;
 			this->buttonTimeFinish->Items->AddRange(gcnew cli::array< System::Object^  >(24) {
-				L"0", L"1", L"2", L"3", L"4", L"5", L"6",
-					L"7", L"8", L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23"
+				L"00", L"01", L"02", L"03", L"04", L"05",
+					L"06", L"07", L"08", L"09", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23"
 			});
 			this->buttonTimeFinish->Location = System::Drawing::Point(255, 297);
 			this->buttonTimeFinish->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
@@ -230,7 +231,7 @@ namespace TeaCupLabVer2 {
 				static_cast<System::Byte>(128)));
 			this->buttonMinuteFinish->FormattingEnabled = true;
 			this->buttonMinuteFinish->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
-				L"0", L"5", L"15", L"20", L"25", L"30",
+				L"00", L"05", L"15", L"20", L"25", L"30",
 					L"35", L"40", L"45", L"50", L"55"
 			});
 			this->buttonMinuteFinish->Location = System::Drawing::Point(475, 297);
