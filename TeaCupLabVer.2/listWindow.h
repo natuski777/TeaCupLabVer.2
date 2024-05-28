@@ -8,7 +8,6 @@
 
 namespace TeaCupLabVer2 
 {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -63,12 +62,6 @@ namespace TeaCupLabVer2
 	private: System::Windows::Forms::Button^ buttonRegist;
 	private: System::Windows::Forms::Label^ labelViewDate;
 
-
-
-
-
-
-
 	private: System::Windows::Forms::Button^ buttonReturn;
 	private: System::Windows::Forms::Label^ labelTimeStart;
 	private: System::Windows::Forms::Label^ label5;
@@ -82,17 +75,6 @@ namespace TeaCupLabVer2
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Label^ labelTitle;
 	private: System::Windows::Forms::TextBox^ labelPlan;
-
-
-
-
-
-
-
-
-
-
-
 
 	private:
 		/// <summary>
@@ -382,7 +364,6 @@ namespace TeaCupLabVer2
 			this->Load += gcnew System::EventHandler(this, &listWindow::listWindow_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
 	private: System::Void listWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
@@ -421,23 +402,17 @@ namespace TeaCupLabVer2
 			}
 			//ラベルに表示するためにSystem::String型に変換
 			//予定のタイトル
-			string list_title = str_buf[0];
-			String^ List_Title = msclr::interop::marshal_as<String^>(list_title);
+			String^ List_Title = msclr::interop::marshal_as<String^>(str_buf[0]);
 			//開始　時間
-			string time_start = str_buf[1];
-			String^ Time_Start = msclr::interop::marshal_as<String^>(time_start);
+			String^ Time_Start = msclr::interop::marshal_as<String^>(str_buf[1]);
 			//開始　分
-			string minutes_tart = str_buf[2];
-			String^ Minute_Start = msclr::interop::marshal_as<String^>(minutes_tart);
+			String^ Minute_Start = msclr::interop::marshal_as<String^>(str_buf[2]);
 			//終了　時間
-			string time_finish = str_buf[3];
-			String^ Time_Finish = msclr::interop::marshal_as<String^>(time_finish);
+			String^ Time_Finish = msclr::interop::marshal_as<String^>(str_buf[3]);
 			//終了　分
-			string minute_finish = str_buf[4];
-			String^ Minute_Finish = msclr::interop::marshal_as<String^>(minute_finish);
+			String^ Minute_Finish = msclr::interop::marshal_as<String^>(str_buf[4]);
 			//予定内容
-			string list_plan = str_buf[5];
-			String^ List_Plan = msclr::interop::marshal_as<String^>(list_plan);
+			String^ List_Plan = msclr::interop::marshal_as<String^>(str_buf[5]);
 
 			//選択した日付がテキストファイルにない場合に「情報が登録されていません。」と表示する処理
 			if (List_Title == "")

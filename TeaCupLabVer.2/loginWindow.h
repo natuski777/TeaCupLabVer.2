@@ -25,20 +25,25 @@ namespace TeaCupLabVer2
 			//
 		}
 
-		//入力されたテキストが半角英数字かどうかを判断
+		//入力されたテキストが英数字かどうかを判断
 		static int Alnumjudge(String^ LoginText, int len)
 		{
 			int i = 0;
+			//入力テキストを先頭から1文字ずつチェック
 			for (i; i < len; i++)
 			{
+				//文字が英数字以外だった場合、ループを抜ける
 				if (!isalnum(LoginText[i]))
 				{
 					break;
 				}
 
 			}
+			//文字列の末尾まで確認しきれた場合に1を返し、そうでない場合に0を返す
 			if (i == len)
+			{
 				return 1;
+			}
 			else
 			{
 				return 0;
@@ -241,7 +246,7 @@ namespace TeaCupLabVer2
 		//未入力時に表示されるメッセージテキストを用意
 		String^ NotEntered = "";
 
-		//ユーザー名またはパスワードが未入力状態の場合
+		//ユーザー名またはパスワードが未入力状態の場合、テキストを追加
 		if (this->textBoxUserName->Text == "")
 		{
 			NotEntered += "ユーザー名は必須項目です。\n";
@@ -250,11 +255,12 @@ namespace TeaCupLabVer2
 		{
 			NotEntered += "パスワードは必須項目です。\n";
 		}
-
+		//未入力状態のテキストボックスがあった場合、テキストをメッセージで表示
 		if (NotEntered != "")
 		{
 			MessageBox::Show(NotEntered);
 		}
+		//両方入力されている場合
 		else
 		{	//入力内容と文字数を取得
 			String^ Username = this->textBoxUserName->Text;
@@ -307,9 +313,10 @@ namespace TeaCupLabVer2
 	private: System::Void buttonPasswordVisual_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		//ボタンが押された回数を記録する変数の宣言
-		static int c = 1;
+		static int CountPush = 1;
 
-		if (c % 2)
+		//表示/非表示ボタンがクリックされる度にパスワードの表示を切り替え
+		if (CountPush % 2)
 		{
 			textBoxPassword->PasswordChar = 0;
 			buttonPasswordVisual->Text = "非表示";
@@ -320,7 +327,7 @@ namespace TeaCupLabVer2
 			buttonPasswordVisual->Text = "表示";
 		}
 
-		c++;
+		CountPush++;
 	}
 };
 }
