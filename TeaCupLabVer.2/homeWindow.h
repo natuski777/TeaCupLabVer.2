@@ -108,6 +108,7 @@ namespace TeaCupLabVer2 {
 			this->monthCalendar1->Dock = System::Windows::Forms::DockStyle::Right;
 			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
+			this->monthCalendar1->ForeColor = System::Drawing::SystemColors::WindowText;
 			this->monthCalendar1->Location = System::Drawing::Point(-225, 0);
 			this->monthCalendar1->Margin = System::Windows::Forms::Padding(0);
 			this->monthCalendar1->MaxSelectionCount = 1;
@@ -160,7 +161,7 @@ namespace TeaCupLabVer2 {
 		   //終了確認メッセージボックス
 	private: System::Void homeWindow_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
 	{
-		if (System::Windows::Forms::DialogResult::Cancel == MessageBox::Show("ログアウトして終了しますか?", "確認", MessageBoxButtons::OKCancel))
+		if (System::Windows::Forms::DialogResult::Cancel == MessageBox::Show("ログアウトしますか?", "確認", MessageBoxButtons::OKCancel))
 		{
 			e->Cancel = true;
 		}
@@ -191,6 +192,8 @@ namespace TeaCupLabVer2 {
 		buttonDecision->Visible = TRUE;		//日付が選択された時は確定ボタン表示
 		selectedDate = monthCalendar1->SelectionStart;	//日付取得
 		label1->Text = (selectedDate.ToLongDateString() + "が選択されています");	//変換して表示
+
+		
 	}
 
 
@@ -201,10 +204,10 @@ namespace TeaCupLabVer2 {
 		{
 			buttonDecision->Visible = FALSE;	//日付が選択されていない時は確定ボタン非表示
 		}
-		/*if (selectedDate == monthCalendar1->SelectionStart) 
+		if (selectedDate == monthCalendar1->SelectionStart)
 		{
-
-		}*/
+			monthCalendar1->ForeColor.Red;
+		}
 	}
 	};
 }
