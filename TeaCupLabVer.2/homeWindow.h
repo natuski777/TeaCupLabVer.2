@@ -123,9 +123,9 @@ namespace TeaCupLabVer2 {
 				static_cast<System::Byte>(128)));
 			this->label1->Location = System::Drawing::Point(132, 543);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(261, 19);
+			this->label1->Size = System::Drawing::Size(240, 19);
 			this->label1->TabIndex = 9;
-			this->label1->Text = L"日付が選択されていません";
+			this->label1->Text = L"日付を選択してください";
 			// 
 			// homeWindow
 			// 
@@ -192,21 +192,13 @@ namespace TeaCupLabVer2 {
 		buttonDecision->Visible = TRUE;		//日付が選択された時は確定ボタン表示
 		selectedDate = monthCalendar1->SelectionStart;	//日付取得
 		label1->Text = (selectedDate.ToLongDateString() + "が選択されています");	//変換して表示
-
-		
 	}
-
-
 
 	private: System::Void homeWindow_Load(System::Object^ sender, System::EventArgs^ e)
 	{
-		if (label1->Text == "日付が選択されていません")
+		if (label1->Text == "日付を選択してください")
 		{
 			buttonDecision->Visible = FALSE;	//日付が選択されていない時は確定ボタン非表示
-		}
-		if (selectedDate == monthCalendar1->SelectionStart)
-		{
-			monthCalendar1->ForeColor.Red;
 		}
 	}
 	};
