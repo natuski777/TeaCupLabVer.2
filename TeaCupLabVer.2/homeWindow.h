@@ -25,7 +25,7 @@ namespace TeaCupLabVer2 {
 	private:
 		System::DateTime selectedDate;
 
-	public:
+	public:											//日付取得の為のプロパティ作成
 		property System::DateTime SelectedDate {
 			System::DateTime get() {
 				return selectedDate;
@@ -80,9 +80,9 @@ namespace TeaCupLabVer2 {
 			this->buttonLogout->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
 			this->buttonLogout->ForeColor = System::Drawing::Color::Tomato;
-			this->buttonLogout->Location = System::Drawing::Point(775, 86);
+			this->buttonLogout->Location = System::Drawing::Point(454, 526);
 			this->buttonLogout->Name = L"buttonLogout";
-			this->buttonLogout->Size = System::Drawing::Size(136, 50);
+			this->buttonLogout->Size = System::Drawing::Size(117, 53);
 			this->buttonLogout->TabIndex = 3;
 			this->buttonLogout->Text = L"ログアウト";
 			this->buttonLogout->UseVisualStyleBackColor = true;
@@ -92,9 +92,9 @@ namespace TeaCupLabVer2 {
 			// 
 			this->buttonDecision->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->buttonDecision->Location = System::Drawing::Point(761, 213);
+			this->buttonDecision->Location = System::Drawing::Point(12, 526);
 			this->buttonDecision->Name = L"buttonDecision";
-			this->buttonDecision->Size = System::Drawing::Size(150, 53);
+			this->buttonDecision->Size = System::Drawing::Size(114, 53);
 			this->buttonDecision->TabIndex = 6;
 			this->buttonDecision->Text = L"確定";
 			this->buttonDecision->UseVisualStyleBackColor = true;
@@ -102,15 +102,13 @@ namespace TeaCupLabVer2 {
 			// 
 			// monthCalendar1
 			// 
-			this->monthCalendar1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
 			this->monthCalendar1->BackColor = System::Drawing::Color::LemonChiffon;
 			this->monthCalendar1->CalendarDimensions = System::Drawing::Size(4, 3);
 			this->monthCalendar1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->monthCalendar1->Dock = System::Windows::Forms::DockStyle::Right;
 			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->monthCalendar1->Location = System::Drawing::Point(103, 21);
+			this->monthCalendar1->Location = System::Drawing::Point(-225, 0);
 			this->monthCalendar1->Margin = System::Windows::Forms::Padding(0);
 			this->monthCalendar1->MaxSelectionCount = 1;
 			this->monthCalendar1->Name = L"monthCalendar1";
@@ -120,11 +118,11 @@ namespace TeaCupLabVer2 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"MS UI Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"ＭＳ ゴシック", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(128)));
-			this->label1->Location = System::Drawing::Point(682, 341);
+			this->label1->Location = System::Drawing::Point(132, 543);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(208, 19);
+			this->label1->Size = System::Drawing::Size(261, 19);
 			this->label1->TabIndex = 9;
 			this->label1->Text = L"日付が選択されていません";
 			// 
@@ -134,7 +132,7 @@ namespace TeaCupLabVer2 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::LemonChiffon;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->ClientSize = System::Drawing::Size(920, 552);
+			this->ClientSize = System::Drawing::Size(583, 591);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->monthCalendar1);
 			this->Controls->Add(this->buttonDecision);
@@ -143,8 +141,10 @@ namespace TeaCupLabVer2 {
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"homeWindow";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"茶碗蒸し研究所";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &homeWindow::homeWindow_FormClosing);
+			this->Load += gcnew System::EventHandler(this, &homeWindow::homeWindow_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -154,7 +154,7 @@ namespace TeaCupLabVer2 {
 		//ログアウト確認メッセージボックス
 	private: System::Void buttonLogout_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-			this->Close();
+		this->Close();
 	}
 
 		   //終了確認メッセージボックス
@@ -163,36 +163,48 @@ namespace TeaCupLabVer2 {
 		if (System::Windows::Forms::DialogResult::Cancel == MessageBox::Show("ログアウトして終了しますか?", "確認", MessageBoxButtons::OKCancel))
 		{
 			e->Cancel = true;
-			Close();
 		}
-		
+
 	}
 
 		   //情報一覧画面、情報登録画面、削除画面に日付を渡す
 	private: System::Void buttonDecision_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		
+
 		this->Hide();
 		listWindow^ Lis = gcnew listWindow();	//登録情報一覧画面に日付を渡す
 		Lis->DateFromList = this->SelectedDate;
 
 		registWindow^ Reg = gcnew registWindow();	//情報登録画面に日付を渡す
 		Reg->DateFromRegist = this->SelectedDate;
-		
+
 		deleteWindow^ Del = gcnew deleteWindow();	//削除画面に日付を渡す
 		Del->DateFromDelete = this->SelectedDate;
 
 		Lis->ShowDialog();	//登録情報一覧画面に遷移
-		
+
 		this->Show();
 	}
 		   //日付取得
-	private: System::Void monthCalendar1_DateSelected(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) 
+	private: System::Void monthCalendar1_DateSelected(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e)
 	{
-		selectedDate = monthCalendar1->SelectionStart;
-		label1->Text = (selectedDate.ToLongDateString()+"が選択されています");
+		buttonDecision->Visible = TRUE;		//日付が選択された時は確定ボタン表示
+		selectedDate = monthCalendar1->SelectionStart;	//日付取得
+		label1->Text = (selectedDate.ToLongDateString() + "が選択されています");	//変換して表示
 	}
 
 
-};
+
+	private: System::Void homeWindow_Load(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (label1->Text == "日付が選択されていません")
+		{
+			buttonDecision->Visible = FALSE;	//日付が選択されていない時は確定ボタン非表示
+		}
+		/*if (selectedDate == monthCalendar1->SelectionStart) 
+		{
+
+		}*/
+	}
+	};
 }
