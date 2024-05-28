@@ -182,7 +182,7 @@ namespace TeaCupLabVer2 {
 				L"0", L"1", L"2", L"3", L"4", L"5", L"6",
 					L"7", L"8", L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23", L"24"
 			});
-			this->buttonTimeStart->Location = System::Drawing::Point(255, 297);
+			this->buttonTimeStart->Location = System::Drawing::Point(255, 237);
 			this->buttonTimeStart->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonTimeStart->Name = L"buttonTimeStart";
 			this->buttonTimeStart->Size = System::Drawing::Size(100, 31);
@@ -199,7 +199,7 @@ namespace TeaCupLabVer2 {
 				L"0", L"5", L"10", L"15", L"20", L"25",
 					L"30", L"35", L"40", L"45", L"50", L"55"
 			});
-			this->buttonMinuteStart->Location = System::Drawing::Point(475, 297);
+			this->buttonMinuteStart->Location = System::Drawing::Point(475, 237);
 			this->buttonMinuteStart->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonMinuteStart->Name = L"buttonMinuteStart";
 			this->buttonMinuteStart->Size = System::Drawing::Size(100, 31);
@@ -216,7 +216,7 @@ namespace TeaCupLabVer2 {
 				L"0", L"1", L"2", L"3", L"4", L"5", L"6",
 					L"7", L"8", L"9", L"10", L"11", L"12", L"13", L"14", L"15", L"16", L"17", L"18", L"19", L"20", L"21", L"22", L"23"
 			});
-			this->buttonTimeFinish->Location = System::Drawing::Point(255, 237);
+			this->buttonTimeFinish->Location = System::Drawing::Point(255, 297);
 			this->buttonTimeFinish->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonTimeFinish->Name = L"buttonTimeFinish";
 			this->buttonTimeFinish->Size = System::Drawing::Size(100, 31);
@@ -233,7 +233,7 @@ namespace TeaCupLabVer2 {
 				L"0", L"5", L"15", L"20", L"25", L"30",
 					L"35", L"40", L"45", L"50", L"55"
 			});
-			this->buttonMinuteFinish->Location = System::Drawing::Point(475, 237);
+			this->buttonMinuteFinish->Location = System::Drawing::Point(475, 297);
 			this->buttonMinuteFinish->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonMinuteFinish->Name = L"buttonMinuteFinish";
 			this->buttonMinuteFinish->Size = System::Drawing::Size(100, 31);
