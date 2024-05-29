@@ -24,16 +24,16 @@ namespace TeaCupLabVer2
 	public ref class listWindow : public System::Windows::Forms::Form
 	{
 	private:
-		System::DateTime dateFromList;
+		System::DateTime dateFromList;	//変数宣言
 	public:
-		property System::DateTime DateFromList {
-			System::DateTime get() 
+		property System::DateTime DateFromList {	//外部からのアクセスの為のプロパティ作成
+			System::DateTime get()	//DateFromListプロパティが参照されたときにdateFromList変数の値を返す
 			{
 				return dateFromList;
 			}
-			void set(System::DateTime value)
-			{
-				dateFromList = value;
+			void set(System::DateTime value)	//DateFromListプロパティに新しい値を設定する
+			{									
+				dateFromList = value;	//valueに選択された日付が格納されている
 			}
 		}
 	public:
@@ -447,7 +447,7 @@ namespace TeaCupLabVer2
 {
 		this->Hide();
 		registWindow^ Reg = gcnew registWindow();
-		Reg->DateFromRegist = this->dateFromList;
+		Reg->DateFromRegist = this->DateFromList;
 		Reg->ShowDialog();
 		this->Show();
 		File_Load();
