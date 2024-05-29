@@ -23,12 +23,12 @@ namespace TeaCupLabVer2 {
 	public ref class homeWindow : public System::Windows::Forms::Form
 	{
 	private:
-		System::DateTime selectedDate;
+		System::DateTime selectedDate;				//変数宣言
 
-	public:											//日付取得の為のプロパティ作成
+	public:											//外部からのアクセスの為のプロパティ作成
 		property System::DateTime SelectedDate
 		{
-			System::DateTime get()
+			System::DateTime get()	//selectDateの値を返す
 			{
 				return selectedDate;
 			}

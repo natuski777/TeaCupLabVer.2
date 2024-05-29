@@ -547,11 +547,15 @@ private: System::Void buttonFinish_Click(System::Object^ sender, System::EventAr
 		//ファイルを開いて最後の行へ日付＋情報をカンマ区切りで入力→閉じるまで
 		ofstream writing_file;
 		string filename = "TeaCupLab.txt";		//変数filenameにテキストファイルを代入
+		//ファイルを開いて最終行まで読み込む
 		writing_file.open(filename, ios::app);
+		//カンマ区切りでファイルに入力
 		string writing_text = date + ",\n" + title + "," + timestart + "," + minutestart + "," + timefinish + "," + minutefinish + "," + plan + ",";
 		writing_file << writing_text << endl;
+		//ファイルを閉じる
 		writing_file.close();
-		this->textBoxTitle->Text = "";					//コンボボックス、テキストボックスの中身を初期化
+		//コンボボックス、テキストボックスの中身を初期化
+		this->textBoxTitle->Text = "";					
 		this->buttonTimeStart->SelectedIndex = -1;			
 		this->buttonMinuteStart->SelectedIndex = -1;
 		this->buttonTimeFinish->SelectedIndex = -1;

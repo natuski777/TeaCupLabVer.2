@@ -24,16 +24,16 @@ namespace TeaCupLabVer2
 	public ref class listWindow : public System::Windows::Forms::Form
 	{
 	private:
-		System::DateTime dateFromList;
+		System::DateTime dateFromList;	//変数宣言
 	public:
-		property System::DateTime DateFromList {
-			System::DateTime get() 
+		property System::DateTime DateFromList {	//外部からのアクセスの為のプロパティ作成
+			System::DateTime get()	//DateFromListプロパティが参照されたときにdateFromList変数の値を返す
 			{
 				return dateFromList;
 			}
-			void set(System::DateTime value)
-			{
-				dateFromList = value;
+			void set(System::DateTime value)	//DateFromListプロパティに新しい値を設定する
+			{									
+				dateFromList = value;	//valueに選択された日付が格納されている
 			}
 		}
 	public:
@@ -382,9 +382,9 @@ namespace TeaCupLabVer2
 		String^ labelviewdate = gcnew String(labelViewDate->Text);
 		string date = msclr::interop::marshal_as<string>(labelviewdate);
 
-		string line;	//line　＝　一行
-		string str_first_conma;
-		string str_buf[6];
+		string line;				//line　＝　一行
+		string str_first_conma;	//カンマ区切りの先頭列
+		string str_buf[6];		//カンマ区切りを格納するためのバッファー６つ
 
 		//ファイルを開く
 		ifstream myFile("TeaCupLab.txt", ios::in);//read
@@ -420,9 +420,10 @@ namespace TeaCupLabVer2
 			//予定内容
 			String^ List_Plan = msclr::interop::marshal_as<String^>(str_buf[5]);
 
-			//選択した日付がテキストファイルにない場合に「情報が登録されていません。」と表示する処理
+			
 			if (List_Title == "")
 			{
+				//選択した日付がテキストファイルにない場合に「情報が登録されていません。」と表示する処理
 				labelTitle->Text = "予定が登録されていません。";
 				labelTimeStart->Text = "-";
 				labelMinuteStart->Text = "-";
@@ -432,6 +433,7 @@ namespace TeaCupLabVer2
 			}
 			else
 			{
+				//選択した日付がテキストファイルにある場合に格納されている情報を表示する処理
 				labelTitle->Text = List_Title;
 				labelTimeStart->Text = Time_Start;
 				labelMinuteStart->Text = Minute_Start;
@@ -440,6 +442,7 @@ namespace TeaCupLabVer2
 				labelPlan->Text = List_Plan;
 			}
 		}
+		//ファイルを閉じる
 		myFile.close();
 	}
 		//情報登録画面のボタンをクリックすると情報登録画面へ遷移する処理,モーダルダイアログで表示
@@ -447,12 +450,13 @@ namespace TeaCupLabVer2
 {
 		this->Hide();
 		registWindow^ Reg = gcnew registWindow();
-		Reg->DateFromRegist = this->dateFromList;
+		Reg->DateFromRegist = this->DateFromList;
 		Reg->ShowDialog();
 		this->Show();
+		//ラベルへの表示を行う関数
 		File_Load();
 }
-	//カレンダー画面へのボタンをクリックするとホーム画面へ遷移する処理、モーダルダイアログで表示
+	//カレンダー画面へのボタンをクリックするとホーム画面へ遷移する処理
 	private: System::Void buttonReturn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		Close();
@@ -460,6 +464,7 @@ namespace TeaCupLabVer2
 	
 	private: System::Void listWindow_Load(System::Object^ sender, System::EventArgs^ e)
 	{
+		//ラベルへの表示を行う関数
 		File_Load();
 	}
 };
